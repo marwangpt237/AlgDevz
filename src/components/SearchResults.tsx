@@ -1,6 +1,7 @@
 import { Category, Language, Resource } from '../types';
 import { ExternalLink, Copy, Check, SearchX, Bookmark } from 'lucide-react';
 import { useState } from 'react';
+import { getTagColor } from '../utils';
 
 interface SearchResultsProps {
   query: string;
@@ -116,6 +117,13 @@ function SearchResultItem({
         <p className="text-zinc-400 text-sm leading-relaxed mb-3">
           {resource.description[language]}
         </p>
+        <div className="flex flex-wrap gap-2">
+          {resource.tags.map(tag => (
+            <span key={tag} className={`px-2 py-0.5 text-xs font-medium rounded-md border ${getTagColor(tag)}`}>
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="flex items-center gap-2 transition-opacity mt-2 sm:mt-0">

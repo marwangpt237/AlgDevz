@@ -39,21 +39,27 @@ export function Sidebar({ categories, selectedId, onSelect, language, isOpen, on
           {categories.map((category) => {
             const Icon = (Icons as any)[category.iconName] || Icons.CircleDot;
             const isSelected = selectedId === category.id;
+            const count = category.subcategories.reduce((acc, sub) => acc + sub.resources.length, 0);
             
             return (
               <button
                 key={category.id}
                 onClick={() => onSelect(category.id)}
                 className={`
-                  w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors text-start cursor-pointer
+                  w-full flex items-center justify-between px-3 py-2.5 text-sm font-medium rounded-lg transition-colors text-start cursor-pointer group
                   ${isSelected 
                     ? 'bg-emerald-500/10 text-emerald-400' 
                     : 'text-zinc-400 hover:bg-zinc-800/50 hover:text-zinc-200'
                   }
                 `}
               >
-                <Icon className="w-4 h-4 shrink-0" />
-                <span className="truncate">{category.title[language]}</span>
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <Icon className="w-4 h-4 shrink-0" />
+                  <span className="truncate">{category.title[language]}</span>
+                </div>
+                <span className={`text-xs px-2 py-0.5 rounded-full shrink-0 ms-2 ${isSelected ? 'bg-emerald-500/20 text-emerald-400' : 'bg-zinc-800 text-zinc-500 group-hover:bg-zinc-700'}`}>
+                  {count}
+                </span>
               </button>
             );
           })}

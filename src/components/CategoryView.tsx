@@ -1,6 +1,7 @@
 import { Category, Language, Resource } from '../types';
 import { ExternalLink, Copy, Check, Bookmark } from 'lucide-react';
 import { useState } from 'react';
+import { getTagColor } from '../utils';
 
 interface CategoryViewProps {
   category: Category;
@@ -97,7 +98,7 @@ function ResourceItem({
         </p>
         <div className="flex flex-wrap gap-2">
           {resource.tags.map(tag => (
-            <span key={tag} className="px-2 py-0.5 text-xs font-medium bg-zinc-800 text-zinc-400 rounded-md border border-zinc-700/50">
+            <span key={tag} className={`px-2 py-0.5 text-xs font-medium rounded-md border ${getTagColor(tag)}`}>
               {tag}
             </span>
           ))}
