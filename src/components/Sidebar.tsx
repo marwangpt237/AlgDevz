@@ -16,16 +16,17 @@ export function Sidebar({ categories, selectedId, onSelect, language, isOpen, on
       {/* Mobile backdrop */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] lg:hidden"
           onClick={onClose}
         />
       )}
       
       {/* Sidebar */}
       <aside className={`
-        fixed lg:sticky top-[120px] sm:top-16 start-0 bottom-0 z-40
-        w-72 lg:w-64 border-e border-zinc-800 bg-[#111113] lg:bg-transparent
-        overflow-y-auto pt-4 lg:pt-6 pb-20 px-4 transition-transform duration-300 ease-in-out
+        fixed inset-y-0 start-0 z-[70] w-[280px] shrink-0
+        lg:sticky lg:top-[64px] lg:z-10 lg:w-64 lg:h-[calc(100vh-64px)]
+        border-e border-zinc-800 bg-[#111113] lg:bg-transparent
+        overflow-y-auto pt-6 lg:pt-8 pb-20 px-4 transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : (language === 'ar' ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0')}
       `}>
         <nav className="space-y-1">

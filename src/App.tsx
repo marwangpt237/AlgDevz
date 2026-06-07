@@ -197,7 +197,7 @@ export default function App() {
         onSuggestClick={() => setIsSuggestModalOpen(true)}
       />
       
-      <div className="flex max-w-7xl mx-auto items-start relative px-4 sm:px-6 lg:px-8 pt-[120px] sm:pt-24 lg:pt-20">
+      <div className="flex max-w-7xl mx-auto items-start relative px-4 sm:px-6 lg:px-8 pt-16 lg:pt-16">
         <Sidebar 
           categories={allCategories}
           selectedId={selectedCategoryId}
