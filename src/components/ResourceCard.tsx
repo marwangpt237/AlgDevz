@@ -40,17 +40,17 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
               {breadcrumb}
             </div>
           )}
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 w-full min-w-0">
             <a 
               href={resource.url} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-emerald-400 hover:text-emerald-300 font-medium text-base sm:text-lg hover:underline underline-offset-4 decoration-emerald-500/30 flex items-center gap-1.5 break-words"
+              className="text-emerald-400 hover:text-emerald-300 font-medium text-base sm:text-lg hover:underline underline-offset-4 decoration-emerald-500/30 flex items-center gap-1.5 break-words [line-break:anywhere]"
             >
               {resource.title}
             </a>
           </div>
-          <p className="text-zinc-400 text-sm leading-relaxed mb-3">
+          <p className="text-zinc-400 text-sm leading-relaxed mb-3 break-words [overflow-wrap:anywhere] whitespace-pre-wrap">
             {resource.description[language] || resource.description.en}
           </p>
           <div className="flex flex-wrap gap-2 items-center">

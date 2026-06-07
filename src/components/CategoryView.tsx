@@ -37,7 +37,7 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
             return (
               <div key={sub.id} className="scroll-mt-24" id={sub.id}>
                 <h2 className="text-xl sm:text-2xl font-semibold text-zinc-200 mb-6 flex items-center gap-2 relative group">
-                  <span className="text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity absolute -start-6">#</span>
+                  <span className="text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity absolute -start-8 w-6 text-end">#</span>
                   {sub.title[language] || sub.title.en}
                 </h2>
                 

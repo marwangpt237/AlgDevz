@@ -183,7 +183,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#111113] text-zinc-200 selection:bg-emerald-500/30 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+    <div className={`min-h-screen bg-[#111113] text-zinc-200 selection:bg-emerald-500/30 overflow-x-hidden ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
       <Header 
         language={language}
         onLanguageChange={setLanguage}
