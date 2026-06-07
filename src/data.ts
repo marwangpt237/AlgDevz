@@ -2,6 +2,61 @@ import { Category } from './types';
 
 export const categoriesData: Category[] = [
   {
+    "id": "hosting-cloud",
+    "title": {
+      "en": "Hosting & Cloud",
+      "ar": "الاستضافة والخدمات السحابية"
+    },
+    "iconName": "Cloud",
+    "subcategories": [
+      {
+        "id": "cloud_providers",
+        "title": {
+          "en": "Cloud Providers",
+          "ar": "مزودي الخدمات السحابية"
+        },
+        "resources": [
+          {
+            "title": "Vercel",
+            "description": {
+              "en": "Platform for frontend frameworks and static sites.",
+              "ar": "منصة لأطر عمل الواجهات الأمامية والمواقع الثابتة."
+            },
+            "url": "https://vercel.com/",
+            "tags": ["Hosting", "Cloud"]
+          },
+          {
+            "title": "Render",
+            "description": {
+              "en": "Cloud application hosting for developers.",
+              "ar": "استضافة للتطبيقات السحابية للمطورين."
+            },
+            "url": "https://render.com/",
+            "tags": ["Hosting", "Server"]
+          },
+          {
+            "title": "Netlify",
+            "description": {
+              "en": "Build, deploy, and scale modern web projects.",
+              "ar": "بناء ونشر وتوسيع مشاريع الويب الحديثة."
+            },
+            "url": "https://www.netlify.com/",
+            "tags": ["Hosting", "Cloud"]
+          },
+          {
+            "title": "DigitalOcean",
+            "description": {
+              "en": "Developer cloud provider for building apps.",
+              "ar": "مزود سحابي للمطورين لبناء التطبيقات."
+            },
+            "url": "https://www.digitalocean.com/",
+            "tags": ["Cloud", "Server", "Linux"]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "artificial-intelligence",
     "title": {
       "en": "Artificial Intelligence",

@@ -27,7 +27,7 @@ export function Sidebar({ categories, selectedId, onSelect, language, isOpen, on
         lg:sticky lg:top-[64px] lg:z-10 lg:w-64 lg:h-[calc(100vh-64px)]
         border-e border-zinc-800 bg-[#111113] lg:bg-transparent
         overflow-y-auto pt-6 lg:pt-8 pb-20 px-4 transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : (language === 'ar' ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0')}
+        ${isOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full lg:!translate-x-0'}
       `}>
         <nav className="space-y-1">
           {categories.map((category) => {

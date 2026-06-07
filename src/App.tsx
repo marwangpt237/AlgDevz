@@ -197,7 +197,7 @@ export default function App() {
         onSuggestClick={() => setIsSuggestModalOpen(true)}
       />
       
-      <div className="flex max-w-7xl mx-auto items-start relative px-4 sm:px-6 lg:px-8 pt-16 lg:pt-16">
+      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto items-start relative px-4 sm:px-6 lg:px-8 pt-32 sm:pt-24 lg:pt-16">
         <Sidebar 
           categories={allCategories}
           selectedId={selectedCategoryId}
@@ -211,7 +211,7 @@ export default function App() {
           onClose={() => setIsSidebarOpen(false)}
         />
         
-        <main className="flex-1 min-w-0 pb-24 lg:ps-12 w-full">
+        <main className="flex-1 w-full min-w-0 pb-24 lg:ps-12">
           {renderContent()}
         </main>
       </div>
