@@ -16,17 +16,22 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
   const total = category.subcategories.reduce((a, s) => a + s.resources.length, 0);
   const isAr = language === 'ar';
 
-  // Track which subcategories are expanded - default to first 2 open for performance
-  const [expanded, setExpanded] = useState<Record<string, boolean>>(() => {
-    const initial: Record<string, boolean> = {};
-    category.subcategories.slice(0, 2).forEach(sub => {
-      initial[sub.id] = true;
-    });
-    return initial;
-  });
-
-  // Track how many items to show per subcategory
+  // Track which subcategories are expanded - reset when category changes
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [visibleCount, setVisibleCount] = useState<Record<string, number>>({});
+
+  // Reset when category changes - critical for mobile performance
+  useMemo(() => {
+    const initial: Record<string, boolean> = {};
+    // Only open first subcategory by default, like Hosting & Cloud
+    if (category.subcategories[0]) {
+      initial[category.subcategories[0].id] = true;
+    }
+    setExpanded(initial);
+    setVisibleCount({});
+    // Scroll to top on category change
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [category.id]);
 
   const toggleSub = (id: string) => {
     setExpanded(prev => ({ ...prev, [id]: !prev[id] }));

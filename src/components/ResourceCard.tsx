@@ -33,37 +33,38 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
   const isAr = language === 'ar';
 
   return (
-    <div className="group relative">
-      <div className="relative overflow-hidden rounded-2xl border border-zinc-800/60 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 hover:border-zinc-700/80 hover:bg-zinc-900/60 hover:shadow-[0_0_0_1px_rgba(16,185,129,0.1),0_8px_24px_-12px_rgba(0,0,0,0.8)]">
+    <div className="group relative w-full max-w-full overflow-hidden">
+      <div className="relative overflow-hidden rounded-2xl border border-zinc-800/60 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 hover:border-zinc-700/80 hover:bg-zinc-900/60">
         {/* subtle gradient accent */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-violet-500/5" />
         </div>
         
-        <div className="relative p-4 sm:p-5">
-          <div className="flex items-start gap-4">
-            <div className="flex-1 min-w-0">
+        <div className="relative p-3.5 sm:p-5 w-full">
+          <div className="flex items-start gap-3 w-full min-w-0">
+            <div className="flex-1 min-w-0 w-full overflow-hidden">
               {breadcrumb && (
                 <div className="mb-2 flex items-center gap-1.5">
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-zinc-800/60 border border-zinc-800 text-[10px] font-medium uppercase tracking-wider text-zinc-400">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-zinc-800/60 border border-zinc-800 text-[10px] font-medium uppercase tracking-wider text-zinc-400 max-w-full truncate">
                     {breadcrumb}
                   </span>
                 </div>
               )}
               
-              <h3 className="flex items-start gap-2 mb-1.5">
+              <h3 className="flex items-start gap-1.5 mb-1.5 w-full min-w-0">
                 <a 
                   href={resource.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[15px] sm:text-[16px] font-semibold leading-snug text-zinc-100 hover:text-emerald-400 transition-colors line-clamp-2"
+                  className="text-[14px] sm:text-[15px] font-semibold leading-snug text-zinc-100 hover:text-emerald-400 transition-colors break-words hyphens-auto flex-1 min-w-0"
+                  style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}
                 >
                   {resource.title}
                 </a>
-                <ExternalLink className="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-400 mt-0.5 shrink-0 transition-colors" />
+                <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-zinc-600 group-hover:text-zinc-400 mt-0.5 shrink-0 transition-colors" />
               </h3>
               
-              <p className="text-[13px] leading-[1.55] text-zinc-400 line-clamp-2 mb-3 break-words overflow-wrap-anywhere">
+              <p className="text-[12px] sm:text-[13px] leading-[1.5] text-zinc-400 mb-2.5 break-words" style={{ overflowWrap: 'anywhere', wordBreak: 'break-word', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                 {resource.description[language] || resource.description.en}
               </p>
               

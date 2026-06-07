@@ -253,7 +253,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#050507] text-zinc-100 selection:bg-emerald-500/20 selection:text-emerald-100 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+    <div className={`min-h-screen bg-[#050507] text-zinc-100 selection:bg-emerald-500/20 selection:text-emerald-100 overflow-x-hidden ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
       <Header 
         language={language}
         onLanguageChange={setLanguage}
@@ -267,8 +267,8 @@ export default function App() {
         onSuggestClick={() => setIsSuggestModalOpen(true)}
       />
       
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="flex items-start gap-6 lg:gap-8 pt-[84px] md:pt-[72px]">
+      <div className="mx-auto max-w-[1400px] px-3 sm:px-4 lg:px-6 xl:px-8 w-full overflow-x-hidden">
+        <div className="flex items-start gap-0 lg:gap-6 xl:gap-8 pt-[84px] md:pt-[72px] w-full min-w-0">
           <Sidebar 
             categories={allCategories}
             selectedId={selectedCategoryId}
@@ -282,7 +282,7 @@ export default function App() {
             onClose={() => setIsSidebarOpen(false)}
           />
           
-          <main className="flex-1 min-w-0 pb-16 w-full">
+          <main className="flex-1 min-w-0 pb-16 w-full max-w-full overflow-x-hidden">
             {renderContent()}
           </main>
         </div>
