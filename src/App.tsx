@@ -211,7 +211,7 @@ export default function App() {
           onClose={() => setIsSidebarOpen(false)}
         />
         
-        <main className="flex-1 w-full min-w-0 pb-24 lg:ps-12">
+        <main className="flex-1 min-w-0 pb-24 lg:ps-12">
           {renderContent()}
         </main>
       </div>
