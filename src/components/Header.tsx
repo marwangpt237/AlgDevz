@@ -7,9 +7,10 @@ interface HeaderProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   toggleSidebar: () => void;
+  onHomeClick?: () => void;
 }
 
-export function Header({ language, onLanguageChange, searchQuery, onSearchChange, toggleSidebar }: HeaderProps) {
+export function Header({ language, onLanguageChange, searchQuery, onSearchChange, toggleSidebar, onHomeClick }: HeaderProps) {
   const isAr = language === 'ar';
 
   return (
@@ -19,19 +20,19 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
         <div className="flex items-center gap-3">
           <button 
             onClick={toggleSidebar}
-            className="lg:hidden p-2 -ms-2 text-zinc-400 hover:text-zinc-100 rounded-md"
+            className="lg:hidden p-2 -ms-2 text-zinc-400 hover:text-zinc-100 rounded-md cursor-pointer"
           >
             <Menu className="w-5 h-5" />
           </button>
           
-          <div className="flex items-center gap-2">
+          <button onClick={onHomeClick} className="flex items-center gap-2 cursor-pointer outline-none">
             <div className="w-8 h-8 rounded bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 text-emerald-400">
               <Github className="w-5 h-5" />
             </div>
             <span className="font-bold text-lg tracking-tight hidden sm:block text-zinc-100">
               AlgDevs
             </span>
-          </div>
+          </button>
         </div>
 
         <div className="flex-1 max-w-xl">

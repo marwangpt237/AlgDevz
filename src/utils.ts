@@ -26,3 +26,34 @@ export function getTagColor(tag: string) {
   
   return colors[Math.abs(hash) % colors.length];
 }
+
+import { Category, Resource } from './types';
+
+export function findSimilarResources(currentResource: Resource, allCategories: Category[], maxCount = 4): Resource[] {
+  const matching: { resource: Resource; score: number }[] = [];
+  
+  for (const cat of allCategories) {
+    if (!cat.subcategories) continue;
+    for (const sub of cat.subcategories) {
+       for (const res of sub.resources) {
+          if (res.url === currentResource.url && res.title === currentResource.title) continue;
+          
+          let score = 0;
+          for (const tag of currentResource.tags) {
+             const t = tag.toLowerCase();
+             if (t === 'general' || t === 'fmhy') continue; // low signal
+             if (res.tags.includes(tag)) {
+                score++;
+             }
+          }
+          if (score > 0) {
+             matching.push({ resource: res, score });
+          }
+       }
+    }
+  }
+  
+  matching.sort((a, b) => b.score - a.score);
+  return matching.slice(0, maxCount).map(m => m.resource);
+}
+
