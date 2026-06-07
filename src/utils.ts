@@ -10,8 +10,10 @@ export function getTagColor(tag: string) {
   if (t === 'privacy' || t === 'security') return 'bg-rose-500/10 text-rose-400 border-rose-500/20';
   if (t === 'streaming' || t === 'video') return 'bg-red-500/10 text-red-400 border-red-500/20';
   if (t === 'gaming' || t === 'game') return 'bg-violet-500/10 text-violet-400 border-violet-500/20';
-  if (t === 'audio' || t === 'music') return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+  if (t === 'audio' || t === 'music') return 'bg-amber-500/10 text-amber-500 border-amber-500/20';
   if (t === 'reading' || t === 'book') return 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20';
+  if (t === 'hosting' || t === 'server' || t === 'cloud') return 'bg-sky-500/10 text-sky-400 border-sky-500/20';
+  if (t === 'linux' || t === 'android' || t === 'apple / ios') return 'bg-teal-500/10 text-teal-400 border-teal-500/20';
 
   const colors = [
     'bg-zinc-800 text-zinc-300 border-zinc-700/50',

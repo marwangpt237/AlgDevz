@@ -8,9 +8,10 @@ interface HeaderProps {
   onSearchChange: (query: string) => void;
   toggleSidebar: () => void;
   onHomeClick?: () => void;
+  onSuggestClick?: () => void;
 }
 
-export function Header({ language, onLanguageChange, searchQuery, onSearchChange, toggleSidebar, onHomeClick }: HeaderProps) {
+export function Header({ language, onLanguageChange, searchQuery, onSearchChange, toggleSidebar, onHomeClick, onSuggestClick }: HeaderProps) {
   const isAr = language === 'ar';
 
   return (
@@ -50,7 +51,17 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
+          {onSuggestClick && (
+            <button
+              onClick={onSuggestClick}
+              className="hidden sm:flex items-center gap-2 px-3 py-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 rounded-lg transition-colors cursor-pointer"
+            >
+              <span className="hidden md:block w-4 h-4 text-center leading-none">+</span>
+              {isAr ? 'اقتراح مورد' : 'Suggest'}
+            </button>
+          )}
+
           <button
             onClick={() => onLanguageChange(isAr ? 'en' : 'ar')}
             className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 bg-zinc-900/50 hover:bg-zinc-800 border border-zinc-800 rounded-lg transition-colors cursor-pointer"

@@ -5,12 +5,14 @@ import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { CategoryView } from './components/CategoryView';
 import { SearchResults } from './components/SearchResults';
+import { SuggestModal } from './components/SuggestModal';
 
 export default function App() {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('ar');
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>('home');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSuggestModalOpen, setIsSuggestModalOpen] = useState(false);
 
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
     try {
@@ -89,7 +91,7 @@ export default function App() {
     if (selectedCategoryId === 'home') {
       return (
         <div className="flex flex-col items-center justify-center py-20 text-center px-4">
-          <h1 className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-indigo-500 bg-clip-text text-transparent mb-6 tracking-tight">
+          <h1 className="text-4xl sm:text-6xl font-bold text-zinc-100 mb-6 tracking-tight">
             AlgDevs Resources
           </h1>
           <p className="text-lg text-zinc-400 max-w-2xl mb-10 leading-relaxed font-medium">
@@ -98,13 +100,13 @@ export default function App() {
               : "Welcome to AlgDevs, the ultimate directory for digital resources and developer tools, carefully curated for the developer community."}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl w-full">
-             {categoriesData.slice(0, 6).map(c => (
+             {categoriesData.map(c => (
                 <button
                   key={c.id}
                   onClick={() => setSelectedCategoryId(c.id)}
-                  className="p-6 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-emerald-500/50 hover:bg-zinc-800/80 transition-all text-start"
+                  className="p-6 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-700 hover:bg-zinc-800/80 transition-all text-start group"
                 >
-                  <h3 className="font-semibold text-lg text-zinc-200 mb-2">{c.title[language] || c.title.en}</h3>
+                  <h3 className="font-semibold text-lg text-zinc-200 mb-2 group-hover:text-white transition-colors">{c.title[language] || c.title.en}</h3>
                   <p className="text-sm text-zinc-500">{c.subcategories.reduce((acc, sub) => acc + sub.resources.length, 0)} {language === 'ar' ? 'موارد' : 'Resources'}</p>
                 </button>
              ))}
@@ -115,31 +117,56 @@ export default function App() {
     
     if (selectedCategoryId === 'about') {
       return (
-        <div className="max-w-3xl mx-auto py-12 px-4">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-12 text-center md:text-start flex flex-col md:flex-row gap-8 items-center md:items-start">
-             <div className="flex-1 space-y-6 w-full">
-                <h2 className="text-3xl font-bold text-zinc-100">
-                  {language === 'ar' ? 'معلومات التواصل' : 'Contact Information'}
-                </h2>
-                <div className="pt-4 space-y-4">
-                  <div className="flex items-center gap-4 text-zinc-300 bg-zinc-950 p-4 rounded-xl border border-zinc-800/50">
-                    <span className="font-mono text-emerald-400 font-semibold px-2 py-1 bg-emerald-500/10 rounded w-28 shrink-0 text-start">Email</span>
-                    <a href="mailto:contact@marwan-naili.me" className="hover:text-emerald-400 transition-colors truncate">contact@marwan-naili.me</a>
-                  </div>
-                  <div className="flex items-center gap-4 text-zinc-300 bg-zinc-950 p-4 rounded-xl border border-zinc-800/50">
-                    <span className="font-mono text-blue-400 font-semibold px-2 py-1 bg-blue-500/10 rounded w-28 shrink-0 text-start">Gmail</span>
-                    <a href="mailto:marwannaili.23.07@gmail.com" className="hover:text-blue-400 transition-colors truncate">marwannaili.23.07@gmail.com</a>
-                  </div>
-                  <div className="flex items-center gap-4 text-zinc-300 bg-zinc-950 p-4 rounded-xl border border-zinc-800/50">
-                    <span className="font-mono text-cyan-400 font-semibold px-2 py-1 bg-cyan-500/10 rounded w-28 shrink-0 text-start">Telegram</span>
-                    <a href="https://t.me/mr1labs" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors truncate">@mr1labs</a>
-                  </div>
-                  <div className="flex items-center gap-4 text-zinc-300 bg-zinc-950 p-4 rounded-xl border border-zinc-800/50">
-                    <span className="font-mono text-purple-400 font-semibold px-2 py-1 bg-purple-500/10 rounded w-28 shrink-0 text-start">Phone</span>
-                    <a href="tel:+213792431470" className="hover:text-purple-400 transition-colors truncate" dir="ltr">+213 792 431 470</a>
-                  </div>
-                </div>
-             </div>
+        <div className="max-w-3xl mx-auto py-12 px-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <div className="mb-10 text-center md:text-start">
+            <h1 className="text-3xl sm:text-4xl font-bold text-zinc-100 mb-4 tracking-tight">
+              {language === 'ar' ? 'معلومات التواصل' : 'Contact Information'}
+            </h1>
+            <p className="text-zinc-400 text-lg">
+               {language === 'ar' ? "تواصل معي في أي وقت بخصوص المشروع أو أي استفسار." : "Feel free to reach out anytime regarding the project or queries."}
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+             <a href="mailto:contact@marwan-naili.me" className="flex items-center gap-4 text-zinc-300 bg-zinc-900/50 p-5 rounded-2xl border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all group">
+               <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-zinc-400 group-hover:text-zinc-200">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+               </div>
+               <div>
+                  <div className="text-sm text-zinc-500 mb-1">{language === 'ar' ? 'البريد الإلكتروني للأعمال' : 'Business Email'}</div>
+                  <div className="font-medium text-zinc-200">contact@marwan-naili.me</div>
+               </div>
+             </a>
+
+             <a href="mailto:marwannaili.23.07@gmail.com" className="flex items-center gap-4 text-zinc-300 bg-zinc-900/50 p-5 rounded-2xl border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all group">
+               <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-zinc-400 group-hover:text-zinc-200">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"/><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/></svg>
+               </div>
+               <div>
+                  <div className="text-sm text-zinc-500 mb-1">{language === 'ar' ? 'الجيميل الشخصي' : 'Personal Gmail'}</div>
+                  <div className="font-medium text-zinc-200">marwannaili.23.07@gmail.com</div>
+               </div>
+             </a>
+
+             <a href="https://t.me/mr1labs" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-zinc-300 bg-zinc-900/50 p-5 rounded-2xl border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all group">
+               <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-zinc-400 group-hover:text-zinc-200">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+               </div>
+               <div>
+                  <div className="text-sm text-zinc-500 mb-1">{language === 'ar' ? 'تيليجرام' : 'Telegram'}</div>
+                  <div className="font-medium text-zinc-200" dir="ltr">@mr1labs</div>
+               </div>
+             </a>
+
+             <a href="tel:+213792431470" className="flex items-center gap-4 text-zinc-300 bg-zinc-900/50 p-5 rounded-2xl border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all group">
+               <div className="w-12 h-12 bg-zinc-800 rounded-xl flex items-center justify-center text-zinc-400 group-hover:text-zinc-200">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+               </div>
+               <div>
+                  <div className="text-sm text-zinc-500 mb-1">{language === 'ar' ? 'رقم الهاتف' : 'Phone'}</div>
+                  <div className="font-medium text-zinc-200" dir="ltr">+213 792 431 470</div>
+               </div>
+             </a>
           </div>
         </div>
       );
@@ -156,7 +183,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#111113] text-zinc-200 selection:bg-emerald-500/30 font-sans ${language === 'ar' ? 'font-arabic' : ''}`}>
+    <div className={`min-h-screen bg-[#111113] text-zinc-200 selection:bg-emerald-500/30 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
       <Header 
         language={language}
         onLanguageChange={setLanguage}
@@ -167,6 +194,7 @@ export default function App() {
           setSelectedCategoryId('home');
           setSearchQuery('');
         }}
+        onSuggestClick={() => setIsSuggestModalOpen(true)}
       />
       
       <div className="flex max-w-7xl mx-auto items-start relative px-4 sm:px-6 lg:px-8 pt-20">
@@ -187,6 +215,12 @@ export default function App() {
           {renderContent()}
         </main>
       </div>
+      
+      <SuggestModal 
+        isOpen={isSuggestModalOpen}
+        onClose={() => setIsSuggestModalOpen(false)}
+        language={language}
+      />
     </div>
   );
 }

@@ -2,43 +2,10 @@ import { Category } from './types';
 
 export const categoriesData: Category[] = [
   {
-    "id": "algerian_devs",
-    "title": {
-      "en": "Algerian Dev Communities",
-      "ar": "مجتمعات المطورين الجزائريين"
-    },
-    "iconName": "Users",
-    "subcategories": [
-      {
-        "id": "facebook",
-        "title": {
-          "en": "Facebook Groups",
-          "ar": "مجموعات فيسبوك"
-        },
-        "resources": [
-          {
-            "title": "Algerian Developers",
-            "description": {
-              "en": "The largest Facebook group for Algerian developers",
-              "ar": "أكبر مجموعة على فيسبوك للمطورين الجزائريين"
-            },
-            "url": "https://www.facebook.com/groups/AlgerianDevelopers/",
-            "tags": [
-              "algeria",
-              "facebook",
-              "community",
-              "Reading"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "artificial-intelligence",
     "title": {
       "en": "Artificial Intelligence",
-      "ar": "Artificial Intelligence"
+      "ar": "الذكاء الاصطناعي"
     },
     "iconName": "List",
     "subcategories": [
@@ -341,7 +308,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://beta.ish.chat/",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -352,7 +319,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://arena.ai/text/direct",
             "tags": [
-              "AI"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -386,7 +354,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://woozlit.com/",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -397,7 +365,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://build.nvidia.com/models",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -430,7 +398,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://chat.cerebras.ai/",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -541,7 +509,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://arena.ai/?mode=direct&chat-modality=search",
             "tags": [
-              "AI"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -586,7 +555,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/ItzCrazyKns/Vane",
             "tags": [
               "Open Source",
-              "AI"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -674,7 +644,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.docsgpt.cloud/",
             "tags": [
-              "AI"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -760,7 +731,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://lmstudio.ai/",
             "tags": [
-              "General"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -771,7 +743,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/oobabooga/textgen",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -883,7 +857,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.nomic.ai/gpt4all",
             "tags": [
-              "AI"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -906,7 +881,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/Deep-ai-inc/ch.at",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "AI"
             ]
           }
         ]
@@ -938,7 +914,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://llama.app/",
             "tags": [
-              "AI"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -971,7 +948,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://petals.dev/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -982,7 +959,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://getleon.ai/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -993,7 +970,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://ollama.com/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -1039,7 +1016,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://localai.io/",
             "tags": [
-              "AI"
+              "AI",
+              "Hosting"
             ]
           }
         ]
@@ -1082,7 +1060,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://docs.sillytavern.app/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -1268,7 +1248,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://huggingface.co/spaces/Vchitect/VBench_Leaderboard",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "AI"
             ]
           },
           {
@@ -1292,7 +1273,8 @@ export const categoriesData: Category[] = [
             "url": "https://labs.google/fx/tools/flow",
             "tags": [
               "Gaming",
-              "Tool"
+              "Tool",
+              "Android"
             ]
           },
           {
@@ -1314,7 +1296,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://arena.ai/?chat-modality=video",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "AI"
             ]
           },
           {
@@ -1325,7 +1308,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.designarena.ai/",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "AI"
             ]
           },
           {
@@ -1349,7 +1333,8 @@ export const categoriesData: Category[] = [
             "url": "https://aistudio.tencent.com/modelSquare/home/play?modelId=303&from=/visual",
             "tags": [
               "Streaming",
-              "Gaming"
+              "Gaming",
+              "AI"
             ]
           },
           {
@@ -1415,7 +1400,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://modelscope.ai/civision/videoGeneration",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "AI"
             ]
           },
           {
@@ -1460,7 +1446,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/colinurbs/FramePack-Studio",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "AI"
             ]
           },
           {
@@ -1483,7 +1470,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://pinokio.co/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -1506,7 +1493,8 @@ export const categoriesData: Category[] = [
             "url": "https://labs.google/fx/tools/flow",
             "tags": [
               "Gaming",
-              "Tool"
+              "Tool",
+              "Android"
             ]
           },
           {
@@ -1528,7 +1516,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://aistudio.tencent.com/chat/HunyuanDefault?modelId=Hunyuan-Image-3.0-Instruct",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -1550,7 +1538,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://arena.ai/?mode=direct&chat-modality=image",
             "tags": [
-              "AI"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -1572,7 +1561,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.designarena.ai/",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -1706,7 +1695,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://photogpt.io/",
             "tags": [
-              "AI"
+              "AI",
+              "Privacy"
             ]
           },
           {
@@ -1751,7 +1741,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://modelscope.ai/civision/imageGeneration",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -2069,7 +2059,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://pinokio.co/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -2235,7 +2225,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://pollinations.ai/play",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "AI"
             ]
           },
           {
@@ -2436,7 +2427,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://arena.ai4bharat.org/#/tts",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -3458,7 +3449,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://discord.gg/MFCU6sKSNs",
             "tags": [
-              "AI"
+              "AI",
+              "Hosting"
             ]
           },
           {
@@ -3887,8 +3879,7 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/josephmisiti/awesome-machine-learning",
             "tags": [
               "Open Source",
-              "Learning",
-              "AI"
+              "Learning"
             ]
           },
           {
@@ -3986,7 +3977,6 @@ export const categoriesData: Category[] = [
             "tags": [
               "Open Source",
               "Learning",
-              "AI",
               "Reading"
             ]
           },
@@ -3998,8 +3988,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.deep-ml.com/",
             "tags": [
-              "Learning",
-              "AI"
+              "Learning"
             ]
           },
           {
@@ -4011,8 +4000,7 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/microsoft/AI-For-Beginners",
             "tags": [
               "Open Source",
-              "Learning",
-              "AI"
+              "Learning"
             ]
           },
           {
@@ -4024,8 +4012,7 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/dair-ai/ML-Course-Notes",
             "tags": [
               "Open Source",
-              "Learning",
-              "AI"
+              "Learning"
             ]
           },
           {
@@ -4049,8 +4036,7 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/dair-ai/ML-YouTube-Courses",
             "tags": [
               "Open Source",
-              "Learning",
-              "AI"
+              "Learning"
             ]
           },
           {
@@ -4074,7 +4060,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://modelscope.ai/civision/modelTraining",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -4121,6 +4107,7 @@ export const categoriesData: Category[] = [
             "url": "https://mmdeploy.readthedocs.io/en/latest/",
             "tags": [
               "Learning",
+              "AI",
               "Reading",
               "Tool"
             ]
@@ -4156,7 +4143,7 @@ export const categoriesData: Category[] = [
     "id": "adblock",
     "title": {
       "en": "Adblock",
-      "ar": "Adblock"
+      "ar": "حجب الإعلانات"
     },
     "iconName": "List",
     "subcategories": [
@@ -4175,7 +4162,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://filterlists.com/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -4274,7 +4261,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://pi-hole.net/",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -4285,7 +4273,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://firebog.net/",
             "tags": [
-              "General"
+              "Hosting",
+              "Android"
             ]
           },
           {
@@ -4296,7 +4285,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://adguard.com/en/adguard-home/overview.html",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -4307,7 +4297,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://mullvad.net/en/help/dns-over-https-and-dns-over-tls/",
             "tags": [
-              "Download"
+              "Download",
+              "Privacy"
             ]
           },
           {
@@ -4340,7 +4331,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://nextdns.io",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "Privacy"
             ]
           },
           {
@@ -4351,7 +4343,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://libredns.gr/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4362,7 +4354,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://doh.tiar.app/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4373,7 +4365,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://rethinkdns.com/configure",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4384,7 +4376,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://dnswarden.com/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4395,7 +4387,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://0xerr0r.github.io/blocky/latest/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4406,7 +4398,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://adguard-dns.io/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4417,7 +4409,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://controld.com/free-dns",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4428,7 +4420,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://nxfilter.org/",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -4439,7 +4432,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://tblock.me/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4450,7 +4443,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://diversion.ch/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -4472,7 +4465,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://technitium.com/dns",
             "tags": [
-              "Tool"
+              "Tool",
+              "Hosting"
             ]
           }
         ]
@@ -4525,7 +4519,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/StevenBlack/hosts",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           },
           {
@@ -4569,7 +4564,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/neodevpro/neodevhost",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           },
           {
@@ -4580,7 +4576,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://o0.pages.dev/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           }
         ]
@@ -4829,7 +4825,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.filescan.io/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -5050,7 +5046,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_operating_systems",
             "tags": [
-              "Privacy"
+              "Privacy",
+              "Android"
             ]
           },
           {
@@ -5487,7 +5484,8 @@ export const categoriesData: Category[] = [
             "url": "https://hostux.network/",
             "tags": [
               "Privacy",
-              "Tool"
+              "Tool",
+              "Hosting"
             ]
           },
           {
@@ -5793,7 +5791,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_android_browsers",
             "tags": [
-              "Privacy"
+              "Privacy",
+              "Android"
             ]
           },
           {
@@ -5872,7 +5871,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.cloudflare.com/ssl/encrypted-sni/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -5936,7 +5935,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://getaegis.app/",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -5947,7 +5946,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://stratumauth.com",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -5969,7 +5968,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://2fas.com/",
             "tags": [
-              "General"
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -5991,7 +5991,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/X1nto/Mauth",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -6002,7 +6003,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/helloworld1/FreeOTPPlus",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -6014,7 +6016,8 @@ export const categoriesData: Category[] = [
             "url": "https://keepassxc.org/",
             "tags": [
               "Learning",
-              "Streaming"
+              "Streaming",
+              "Linux"
             ]
           },
           {
@@ -6025,7 +6028,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://authme.levminer.com/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -6036,7 +6039,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://developers.yubico.com/yubioath-flutter/",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -6047,7 +6050,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/paolostivanin/OTPClient",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Linux"
             ]
           },
           {
@@ -6058,7 +6062,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://getsentinel.io/",
             "tags": [
-              "General"
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -6069,7 +6074,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://apps.apple.com/app/otp-auth/id659877384",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -6080,7 +6085,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.tofuauth.com/",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -6102,7 +6107,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://docs.2fauth.app/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -6113,7 +6118,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/dani-garcia/vaultwarden",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           },
           {
@@ -6166,7 +6172,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://matrix.org/ecosystem/clients/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -6188,7 +6194,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://signal.org/",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -6243,7 +6249,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://jami.net/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -6265,7 +6271,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://cabal.chat/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -6287,7 +6293,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://berty.tech/",
             "tags": [
-              "General"
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -6298,7 +6305,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.ricochetrefresh.net/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -6309,7 +6316,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://docs.cwtch.im",
             "tags": [
-              "Privacy"
+              "Privacy",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -6320,7 +6329,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://delta.chat/",
             "tags": [
-              "General"
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -6331,7 +6341,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://status.app/",
             "tags": [
-              "General"
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -6342,7 +6353,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://damus.io/",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -6353,7 +6364,10 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/balzack/databag",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -6526,7 +6540,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://monitor.mozilla.org/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -6646,6 +6660,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://browserleaks.com/",
             "tags": [
+              "Privacy",
               "Tool"
             ]
           },
@@ -6721,7 +6736,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage/#wiki_searx_instances",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -6800,7 +6815,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://yacy.net/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -6833,7 +6848,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://wispydocs.pages.dev/torrenting/",
             "tags": [
-              "Download"
+              "Download",
+              "Privacy"
             ]
           },
           {
@@ -6844,7 +6860,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://vpn.techlore.tech/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -6855,7 +6871,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://kumu.io/Windscribe/vpn-relationships",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -6867,7 +6883,8 @@ export const categoriesData: Category[] = [
             "url": "https://one.one.one.one/",
             "tags": [
               "Free",
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           },
           {
@@ -6904,7 +6921,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://airvpn.org/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -6915,7 +6932,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://mullvad.net/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -6937,7 +6954,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://support.mozilla.org/en-US/kb/built-in-vpn",
             "tags": [
-              "Free"
+              "Free",
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -6959,7 +6978,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://riseup.net/en/vpn",
             "tags": [
-              "Free"
+              "Free",
+              "Privacy"
             ]
           },
           {
@@ -6971,6 +6991,7 @@ export const categoriesData: Category[] = [
             "url": "https://privadovpn.com/freevpn",
             "tags": [
               "Free",
+              "Privacy",
               "Tool"
             ]
           },
@@ -6983,7 +7004,8 @@ export const categoriesData: Category[] = [
             "url": "https://calyxos.org/docs/guide/apps/calyx-vpn/",
             "tags": [
               "Free",
-              "Learning"
+              "Learning",
+              "Privacy"
             ]
           },
           {
@@ -6994,7 +7016,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://bitmask.net/",
             "tags": [
-              "Free"
+              "Free",
+              "Privacy",
+              "Android"
             ]
           }
         ]
@@ -7014,7 +7038,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.wireguard.com/",
             "tags": [
-              "Learning"
+              "Learning",
+              "Privacy"
             ]
           },
           {
@@ -7036,7 +7061,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://amnezia.org/",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7047,7 +7073,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://openvpn.net/",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7080,7 +7107,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/juanfont/headscale",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           },
           {
@@ -7091,7 +7119,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/slackhq/nebula",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7102,7 +7132,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/hwdsl2/setup-ipsec-vpn",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7113,7 +7145,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7125,7 +7158,9 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/rajannpatel/Pi-Hole-on-Google-Compute-Engine-Free-Tier-with-Full-Tunnel-and-Split-Tunnel-Wireguard-VPN-Configs",
             "tags": [
               "Open Source",
-              "Learning"
+              "Learning",
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7136,7 +7171,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.tinc-vpn.org/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -7147,7 +7182,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/IAmStoxe/wirehole",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Privacy"
             ]
           },
           {
@@ -7158,7 +7194,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://gitlab.com/openconnect/openconnect",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -7169,7 +7205,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://pritunl.com/",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7180,7 +7217,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://blog.trailofbits.com/2016/12/12/meet-algo-the-vpn-that-works/",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7191,7 +7229,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://sshuttle.readthedocs.io/en",
             "tags": [
-              "Reading"
+              "Privacy",
+              "Reading",
+              "Hosting"
             ]
           },
           {
@@ -7202,7 +7242,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/jedisct1/dsvpn",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7213,7 +7255,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://ocserv.gitlab.io/www/index.html",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           }
         ]
@@ -7233,7 +7276,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_free_vpn_configs",
             "tags": [
-              "Free"
+              "Free",
+              "Privacy"
             ]
           },
           {
@@ -7245,7 +7289,8 @@ export const categoriesData: Category[] = [
             "url": "https://wispydocs.pages.dev/torrenting/",
             "tags": [
               "Learning",
-              "Download"
+              "Download",
+              "Privacy"
             ]
           },
           {
@@ -7267,7 +7312,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://wgtunnel.com/",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -7278,7 +7323,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/Mygod/VPNHotspot",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Privacy",
+              "Android"
             ]
           },
           {
@@ -7289,7 +7336,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/qdm12/gluetun",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Privacy"
             ]
           },
           {
@@ -7300,7 +7348,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://psiphon.ca/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -7453,7 +7501,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://amnezia.org/self-hosted",
             "tags": [
-              "General"
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7475,7 +7524,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://getoutline.org/",
             "tags": [
-              "Learning"
+              "Learning",
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7486,7 +7537,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/vpnhood/VpnHood",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Privacy",
+              "Hosting"
             ]
           },
           {
@@ -7497,7 +7550,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://docs.titaniumnetwork.org/proxies/scramjet/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -7528,7 +7581,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/2dust/v2rayN",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Linux"
             ]
           },
           {
@@ -7539,7 +7593,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://matsuridayo.github.io/",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -7550,7 +7604,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/2dust/v2rayNG",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -7572,7 +7627,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://amnezia.org/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -7594,7 +7649,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://sing-box.sagernet.org/clients/",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -7605,7 +7660,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://throneproj.github.io/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -7617,7 +7672,9 @@ export const categoriesData: Category[] = [
             "url": "https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box",
             "tags": [
               "Gaming",
-              "Tool"
+              "Tool",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -7628,7 +7685,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.clashverge.dev/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -7639,7 +7696,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://streisand.pages.dev/",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -7651,7 +7708,9 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/chen08209/FlClash/blob/main/README.md",
             "tags": [
               "Open Source",
-              "Reading"
+              "Reading",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -7662,7 +7721,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/xchacha20-poly1305/husi",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -7673,7 +7733,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/dyhkwong/Exclave",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -7684,7 +7745,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.proxifier.com/",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -7695,7 +7756,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/whyvl/wireproxy",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Linux"
             ]
           }
         ]
@@ -7738,7 +7800,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/dovecoteescapee/ByeDPIAndroid",
             "tags": [
               "Open Source",
-              "Tool"
+              "Tool",
+              "Android"
             ]
           },
           {
@@ -7783,7 +7846,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://dnstt.xyz/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Privacy"
             ]
           },
           {
@@ -8002,7 +8066,7 @@ export const categoriesData: Category[] = [
     "id": "downloading",
     "title": {
       "en": "Downloading",
-      "ar": "Downloading"
+      "ar": "التحميل"
     },
     "iconName": "List",
     "subcategories": [
@@ -8514,7 +8578,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://nicotine-plus.org/",
             "tags": [
-              "General"
+              "Hosting",
+              "Linux"
             ]
           },
           {
@@ -8905,7 +8970,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://cse.google.com/cse?cx=90a35b59cee2a42e1",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -9271,7 +9336,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://sabnzbd.org/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -9360,7 +9425,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://real-debrid.com/",
             "tags": [
-              "Download"
+              "Download",
+              "Android"
             ]
           },
           {
@@ -9417,7 +9483,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://debridmediamanager.com/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -9461,7 +9527,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://adiirc.com/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -9472,7 +9538,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://konversation.kde.org/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -9483,7 +9549,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://convos.chat/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -9505,7 +9571,7 @@ export const categoriesData: Category[] = [
     "id": "torrenting",
     "title": {
       "en": "Torrenting",
-      "ar": "Torrenting"
+      "ar": "التورنت"
     },
     "iconName": "List",
     "subcategories": [
@@ -9734,7 +9800,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/sergiotapia/torrentinim",
             "tags": [
               "Open Source",
-              "Download"
+              "Download",
+              "Hosting"
             ]
           }
         ]
@@ -9767,7 +9834,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.qbittorrent.org/",
             "tags": [
               "Download",
-              "Tool"
+              "Tool",
+              "Linux"
             ]
           },
           {
@@ -9778,7 +9846,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.deluge-torrent.org/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux"
             ]
           },
           {
@@ -9789,7 +9858,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://transmissionbt.com/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux"
             ]
           },
           {
@@ -9802,7 +9872,8 @@ export const categoriesData: Category[] = [
             "tags": [
               "Download",
               "Reading",
-              "Tool"
+              "Tool",
+              "Linux"
             ]
           },
           {
@@ -9837,7 +9908,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://tixati.com/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -9848,7 +9921,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.biglybt.com/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -9871,7 +9946,8 @@ export const categoriesData: Category[] = [
             "url": "https://wiztorrent.com/",
             "tags": [
               "Download",
-              "Streaming"
+              "Streaming",
+              "Linux"
             ]
           },
           {
@@ -9884,7 +9960,8 @@ export const categoriesData: Category[] = [
             "tags": [
               "Open Source",
               "Download",
-              "Streaming"
+              "Streaming",
+              "Linux"
             ]
           },
           {
@@ -9895,7 +9972,10 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.pikatorrent.com/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -9906,7 +9986,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://distribyted.com/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux"
             ]
           },
           {
@@ -9917,7 +9998,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://apps.gnome.org/Fragments/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux"
             ]
           },
           {
@@ -9928,7 +10010,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://bitflu.workaround.ch/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux"
             ]
           },
           {
@@ -9939,7 +10022,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://apps.kde.org/ktorrent/",
             "tags": [
-              "Download"
+              "Download",
+              "Linux"
             ]
           },
           {
@@ -10099,7 +10183,10 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/linuxserver/docker-qbittorrent",
             "tags": [
               "Open Source",
-              "Download"
+              "Download",
+              "Privacy",
+              "Hosting",
+              "Linux"
             ]
           },
           {
@@ -10110,7 +10197,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://draculatheme.com/qbittorrent",
             "tags": [
-              "Download"
+              "Download",
+              "Apple / iOS"
             ]
           },
           {
@@ -10541,7 +10629,7 @@ export const categoriesData: Category[] = [
     "id": "streaming",
     "title": {
       "en": "Streaming",
-      "ar": "Streaming"
+      "ar": "البث المباشر"
     },
     "iconName": "List",
     "subcategories": [
@@ -10858,7 +10946,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://mappl.tv/",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -11187,7 +11275,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://azmovies.to/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -11297,7 +11385,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.primewire.mov/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -11319,7 +11407,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://projectfreetv.sx/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -12341,7 +12429,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.bbc.co.uk/iplayer",
             "tags": [
               "Download",
-              "Gaming"
+              "Gaming",
+              "Privacy"
             ]
           },
           {
@@ -12561,7 +12650,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://rumble.com/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -13467,7 +13556,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.wco.tv/",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "Privacy"
             ]
           },
           {
@@ -13610,7 +13700,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://bstsrs.in/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -13621,7 +13711,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://noxx.to/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -13632,7 +13722,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://azseries.org/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -13840,7 +13930,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://einthusan.tv/intro/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -14222,7 +14312,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://player.bfi.org.uk/free",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Privacy"
             ]
           },
           {
@@ -14519,7 +14610,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://streamsports99.su/live-tv",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "Privacy"
             ]
           },
           {
@@ -15113,7 +15205,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://streamsports99.su",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "Privacy"
             ]
           },
           {
@@ -16104,7 +16197,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android/#wiki_.25B7_android_live_tv",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Android"
             ]
           },
           {
@@ -16406,7 +16500,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/jellyfin/jellyfin-tizen",
             "tags": [
               "Open Source",
-              "Streaming"
+              "Streaming",
+              "Hosting"
             ]
           },
           {
@@ -16417,7 +16512,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://kodi.tv/",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "Hosting"
             ]
           },
           {
@@ -16508,7 +16604,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://redd.it/gn7fw5",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -16554,7 +16650,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/Exaphis/mutube",
             "tags": [
               "Open Source",
-              "Streaming"
+              "Streaming",
+              "Apple / iOS"
             ]
           },
           {
@@ -16565,7 +16662,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/NSSpiral/Blackb0x",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Apple / iOS"
             ]
           },
           {
@@ -16576,7 +16674,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/bitxeno/atvloadly",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Apple / iOS"
             ]
           }
         ]
@@ -16597,7 +16696,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/Generator/Awesome-Android-TV-FOSS-Apps",
             "tags": [
               "Open Source",
-              "Learning"
+              "Learning",
+              "Android"
             ]
           },
           {
@@ -16619,7 +16719,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25BA_android_streaming",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "Android"
             ]
           },
           {
@@ -16642,7 +16743,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://tivimate.com/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Android"
             ]
           },
           {
@@ -16653,7 +16755,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.aftvnews.com/downloader",
             "tags": [
-              "Download"
+              "Download",
+              "Android"
             ]
           },
           {
@@ -16665,7 +16768,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/yuliskov/SmartTube",
             "tags": [
               "Free",
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -16688,7 +16792,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://xdaforums.com/t/tool-all-in-one-tool-for-windows-android-tv-tools-v4.4648239/",
             "tags": [
-              "Tool"
+              "Tool",
+              "Android"
             ]
           },
           {
@@ -16700,7 +16805,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/bryanroscoe/shield_optimizer",
             "tags": [
               "Open Source",
-              "Tool"
+              "Tool",
+              "Android"
             ]
           },
           {
@@ -16711,7 +16817,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://rentry.co/androidtvpiracy",
             "tags": [
-              "Learning"
+              "Learning",
+              "Android"
             ]
           },
           {
@@ -16723,7 +16830,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.androidtv-guide.com/",
             "tags": [
               "Learning",
-              "Reading"
+              "Reading",
+              "Android"
             ]
           },
           {
@@ -16734,7 +16842,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_modded_apks",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "Android"
             ]
           },
           {
@@ -16759,7 +16868,8 @@ export const categoriesData: Category[] = [
             "tags": [
               "Free",
               "Open Source",
-              "Streaming"
+              "Streaming",
+              "Android"
             ]
           },
           {
@@ -16770,7 +16880,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/NineWorlds/serenity-android",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -16782,7 +16893,9 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/recloudstream/cloudstream",
             "tags": [
               "Open Source",
-              "Streaming"
+              "Streaming",
+              "Hosting",
+              "Android"
             ]
           },
           {
@@ -16805,7 +16918,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://arvio.tv/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -16818,7 +16931,8 @@ export const categoriesData: Category[] = [
             "tags": [
               "Open Source",
               "Streaming",
-              "Gaming"
+              "Gaming",
+              "Android"
             ]
           },
           {
@@ -16885,7 +16999,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_modded_apks",
             "tags": [
-              "Tool"
+              "Tool",
+              "Android"
             ]
           },
           {
@@ -16896,7 +17011,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_modded_apks",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -16908,7 +17023,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_modded_apks",
             "tags": [
               "Gaming",
-              "Reading"
+              "Reading",
+              "Android"
             ]
           },
           {
@@ -16987,7 +17103,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://rentry.co/FMHYB64#sc",
             "tags": [
-              "Tool"
+              "Privacy",
+              "Tool",
+              "Hosting"
             ]
           },
           {
@@ -18155,7 +18273,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/gabelluardo/anime-dl",
             "tags": [
               "Open Source",
-              "Download"
+              "Download",
+              "Apple / iOS"
             ]
           },
           {
@@ -18221,7 +18340,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/torrent#wiki_.25B7_remote_torrenting",
             "tags": [
-              "Download"
+              "Download",
+              "Privacy"
             ]
           },
           {
@@ -18233,7 +18353,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/video-tools#wiki_.25BA_media_servers",
             "tags": [
               "Streaming",
-              "Tool"
+              "Tool",
+              "Hosting"
             ]
           },
           {
@@ -18367,7 +18488,9 @@ export const categoriesData: Category[] = [
             "url": "https://acestream.org/",
             "tags": [
               "Download",
-              "Streaming"
+              "Streaming",
+              "Hosting",
+              "Android"
             ]
           },
           {
@@ -18430,7 +18553,8 @@ export const categoriesData: Category[] = [
             "tags": [
               "Open Source",
               "Download",
-              "Streaming"
+              "Streaming",
+              "Hosting"
             ]
           },
           {
@@ -18492,7 +18616,8 @@ export const categoriesData: Category[] = [
               "Open Source",
               "Download",
               "Streaming",
-              "Gaming"
+              "Gaming",
+              "Hosting"
             ]
           }
         ]
@@ -19319,7 +19444,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/bonukai/MediaTracker",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           }
         ]
@@ -20809,7 +20935,7 @@ export const categoriesData: Category[] = [
     "id": "gaming",
     "title": {
       "en": "Gaming",
-      "ar": "Gaming"
+      "ar": "الألعاب"
     },
     "iconName": "List",
     "subcategories": [
@@ -21033,7 +21159,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://t.me/visual_novels_android_eng",
             "tags": [
-              "General"
+              "Android"
             ]
           },
           {
@@ -21367,7 +21493,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/Emersont1/itchio",
             "tags": [
               "Open Source",
-              "Download"
+              "Download",
+              "Apple / iOS"
             ]
           },
           {
@@ -22651,7 +22778,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://thepeacockproject.org/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -22662,7 +22789,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/k4zmu2a/SpaceCadetPinball",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -22727,6 +22855,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://redsquirrel87.com/doku.php/projects-list",
             "tags": [
+              "Gaming",
               "Tool"
             ]
           },
@@ -22750,7 +22879,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android/#wiki_.25B7_emulators_on_android",
             "tags": [
-              "General"
+              "Gaming",
+              "Android"
             ]
           },
           {
@@ -22772,7 +22902,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://emulation.gametechwiki.com/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Apple / iOS"
             ]
           },
           {
@@ -22816,7 +22947,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://rentry.co/FMHYB64#switch-emulation",
             "tags": [
-              "Learning"
+              "Learning",
+              "Gaming"
             ]
           },
           {
@@ -22871,7 +23003,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://cloudretro.io/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Hosting"
             ]
           },
           {
@@ -22905,7 +23038,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/garungorp/MouseInjectorDolphinDuck",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Gaming"
             ]
           },
           {
@@ -22916,7 +23050,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://savefileconverter.com/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -22939,7 +23073,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/exefer/ns-emu-mod-downloader",
             "tags": [
               "Open Source",
-              "Download"
+              "Download",
+              "Gaming"
             ]
           },
           {
@@ -22984,7 +23119,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://docs.google.com/document/d/1gdjNab-CtVS97jH2diPPP5tCrpBeof9-qPIRRB9-BrU/edit",
             "tags": [
-              "Learning"
+              "Learning",
+              "Gaming"
             ]
           },
           {
@@ -22995,7 +23131,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://amiga.vision/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -23006,7 +23142,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://pcsx-redux.consoledev.net",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -23040,7 +23176,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/azahar-emu/ArticBaseServer",
             "tags": [
               "Open Source",
-              "Gaming"
+              "Gaming",
+              "Hosting"
             ]
           },
           {
@@ -23062,7 +23199,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://zardam.github.io/webnofrendo/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           }
         ]
@@ -23127,7 +23264,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://romm.app/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -24317,7 +24454,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_emulatorjs_.2F_neptunjs",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -24361,7 +24498,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://dos.zone/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -24405,7 +24542,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://demo.emulatorjs.org/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -24427,7 +24564,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.arcadespace.org/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -24526,7 +24663,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.vizzed.com/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -24559,7 +24696,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://virtualconsoles.com/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -24570,7 +24707,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://classicreload.com/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -24614,6 +24751,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.information-superhighway.net/meowio/",
             "tags": [
+              "Gaming",
               "Audio"
             ]
           },
@@ -24636,7 +24774,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.ps1fun.com/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -24669,7 +24807,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.file-hunter.com/",
             "tags": [
-              "General"
+              "Gaming"
             ]
           },
           {
@@ -26464,7 +26602,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://pysolfc.sourceforge.io/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -26650,7 +26788,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://play.cplegacy.com/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Hosting"
             ]
           },
           {
@@ -27134,7 +27273,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://ruffle.rs/",
             "tags": [
-              "General"
+              "Gaming",
+              "Android"
             ]
           },
           {
@@ -27844,7 +27984,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://eaglerforge.github.io/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -28647,7 +28787,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://mk48.io/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Apple / iOS"
             ]
           },
           {
@@ -29322,7 +29463,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://cheerfulghost.github.io/civ-clicker/index.html",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -29476,7 +29617,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://ivark.github.io/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Android"
             ]
           },
           {
@@ -29772,7 +29914,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://distro.fedesito.me/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Linux"
             ]
           },
           {
@@ -30590,7 +30733,7 @@ export const categoriesData: Category[] = [
     "id": "music",
     "title": {
       "en": "Music",
-      "ar": "Music"
+      "ar": "الموسيقى"
     },
     "iconName": "List",
     "subcategories": [
@@ -30645,7 +30788,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android/#wiki_.25B7_youtube_music",
             "tags": [
-              "Audio"
+              "Audio",
+              "Android"
             ]
           },
           {
@@ -30657,6 +30801,7 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/pear-devs/pear-desktop",
             "tags": [
               "Open Source",
+              "Privacy",
               "Audio"
             ]
           },
@@ -30738,7 +30883,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://alirezakj.com/bsc/",
             "tags": [
-              "Free"
+              "Free",
+              "Hosting"
             ]
           },
           {
@@ -30786,7 +30932,8 @@ export const categoriesData: Category[] = [
             "tags": [
               "Open Source",
               "Gaming",
-              "Audio"
+              "Audio",
+              "Hosting"
             ]
           }
         ]
@@ -30829,7 +30976,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://soundcloud.com/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -30951,7 +31098,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.jiosaavn.com/",
             "tags": [
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -31240,7 +31388,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/apastel/ytmusic-deleter",
             "tags": [
               "Open Source",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -31780,7 +31929,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_android_podcasts_.2F_radio",
             "tags": [
-              "Audio"
+              "Audio",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -31862,7 +32013,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://podcasts.apple.com/us/home",
             "tags": [
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -32065,7 +32217,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android/#wiki_.25B7_android_relaxation",
             "tags": [
-              "General"
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -32341,7 +32494,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://fmstream.org/",
             "tags": [
-              "Streaming"
+              "Streaming",
+              "Apple / iOS"
             ]
           },
           {
@@ -32352,7 +32506,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_android_podcasts_.2F_radio",
             "tags": [
-              "Audio"
+              "Audio",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -32364,7 +32520,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.bbc.co.uk/sounds",
             "tags": [
               "Download",
-              "Gaming"
+              "Gaming",
+              "Privacy"
             ]
           },
           {
@@ -32386,7 +32543,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.iheart.com/",
             "tags": [
-              "Audio"
+              "Audio",
+              "Hosting"
             ]
           },
           {
@@ -32488,7 +32646,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://flickermini.pages.dev/radiostations",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Apple / iOS"
             ]
           },
           {
@@ -32599,7 +32758,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.nts.live/",
             "tags": [
               "Learning",
-              "Audio"
+              "Audio",
+              "Hosting"
             ]
           },
           {
@@ -32952,7 +33112,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://radioside.com/",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -33555,7 +33715,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://hostrider.com/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -33577,7 +33737,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android/#wiki_.25BA_android_audio",
             "tags": [
-              "Audio"
+              "Audio",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -33868,7 +34030,8 @@ export const categoriesData: Category[] = [
             "url": "https://playlistor.io/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -33967,7 +34130,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://squid.wtf/",
             "tags": [
-              "Audio"
+              "Audio",
+              "Hosting"
             ]
           },
           {
@@ -34044,7 +34208,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://ytiz.xyz/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -34055,7 +34219,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://cobalt.tools/",
             "tags": [
-              "Tool"
+              "Tool",
+              "Hosting"
             ]
           }
         ]
@@ -34086,7 +34251,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://nicotine-plus.org/",
             "tags": [
-              "Audio"
+              "Audio",
+              "Hosting"
             ]
           },
           {
@@ -34121,7 +34287,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/justin025/onthespot",
             "tags": [
               "Open Source",
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -34205,7 +34372,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://murglar.app/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -34228,7 +34395,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/KraXen72/shira",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           },
           {
@@ -34264,7 +34432,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://you-get.org/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -34320,7 +34488,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://t.me/MusicsHuntersbot",
             "tags": [
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -34331,7 +34500,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://t.me/DeezerMusicBot",
             "tags": [
-              "Audio"
+              "Audio",
+              "Hosting"
             ]
           },
           {
@@ -34353,7 +34523,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://t.me/BeatSpotBot",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -34364,7 +34534,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://t.me/scdlbot",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -34375,7 +34545,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://t.me/antralossless_bot",
             "tags": [
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -34398,7 +34569,8 @@ export const categoriesData: Category[] = [
             "url": "https://t.me/GlomaticoPinkMusicBot",
             "tags": [
               "Download",
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -34874,7 +35046,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://freemp3cloud.com/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -35213,7 +35385,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://rentry.co/FMHYB64#ovpn-dj-mixes",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -35941,7 +36113,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.sittingonclouds.net/",
             "tags": [
-              "Gaming"
+              "Gaming",
+              "Hosting"
             ]
           },
           {
@@ -36354,7 +36527,8 @@ export const categoriesData: Category[] = [
             "url": "https://muspy.com/",
             "tags": [
               "Streaming",
-              "Audio"
+              "Audio",
+              "Hosting"
             ]
           },
           {
@@ -36619,7 +36793,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/bonukai/MediaTracker",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           },
           {
@@ -36631,7 +36806,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/krateng/maloja",
             "tags": [
               "Open Source",
-              "Audio"
+              "Audio",
+              "Hosting"
             ]
           },
           {
@@ -37207,7 +37383,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://tagcloud.rainosullivan.com/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -37401,7 +37577,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25B7_android_audio_players",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Android"
             ]
           },
           {
@@ -37447,7 +37624,9 @@ export const categoriesData: Category[] = [
             "url": "https://www.aimp.ru/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -37471,7 +37650,8 @@ export const categoriesData: Category[] = [
             "url": "https://astramusic.dev/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37483,7 +37663,9 @@ export const categoriesData: Category[] = [
             "url": "https://harmonoid.com/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -37497,7 +37679,9 @@ export const categoriesData: Category[] = [
               "Open Source",
               "Streaming",
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -37509,7 +37693,9 @@ export const categoriesData: Category[] = [
             "url": "https://audionplayer.com/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -37532,7 +37718,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://musikcube.com/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -37543,7 +37729,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/ncmpcpp/ncmpcpp",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Linux"
             ]
           },
           {
@@ -37577,7 +37764,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/noriah/catnip",
             "tags": [
               "Open Source",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37613,7 +37801,8 @@ export const categoriesData: Category[] = [
             "url": "https://snowify.cc/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37625,7 +37814,8 @@ export const categoriesData: Category[] = [
             "url": "https://museeks.io/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37637,7 +37827,8 @@ export const categoriesData: Category[] = [
             "url": "https://audacious-media-player.org/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37649,7 +37840,8 @@ export const categoriesData: Category[] = [
             "url": "https://www.strawberrymusicplayer.org/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37661,7 +37853,8 @@ export const categoriesData: Category[] = [
             "url": "https://exaile.org/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37674,7 +37867,8 @@ export const categoriesData: Category[] = [
             "tags": [
               "Open Source",
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37686,7 +37880,8 @@ export const categoriesData: Category[] = [
             "url": "https://deadbeef.sourceforge.io/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37698,7 +37893,9 @@ export const categoriesData: Category[] = [
             "url": "https://swingmx.com/",
             "tags": [
               "Gaming",
-              "Audio"
+              "Audio",
+              "Hosting",
+              "Linux"
             ]
           },
           {
@@ -37723,7 +37920,8 @@ export const categoriesData: Category[] = [
             "tags": [
               "Open Source",
               "Gaming",
-              "Audio"
+              "Audio",
+              "Linux"
             ]
           },
           {
@@ -37735,7 +37933,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/jeffvli/feishin",
             "tags": [
               "Open Source",
-              "Gaming"
+              "Gaming",
+              "Linux"
             ]
           },
           {
@@ -37747,7 +37946,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/victoralvesf/aonsoku",
             "tags": [
               "Open Source",
-              "Gaming"
+              "Gaming",
+              "Linux"
             ]
           },
           {
@@ -37846,7 +38046,8 @@ export const categoriesData: Category[] = [
             "url": "https://audiorelay.net/",
             "tags": [
               "Streaming",
-              "Audio"
+              "Audio",
+              "Android"
             ]
           },
           {
@@ -38108,7 +38309,8 @@ export const categoriesData: Category[] = [
             "url": "https://artwork.thekvt.eu.org/",
             "tags": [
               "Download",
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -38161,7 +38363,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://support.google.com/websearch/answer/7554088",
             "tags": [
-              "Learning"
+              "Learning",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -38172,7 +38376,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.shazam.com/",
             "tags": [
-              "General"
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -38227,7 +38432,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.soundhound.com/soundhound",
             "tags": [
-              "General"
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -38239,7 +38445,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/aleksey-saenko/MusicRecognizer",
             "tags": [
               "Open Source",
-              "Audio"
+              "Audio",
+              "Android"
             ]
           },
           {
@@ -38250,7 +38457,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/alexmercerind/audire",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Android"
             ]
           },
           {
@@ -38262,7 +38470,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/KieronQuinn/AmbientMusicMod",
             "tags": [
               "Open Source",
-              "Audio"
+              "Audio",
+              "Android"
             ]
           },
           {
@@ -38595,7 +38804,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://apps.apple.com/app/piascore-hd/id406141702",
             "tags": [
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -38876,7 +39086,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://audiosex.pro/",
             "tags": [
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -38921,7 +39132,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://tonocracy.com/",
             "tags": [
-              "General"
+              "AI"
             ]
           },
           {
@@ -39010,7 +39221,8 @@ export const categoriesData: Category[] = [
             "url": "https://rentry.co/FMHYB64#team-vr",
             "tags": [
               "Download",
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -39437,7 +39649,8 @@ export const categoriesData: Category[] = [
             "url": "https://audioz.download/",
             "tags": [
               "Download",
-              "Audio"
+              "Audio",
+              "Apple / iOS"
             ]
           },
           {
@@ -39847,7 +40060,7 @@ export const categoriesData: Category[] = [
     "id": "reading",
     "title": {
       "en": "Reading",
-      "ar": "Reading"
+      "ar": "الكتب والقراءة"
     },
     "iconName": "List",
     "subcategories": [
@@ -40400,7 +40613,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25BA_android_reading",
             "tags": [
-              "Reading"
+              "Reading",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -40433,7 +40648,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://koreader.rocks/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -40455,7 +40672,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://sioyek.info/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -40480,7 +40697,9 @@ export const categoriesData: Category[] = [
             "url": "https://playtorrio.xyz/",
             "tags": [
               "Gaming",
-              "Reading"
+              "Reading",
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -40491,7 +40710,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://epub-reader.online/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -40513,7 +40734,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://fbreader.org/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -40524,7 +40747,9 @@ export const categoriesData: Category[] = [
             },
             "url": "https://anx.anxcye.com/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -40536,7 +40761,8 @@ export const categoriesData: Category[] = [
             "url": "https://github.com/btpf/Alexandria",
             "tags": [
               "Open Source",
-              "Reading"
+              "Reading",
+              "Linux"
             ]
           },
           {
@@ -40547,7 +40773,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://librumreader.com",
             "tags": [
-              "Reading"
+              "Reading",
+              "Linux"
             ]
           },
           {
@@ -40558,7 +40785,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://thorium.edrlab.org/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Linux"
             ]
           },
           {
@@ -40569,7 +40797,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://okular.kde.org/",
             "tags": [
-              "General"
+              "Linux"
             ]
           },
           {
@@ -40602,7 +40830,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://johnfactotum.github.io/foliate/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Linux"
             ]
           },
           {
@@ -40624,7 +40853,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://mupdf.com/",
             "tags": [
-              "General"
+              "Linux",
+              "Android"
             ]
           },
           {
@@ -40635,7 +40865,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://apps.gnome.org/Evince/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Linux"
             ]
           },
           {
@@ -40646,7 +40877,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.yomu-reader.com/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Apple / iOS"
             ]
           },
           {
@@ -40657,7 +40889,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/sdushantha/ff-pdf/",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Linux"
             ]
           },
           {
@@ -40767,7 +41000,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.fviewer.com/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -41003,7 +41236,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/fsantini/KoboCloud",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "Hosting"
             ]
           },
           {
@@ -41048,7 +41282,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.mangaconverter.com/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Hosting"
             ]
           },
           {
@@ -41103,7 +41338,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://bygosh.com",
             "tags": [
-              "Reading"
+              "Reading",
+              "Android"
             ]
           },
           {
@@ -41700,7 +41936,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://colab.research.google.com/github/HongYue1/LightNovel-Crawler-Colab/blob/main/lightnovel_crawler.ipynb",
             "tags": [
-              "Download"
+              "Download",
+              "Apple / iOS"
             ]
           },
           {
@@ -42191,7 +42428,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://en.kiosko.net/",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -42708,7 +42945,10 @@ export const categoriesData: Category[] = [
             "tags": [
               "Gaming",
               "Audio",
-              "Reading"
+              "Reading",
+              "Linux",
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -42779,7 +43019,9 @@ export const categoriesData: Category[] = [
             "url": "https://www.audiobookshelf.org/",
             "tags": [
               "Audio",
-              "Reading"
+              "Reading",
+              "Hosting",
+              "Android"
             ]
           },
           {
@@ -42822,7 +43064,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://batcave.biz/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -43144,7 +43386,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://komga.org/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Hosting"
             ]
           },
           {
@@ -43255,7 +43498,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://weebcentral.com/",
             "tags": [
-              "General"
+              "Privacy"
             ]
           },
           {
@@ -43671,7 +43914,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://seanime.app/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Hosting"
             ]
           },
           {
@@ -43726,7 +43970,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://forum.mobilism.org/viewforum.php?f=123",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -44013,7 +44257,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.radioshackcatalogs.com/",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -45655,7 +45899,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://sci-hub.ru/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -46238,7 +46482,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://github.com/thunlp/PromptPapers",
             "tags": [
-              "Open Source"
+              "Open Source",
+              "AI"
             ]
           },
           {
@@ -46403,7 +46648,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.bioline.org.br/",
             "tags": [
-              "General"
+              "Apple / iOS"
             ]
           },
           {
@@ -46710,7 +46955,7 @@ export const categoriesData: Category[] = [
             },
             "url": "https://pdfhost.io/",
             "tags": [
-              "General"
+              "Hosting"
             ]
           },
           {
@@ -47597,7 +47842,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://quran.com/",
             "tags": [
-              "General"
+              "Android",
+              "Apple / iOS"
             ]
           },
           {
@@ -48632,7 +48878,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://calibre-ebook.com/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Linux"
             ]
           },
           {
@@ -48689,7 +48936,8 @@ export const categoriesData: Category[] = [
             },
             "url": "https://www.mangaconverter.com/",
             "tags": [
-              "Reading"
+              "Reading",
+              "Hosting"
             ]
           },
           {

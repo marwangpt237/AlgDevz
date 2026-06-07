@@ -13,30 +13,33 @@ interface SearchResultsProps {
 export function SearchResults({ query, categories, language, bookmarks, toggleBookmark }: SearchResultsProps) {
   const isAr = language === 'ar';
   
-  // Simple case-insensitive search
-  const lowerQuery = query.toLowerCase();
+  const searchTerms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
   
   const results: { categoryId: string, subTitle: string, resource: Resource }[] = [];
   
-  categories.forEach(category => {
-    if (!category.subcategories) return;
-    category.subcategories.forEach(sub => {
-      sub.resources.forEach(resource => {
-        const matchesTitle = resource.title.toLowerCase().includes(lowerQuery);
-        const matchesDesc = resource.description.en.toLowerCase().includes(lowerQuery) || 
-                            resource.description.ar.toLowerCase().includes(lowerQuery);
-        const matchesTag = resource.tags.some(tag => tag.toLowerCase().includes(lowerQuery));
-
-        if (matchesTitle || matchesDesc || matchesTag) {
-          results.push({
-            categoryId: category.id,
-            subTitle: sub.title[language] || sub.title.en,
-            resource
+  if (searchTerms.length > 0) {
+    categories.forEach(category => {
+      if (!category.subcategories) return;
+      category.subcategories.forEach(sub => {
+        sub.resources.forEach(resource => {
+          const match = searchTerms.every(term => {
+            return resource.title.toLowerCase().includes(term) ||
+                   resource.description.en.toLowerCase().includes(term) ||
+                   resource.description.ar.toLowerCase().includes(term) ||
+                   resource.tags.some(tag => tag.toLowerCase().includes(term));
           });
-        }
+
+          if (match) {
+            results.push({
+              categoryId: category.id,
+              subTitle: sub.title[language] || sub.title.en,
+              resource
+            });
+          }
+        });
       });
     });
-  });
+  }
 
   return (
     <div className="py-8 animate-in fade-in duration-300">

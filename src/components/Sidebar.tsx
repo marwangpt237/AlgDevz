@@ -11,8 +11,6 @@ interface SidebarProps {
 }
 
 export function Sidebar({ categories, selectedId, onSelect, language, isOpen, onClose }: SidebarProps) {
-  const isAr = language === 'ar';
-
   return (
     <>
       {/* Mobile backdrop */}
@@ -28,7 +26,7 @@ export function Sidebar({ categories, selectedId, onSelect, language, isOpen, on
         fixed lg:sticky top-16 start-0 bottom-0 z-40
         w-72 lg:w-64 border-e border-zinc-800 bg-[#111113] lg:bg-transparent
         overflow-y-auto pt-6 pb-20 px-4 transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : isAr ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0'}
+        ${isOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full lg:translate-x-0'}
       `}>
         <nav className="space-y-1">
           {categories.map((category) => {
