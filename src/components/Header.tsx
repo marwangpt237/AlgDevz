@@ -1,4 +1,4 @@
-import { Search, Globe, Menu, Github } from 'lucide-react';
+import { Search, Globe, Menu, Sparkles, Plus } from 'lucide-react';
 import { Language } from '../types';
 
 interface HeaderProps {
@@ -15,62 +15,81 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
   const isAr = language === 'ar';
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[#111113]/90 backdrop-blur-md border-b border-zinc-800 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-0 sm:h-16 flex flex-wrap sm:flex-nowrap items-center justify-between gap-y-3 sm:gap-4">
-        
-        {/* Left Section: Menu & Logo */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0 order-1">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-zinc-800/50 bg-[#050507]/80 backdrop-blur-2xl">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
+        <div className="flex h-[64px] items-center gap-3">
+          {/* Mobile menu */}
           <button 
             onClick={toggleSidebar}
-            className="lg:hidden p-2 -ms-2 text-zinc-400 hover:text-zinc-100 rounded-md cursor-pointer"
+            className="lg:hidden -ms-2 p-2.5 text-zinc-400 hover:text-white hover:bg-zinc-800/60 rounded-xl transition-colors"
+            aria-label="Menu"
           >
             <Menu className="w-5 h-5" />
           </button>
           
-          <button onClick={onHomeClick} className="flex items-center gap-2 cursor-pointer outline-none">
-            <div className="w-8 h-8 rounded bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 text-emerald-400">
-              <Github className="w-5 h-5" />
+          {/* Logo */}
+          <button onClick={onHomeClick} className="flex items-center gap-2.5 group shrink-0">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-emerald-500/20 rounded-xl blur-md group-hover:bg-emerald-500/30 transition-all" />
+              <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                <Sparkles className="w-5 h-5 text-white" />
+              </div>
             </div>
-            <span className="font-bold text-lg tracking-tight sm:block text-zinc-100">
-              AlgDevs
-            </span>
+            <div className="hidden sm:block">
+              <div className="font-bold text-[17px] leading-none tracking-tight text-white">AlgDevs</div>
+              <div className="text-[11px] text-zinc-500 -mt-0.5 font-medium">{isAr ? 'دليل المطور' : 'Dev Directory'}</div>
+            </div>
           </button>
-        </div>
 
-        {/* Right Section: Actions */}
-        <div className="flex items-center gap-1 sm:gap-2 shrink-0 order-2 sm:order-3 ms-auto sm:ms-0">
-          {onSuggestClick && (
+          {/* Search - desktop */}
+          <div className="hidden md:flex flex-1 max-w-[560px] mx-4 lg:mx-8">
+            <div className="relative w-full group">
+              <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 group-focus-within:text-emerald-400 transition-colors pointer-events-none" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => onSearchChange(e.target.value)}
+                placeholder={isAr ? "ابحث عن أدوات، مواقع، موارد..." : "Search tools, sites, resources..."}
+                className="w-full h-10 ps-10 pe-4 bg-zinc-900/60 border border-zinc-800 rounded-xl text-[14px] text-white placeholder-zinc-500 outline-none focus:bg-zinc-900 focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/10 transition-all"
+              />
+              <div className="absolute end-2 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-1">
+                <kbd className="px-1.5 py-0.5 text-[10px] font-medium bg-zinc-800 border border-zinc-700 rounded text-zinc-400">/</kbd>
+              </div>
+            </div>
+          </div>
+
+          {/* Actions */}
+          <div className="flex items-center gap-2 ms-auto">
+            {onSuggestClick && (
+              <button
+                onClick={onSuggestClick}
+                className="h-9 px-3 sm:px-3.5 inline-flex items-center gap-1.5 text-[13px] font-medium text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <Plus className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">{isAr ? 'اقترح' : 'Suggest'}</span>
+              </button>
+            )}
+
             <button
-              onClick={onSuggestClick}
-              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 rounded-lg transition-colors cursor-pointer"
+              onClick={() => onLanguageChange(isAr ? 'en' : 'ar')}
+              className="h-9 w-9 grid place-items-center text-zinc-400 hover:text-white bg-zinc-900/60 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-all"
+              title={isAr ? "English" : "العربية"}
             >
-              <span className="hidden sm:block w-4 h-4 text-center leading-none">+</span>
-              {isAr ? 'اقتراح' : 'Suggest'}
+              <Globe className="w-4 h-4" />
             </button>
-          )}
-
-          <button
-            onClick={() => onLanguageChange(isAr ? 'en' : 'ar')}
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 bg-zinc-900/50 hover:bg-zinc-800 border border-zinc-800 rounded-lg transition-colors cursor-pointer"
-            title={isAr ? "Switch to English" : "التبديل للعربية"}
-          >
-            <Globe className="w-4 h-4" />
-            <span className="hidden sm:block">{isAr ? 'EN' : 'AR'}</span>
-          </button>
+          </div>
         </div>
 
-        {/* Middle Section: Search. Flexible space. Wraps to third line on mobile */}
-        <div className="w-full sm:flex-1 max-w-xl min-w-0 order-3 sm:order-2">
-          <div className="relative group">
-            <div className="absolute inset-y-0 start-0 ps-3 flex items-center pointer-events-none text-zinc-500 group-focus-within:text-emerald-500 transition-colors">
-              <Search className="w-4 h-4" />
-            </div>
+        {/* Search - mobile */}
+        <div className="md:hidden pb-3 -mt-1">
+          <div className="relative">
+            <Search className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder={isAr ? "البحث..." : "Search..."}
-              className="w-full bg-zinc-900/50 border border-zinc-800 text-sm rounded-lg focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 block ps-9 sm:ps-10 p-2 sm:p-2.5 text-zinc-200 placeholder-zinc-500 outline-none transition-all"
+              placeholder={isAr ? "بحث..." : "Search..."}
+              className="w-full h-10 ps-9 pe-3 bg-zinc-900/80 border border-zinc-800 rounded-xl text-[14px] text-white placeholder-zinc-500 outline-none focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/10"
             />
           </div>
         </div>

@@ -1,15 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-arabic: "Cairo", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arabic: "Cairo", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 @layer base {
+  * {
+    @apply border-zinc-800;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
   body {
-    @apply bg-zinc-950 text-zinc-300;
+    @apply bg-[#050507] text-zinc-200 antialiased;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16,185,129,0.15), transparent),
+      radial-gradient(ellipse 80% 50% at 80% 100%, rgba(139,92,246,0.1), transparent);
+    background-attachment: fixed;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full hover:bg-zinc-700;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-zinc-900/70 backdrop-blur-xl border border-zinc-800/50;
+  }
+  .glass-hover {
+    @apply hover:bg-zinc-800/70 hover:border-zinc-700/50 transition-all duration-300;
   }
 }
 

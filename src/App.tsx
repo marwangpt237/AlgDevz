@@ -89,27 +89,85 @@ export default function App() {
     }
     
     if (selectedCategoryId === 'home') {
+      const totalResources = categoriesData.reduce((acc, c) => acc + c.subcategories.reduce((a, s) => a + s.resources.length, 0), 0);
+      
       return (
-        <div className="flex flex-col items-center justify-center py-20 text-center px-4">
-          <h1 className="text-4xl sm:text-6xl font-bold text-zinc-100 mb-6 tracking-tight">
-            AlgDevs Resources
-          </h1>
-          <p className="text-lg text-zinc-400 max-w-2xl mb-10 leading-relaxed font-medium">
-            {language === 'ar' 
-              ? "مرحباً بكم في AlgDevs، الدليل الشامل لأهم الموارد الرقمية وأدوات التطوير المجمعة بعناية لخدمة مجتمع المطورين." 
-              : "Welcome to AlgDevs, the ultimate directory for digital resources and developer tools, carefully curated for the developer community."}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl w-full">
-             {categoriesData.map(c => (
-                <button
-                  key={c.id}
-                  onClick={() => setSelectedCategoryId(c.id)}
-                  className="p-6 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-700 hover:bg-zinc-800/80 transition-all text-start group"
-                >
-                  <h3 className="font-semibold text-lg text-zinc-200 mb-2 group-hover:text-white transition-colors">{c.title[language] || c.title.en}</h3>
-                  <p className="text-sm text-zinc-500">{c.subcategories.reduce((acc, sub) => acc + sub.resources.length, 0)} {language === 'ar' ? 'موارد' : 'Resources'}</p>
-                </button>
-             ))}
+        <div className="py-8 sm:py-12">
+          {/* Hero */}
+          <div className="relative overflow-hidden rounded-[28px] border border-zinc-800/50 bg-gradient-to-b from-zinc-900/50 to-zinc-950/50 p-8 sm:p-12 mb-10">
+            <div className="absolute inset-0">
+              <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px]" />
+              <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-violet-500/10 rounded-full blur-[120px]" />
+            </div>
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-4">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                {language === 'ar' ? 'محدث يومياً' : 'Updated daily'}
+              </div>
+              <h1 className="text-[32px] sm:text-[44px] font-bold tracking-tight leading-[1.1] mb-4">
+                <span className="bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
+                  {language === 'ar' ? 'دليل المطور الجزائري' : 'Algerian Dev Directory'}
+                </span>
+              </h1>
+              <p className="text-[15px] sm:text-[17px] leading-relaxed text-zinc-400 max-w-2xl">
+                {language === 'ar' 
+                  ? "مجموعة منتقاة بعناية من أفضل الأدوات والموارد والمنصات للمطورين. كل شيء في مكان واحد، سريع وبدون إعلانات." 
+                  : "Carefully curated tools, resources, and platforms for developers. Everything in one place — fast, clean, and ad-free."}
+              </p>
+              <div className="flex items-center gap-6 mt-6 text-sm">
+                <div>
+                  <div className="font-semibold text-white">{totalResources}+</div>
+                  <div className="text-zinc-500 text-xs">{language === 'ar' ? 'مورد' : 'resources'}</div>
+                </div>
+                <div className="w-px h-8 bg-zinc-800" />
+                <div>
+                  <div className="font-semibold text-white">{categoriesData.length}</div>
+                  <div className="text-zinc-500 text-xs">{language === 'ar' ? 'تصنيف' : 'categories'}</div>
+                </div>
+                <div className="w-px h-8 bg-zinc-800" />
+                <div>
+                  <div className="font-semibold text-white">100%</div>
+                  <div className="text-zinc-500 text-xs">{language === 'ar' ? 'مجاني' : 'free'}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Categories */}
+          <div>
+            <h2 className="text-[13px] font-semibold uppercase tracking-wider text-zinc-500 mb-4 px-1">
+              {language === 'ar' ? 'تصفح حسب الفئة' : 'Browse by category'}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+               {categoriesData.map(c => {
+                  const count = c.subcategories.reduce((acc, sub) => acc + sub.resources.length, 0);
+                  return (
+                    <button
+                      key={c.id}
+                      onClick={() => setSelectedCategoryId(c.id)}
+                      className="group relative overflow-hidden text-start p-[1px] rounded-2xl bg-gradient-to-b from-zinc-800 to-zinc-800/50 hover:from-zinc-700 hover:to-zinc-800 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20"
+                    >
+                      <div className="relative h-full bg-[#0c0c0e] rounded-2xl p-5">
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/[0.03] to-violet-500/[0.03]" />
+                        </div>
+                        <div className="relative flex items-start justify-between gap-4">
+                          <div className="min-w-0 flex-1">
+                            <h3 className="font-semibold text-[15px] text-zinc-100 group-hover:text-white mb-1.5">{c.title[language] || c.title.en}</h3>
+                            <p className="text-[13px] text-zinc-500">{count} {language === 'ar' ? 'مورد' : 'resources'}</p>
+                          </div>
+                          <div className="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-800 group-hover:border-zinc-700 flex items-center justify-center text-zinc-600 group-hover:text-zinc-400 transition-colors shrink-0">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  )
+               })}
+            </div>
           </div>
         </div>
       );
@@ -183,7 +241,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#111113] text-zinc-200 selection:bg-emerald-500/30 overflow-x-hidden ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+    <div className={`min-h-screen bg-[#050507] text-zinc-100 selection:bg-emerald-500/20 selection:text-emerald-100 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
       <Header 
         language={language}
         onLanguageChange={setLanguage}
@@ -197,23 +255,25 @@ export default function App() {
         onSuggestClick={() => setIsSuggestModalOpen(true)}
       />
       
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto items-start relative px-4 sm:px-6 lg:px-8 pt-32 sm:pt-24 lg:pt-16">
-        <Sidebar 
-          categories={allCategories}
-          selectedId={selectedCategoryId}
-          onSelect={(id) => {
-            setSelectedCategoryId(id);
-            setSearchQuery('');
-            setIsSidebarOpen(false);
-          }}
-          language={language}
-          isOpen={isSidebarOpen}
-          onClose={() => setIsSidebarOpen(false)}
-        />
-        
-        <main className="flex-1 min-w-0 pb-24 lg:ps-12">
-          {renderContent()}
-        </main>
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <div className="flex items-start gap-6 lg:gap-8 pt-[84px] md:pt-[72px]">
+          <Sidebar 
+            categories={allCategories}
+            selectedId={selectedCategoryId}
+            onSelect={(id) => {
+              setSelectedCategoryId(id);
+              setSearchQuery('');
+              setIsSidebarOpen(false);
+            }}
+            language={language}
+            isOpen={isSidebarOpen}
+            onClose={() => setIsSidebarOpen(false)}
+          />
+          
+          <main className="flex-1 min-w-0 pb-16 w-full">
+            {renderContent()}
+          </main>
+        </div>
       </div>
       
       <SuggestModal 

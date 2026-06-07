@@ -45,33 +45,35 @@ export function SearchResults({ query, categories, language, bookmarks, toggleBo
   }
 
   return (
-    <div className="py-8 animate-in fade-in duration-300">
-      <h1 className="text-2xl font-bold text-zinc-100 mb-2">
-        {isAr ? 'نتائج البحث عن' : 'Search results for'} <span className="text-emerald-400">"{query}"</span>
-      </h1>
-      <p className="text-zinc-500 mb-8">
-        {isAr ? `تم العثور على ${results.length} نتيجة` : `Found ${results.length} results`}
-      </p>
+    <div className="py-6 sm:py-8">
+      <div className="mb-6">
+        <h1 className="text-[22px] sm:text-[26px] font-bold text-white">
+          {isAr ? 'نتائج البحث' : 'Search results'}
+        </h1>
+        <p className="mt-1 text-[14px] text-zinc-500">
+          {results.length} {isAr ? 'نتيجة لـ' : 'results for'} <span className="text-zinc-300">"{query}"</span>
+        </p>
+      </div>
 
       {results.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 text-center border border-dashed border-zinc-800 rounded-2xl">
-          <div className="w-16 h-16 rounded-full bg-zinc-900 flex items-center justify-center mb-4">
-            <SearchX className="w-8 h-8 text-zinc-600" />
+        <div className="relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/20 p-12 text-center">
+          <div className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+            <SearchX className="w-5 h-5 text-zinc-600" />
           </div>
-          <h3 className="text-lg font-medium text-zinc-300 mb-1">
-            {isAr ? 'لا توجد نتائج' : 'No results found'}
+          <h3 className="text-[15px] font-medium text-zinc-200 mb-1">
+            {isAr ? 'لا توجد نتائج' : 'No results'}
           </h3>
-          <p className="text-zinc-500 max-w-sm">
+          <p className="text-[13px] text-zinc-500 max-w-sm mx-auto">
             {isAr 
-              ? 'لم نتمكن من العثور على أي موارد تطابق بحثك. جرب كلمات مفتاحية مختلفة.' 
-              : 'We couldn\'t find any resources matching your search. Try different keywords.'}
+              ? 'جرب كلمات مختلفة أو تصفح التصنيفات' 
+              : 'Try different keywords or browse categories'}
           </p>
         </div>
       ) : (
-        <div className="space-y-4">
+        <div className="grid gap-3">
           {results.map((result, i) => (
             <ResourceCard 
-              key={i}
+              key={result.resource.url + i}
               resource={result.resource} 
               language={language} 
               isBookmarked={bookmarks.includes(result.resource.url)}
@@ -85,4 +87,3 @@ export function SearchResults({ query, categories, language, bookmarks, toggleBo
     </div>
   );
 }
-

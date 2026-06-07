@@ -12,39 +12,57 @@ interface CategoryViewProps {
 
 export function CategoryView({ category, language, bookmarks, toggleBookmark }: CategoryViewProps) {
   const isEmpty = category.subcategories.every(sub => sub.resources.length === 0);
+  const total = category.subcategories.reduce((a, s) => a + s.resources.length, 0);
 
   return (
-    <div className="py-8 animate-in fade-in slide-in-from-bottom-4 duration-500 ease-out">
-      <h1 className="text-3xl sm:text-4xl font-bold text-zinc-100 mb-2">
-        {category.title[language] || category.title.en}
-      </h1>
-      <div className="h-1 w-20 bg-emerald-500 rounded-full mb-10"></div>
+    <div className="py-6 sm:py-8">
+      <div className="mb-8">
+        <div className="flex items-baseline gap-3 mb-2">
+          <h1 className="text-[28px] sm:text-[32px] font-bold tracking-tight text-white">
+            {category.title[language] || category.title.en}
+          </h1>
+          {total > 0 && (
+            <span className="text-[13px] font-medium px-2.5 py-1 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400">
+              {total}
+            </span>
+          )}
+        </div>
+        <div className="h-px w-full bg-gradient-to-r from-emerald-500/50 via-zinc-800 to-transparent" />
+      </div>
 
       {isEmpty ? (
-        <div className="text-center py-20 border border-dashed border-zinc-800 rounded-2xl bg-zinc-900/10">
-          <Bookmark className="w-8 h-8 text-zinc-600 mx-auto mb-4" />
-          <h3 className="text-lg font-medium text-zinc-300 mb-1">
-            {language === 'ar' ? 'لا توجد موارد محفوظة' : 'No saved resources'}
-          </h3>
-          <p className="text-zinc-500">
-            {language === 'ar' ? 'قم بحفظ بعض الموارد لعرضها هنا.' : 'Save some resources to see them here.'}
-          </p>
+        <div className="relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/20 p-12 text-center">
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/5 to-transparent" />
+          <div className="relative">
+            <div className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+              <Bookmark className="w-5 h-5 text-zinc-600" />
+            </div>
+            <h3 className="text-[15px] font-medium text-zinc-200 mb-1">
+              {language === 'ar' ? 'لا توجد موارد محفوظة' : 'No saved resources yet'}
+            </h3>
+            <p className="text-[13px] text-zinc-500 max-w-sm mx-auto">
+              {language === 'ar' ? 'انقر على أيقونة الإشارة المرجعية لحفظ مواردك المفضلة.' : 'Click the bookmark icon on any resource to save it here.'}
+            </p>
+          </div>
         </div>
       ) : (
-        <div className="space-y-12">
+        <div className="space-y-10">
           {category.subcategories.map((sub) => {
             if (sub.resources.length === 0) return null;
             return (
-              <div key={sub.id} className="scroll-mt-24" id={sub.id}>
-                <h2 className="text-xl sm:text-2xl font-semibold text-zinc-200 mb-6 flex items-center gap-2 relative group">
-                  <span className="text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity absolute -start-8 w-6 text-end">#</span>
-                  {sub.title[language] || sub.title.en}
-                </h2>
+              <section key={sub.id} className="scroll-mt-24" id={sub.id}>
+                <div className="flex items-center gap-3 mb-4">
+                  <h2 className="text-[17px] font-semibold text-zinc-100">
+                    {sub.title[language] || sub.title.en}
+                  </h2>
+                  <div className="h-px flex-1 bg-zinc-800/50" />
+                  <span className="text-[11px] text-zinc-600 font-medium">{sub.resources.length}</span>
+                </div>
                 
-                <div className="space-y-4">
+                <div className="grid gap-3">
                   {sub.resources.map((resource, i) => (
                     <ResourceCard 
-                      key={i} 
+                      key={resource.url + i} 
                       resource={resource} 
                       language={language} 
                       isBookmarked={bookmarks.includes(resource.url)}
@@ -53,7 +71,7 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
                     />
                   ))}
                 </div>
-              </div>
+              </section>
             );
           })}
         </div>
