@@ -63,7 +63,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
                 <ExternalLink className="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-400 mt-0.5 shrink-0 transition-colors" />
               </h3>
               
-              <p className="text-[13px] leading-[1.55] text-zinc-400 line-clamp-2 mb-3">
+              <p className="text-[13px] leading-[1.55] text-zinc-400 line-clamp-2 mb-3 break-words overflow-wrap-anywhere">
                 {resource.description[language] || resource.description.en}
               </p>
               
@@ -90,25 +90,25 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
               </div>
             </div>
 
-            {/* Actions - always visible on mobile, hover on desktop */}
-            <div className="flex sm:flex-col items-center gap-1 shrink-0 -me-1">
+            {/* Actions - larger touch targets for mobile */}
+            <div className="flex sm:flex-col items-center gap-1.5 shrink-0 -me-1">
               <button
                 onClick={() => onToggleBookmark(resource.url)}
-                className={`w-8 h-8 grid place-items-center rounded-lg border transition-all active:scale-95 ${
+                className={`w-9 h-9 sm:w-8 sm:h-8 grid place-items-center rounded-xl sm:rounded-lg border transition-all active:scale-95 touch-manipulation ${
                   isBookmarked 
                     ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400' 
-                    : 'bg-zinc-800/50 border-zinc-800 text-zinc-500 hover:text-zinc-200 hover:border-zinc-700'
+                    : 'bg-zinc-800/70 border-zinc-700/50 text-zinc-400 hover:text-zinc-200 hover:border-zinc-600 active:bg-zinc-700'
                 }`}
                 aria-label="Bookmark"
               >
-                <Bookmark className="w-3.5 h-3.5" fill={isBookmarked ? "currentColor" : "none"} />
+                <Bookmark className="w-4 h-4 sm:w-3.5 sm:h-3.5" fill={isBookmarked ? "currentColor" : "none"} />
               </button>
               <button 
                 onClick={copyUrl}
-                className="w-8 h-8 grid place-items-center rounded-lg bg-zinc-800/50 border border-zinc-800 text-zinc-500 hover:text-zinc-200 hover:border-zinc-700 transition-all active:scale-95"
+                className="w-9 h-9 sm:w-8 sm:h-8 grid place-items-center rounded-xl sm:rounded-lg bg-zinc-800/70 border border-zinc-700/50 text-zinc-400 hover:text-zinc-200 hover:border-zinc-600 active:bg-zinc-700 transition-all active:scale-95 touch-manipulation"
                 aria-label="Copy"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <Check className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-emerald-400" /> : <Copy className="w-4 h-4 sm:w-3.5 sm:h-3.5" />}
               </button>
             </div>
           </div>

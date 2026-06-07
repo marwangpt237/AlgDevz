@@ -27,6 +27,18 @@ export default function App() {
     localStorage.setItem('algdevs-bookmarks', JSON.stringify(bookmarks));
   }, [bookmarks]);
 
+  // Prevent body scroll when mobile sidebar is open
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isSidebarOpen]);
+
   const toggleBookmark = (url: string) => {
     setBookmarks(prev => 
       prev.includes(url) ? prev.filter(b => b !== url) : [...prev, url]
