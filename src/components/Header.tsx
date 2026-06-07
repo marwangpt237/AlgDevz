@@ -15,10 +15,11 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
   const isAr = language === 'ar';
 
   return (
-    <header className="fixed top-0 left-0 right-0 h-16 bg-[#111113]/80 backdrop-blur-md border-b border-zinc-800 z-50">
-      <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+    <header className="fixed top-0 left-0 right-0 bg-[#111113]/90 backdrop-blur-md border-b border-zinc-800 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-0 sm:h-16 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 sm:gap-4">
         
-        <div className="flex items-center gap-3">
+        {/* Left Section: Menu & Logo */}
+        <div className="flex items-center gap-2 sm:gap-3 order-1">
           <button 
             onClick={toggleSidebar}
             className="lg:hidden p-2 -ms-2 text-zinc-400 hover:text-zinc-100 rounded-md cursor-pointer"
@@ -36,7 +37,8 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
           </button>
         </div>
 
-        <div className="flex-1 max-w-xl">
+        {/* Middle Section: Search. Drops to new row on mobile */}
+        <div className="w-full sm:flex-1 max-w-xl order-3 sm:order-2">
           <div className="relative group">
             <div className="absolute inset-y-0 start-0 ps-3 flex items-center pointer-events-none text-zinc-500 group-focus-within:text-emerald-500 transition-colors">
               <Search className="w-4 h-4" />
@@ -51,14 +53,15 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        {/* Right Section: Actions */}
+        <div className="flex items-center gap-2 order-2 sm:order-3">
           {onSuggestClick && (
             <button
               onClick={onSuggestClick}
-              className="hidden sm:flex items-center gap-2 px-3 py-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 rounded-lg transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 rounded-lg transition-colors cursor-pointer"
             >
-              <span className="hidden md:block w-4 h-4 text-center leading-none">+</span>
-              {isAr ? 'اقتراح مورد' : 'Suggest'}
+              <span className="hidden sm:block w-4 h-4 text-center leading-none">+</span>
+              {isAr ? 'اقتراح' : 'Suggest'}
             </button>
           )}
 

@@ -18,10 +18,10 @@ export function SearchResults({ query, categories, language, bookmarks, toggleBo
   const results: { categoryId: string, subTitle: string, resource: Resource }[] = [];
   
   if (searchTerms.length > 0) {
-    categories.forEach(category => {
-      if (!category.subcategories) return;
-      category.subcategories.forEach(sub => {
-        sub.resources.forEach(resource => {
+    for (const category of categories) {
+      if (!category.subcategories) continue;
+      for (const sub of category.subcategories) {
+        for (const resource of sub.resources) {
           const match = searchTerms.every(term => {
             return resource.title.toLowerCase().includes(term) ||
                    resource.description.en.toLowerCase().includes(term) ||
@@ -35,10 +35,13 @@ export function SearchResults({ query, categories, language, bookmarks, toggleBo
               subTitle: sub.title[language] || sub.title.en,
               resource
             });
+            if (results.length >= 50) break;
           }
-        });
-      });
-    });
+        }
+        if (results.length >= 50) break;
+      }
+      if (results.length >= 50) break;
+    }
   }
 
   return (

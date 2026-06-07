@@ -23,10 +23,10 @@ export function Sidebar({ categories, selectedId, onSelect, language, isOpen, on
       
       {/* Sidebar */}
       <aside className={`
-        fixed lg:sticky top-16 start-0 bottom-0 z-40
+        fixed lg:sticky top-[120px] sm:top-16 start-0 bottom-0 z-40
         w-72 lg:w-64 border-e border-zinc-800 bg-[#111113] lg:bg-transparent
-        overflow-y-auto pt-6 pb-20 px-4 transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : 'ltr:-translate-x-full rtl:translate-x-full lg:translate-x-0'}
+        overflow-y-auto pt-4 lg:pt-6 pb-20 px-4 transition-transform duration-300 ease-in-out
+        ${isOpen ? 'translate-x-0' : (language === 'ar' ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0')}
       `}>
         <nav className="space-y-1">
           {categories.map((category) => {

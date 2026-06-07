@@ -109,7 +109,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
       </div>
 
       {showSimilar && (
-        <div className="pl-4 sm:pl-8 pr-4 pt-4 pb-2 border-l-2 border-r-2 border-b-2 border-zinc-800/40 rounded-b-xl -mt-2 bg-zinc-900/10 animate-in slide-in-from-top-2 fade-in duration-200">
+        <div className="px-4 sm:ps-8 sm:pe-4 pt-4 pb-2 border-x-2 border-b-2 border-zinc-800/40 rounded-b-xl -mt-2 bg-zinc-900/10 animate-in slide-in-from-top-2 fade-in duration-200">
           <div className="text-xs font-semibold text-zinc-500 mb-3 flex items-center gap-2">
             <Sparkles className="w-3 h-3" /> 
             {language === 'ar' ? 'ربما يعجبك أيضاً' : 'You might also like'}
