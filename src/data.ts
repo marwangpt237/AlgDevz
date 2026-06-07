@@ -152,6 +152,24 @@ export const categoriesData: Category[] = [
             "tags": ["Hosting", "PaaS", "Free", "NoCC"]
           },
           {
+            "title": "Serv00.com",
+            "description": {
+              "en": "FREE for life: 3GB storage, SSH, Node.js/Python/PHP, 100 sites, no credit card. Perfect for students.",
+              "ar": "مجاني مدى الحياة: 3GB، SSH، Node.js، 100 موقع. بدون بطاقة - مثالي للطلاب."
+            },
+            "url": "https://serv00.com/",
+            "tags": ["Hosting", "VPS", "Free", "NoCC", "SSH"]
+          },
+          {
+            "title": "HelioHost",
+            "description": {
+              "en": "Free cPanel hosting since 2005. No ads, no credit card. Community supported.",
+              "ar": "استضافة مجانية منذ 2005. بدون إعلانات أو بطاقة."
+            },
+            "url": "https://heliohost.org/",
+            "tags": ["Hosting", "cPanel", "Free", "NoCC"]
+          },
+          {
             "title": "InfinityFree",
             "description": {
               "en": "Unlimited free hosting with PHP/MySQL. No credit card, no ads.",

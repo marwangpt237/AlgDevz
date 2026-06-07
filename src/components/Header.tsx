@@ -71,11 +71,14 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
             )}
 
             <button
-              onClick={() => onLanguageChange(isAr ? 'en' : 'ar')}
+              onClick={() => {
+                const next = isAr ? 'en' : language === 'en' ? 'fr' : 'ar';
+                onLanguageChange(next as Language);
+              }}
               className="h-9 w-9 grid place-items-center text-zinc-400 hover:text-white bg-zinc-900/60 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-all"
-              title={isAr ? "English" : "العربية"}
+              title={isAr ? "English" : language === 'en' ? "Français" : "العربية"}
             >
-              <Globe className="w-4 h-4" />
+              <span className="text-[11px] font-bold">{language.toUpperCase()}</span>
             </button>
           </div>
         </div>
