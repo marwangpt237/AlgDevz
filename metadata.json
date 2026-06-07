@@ -1,0 +1,6 @@
+{
+  "name": "AlgDevs",
+  "description": "Algerian Developers Resources - A bilingual directory of tools, communities, and open source projects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
