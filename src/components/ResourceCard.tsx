@@ -1,5 +1,5 @@
 import { Language, Resource, Category } from '../types';
-import { ExternalLink, Copy, Check, Bookmark, Sparkles, ChevronDown } from 'lucide-react';
+import { ExternalLink, Copy, Check, Bookmark, Sparkles, ChevronDown, Share2 } from 'lucide-react';
 import React, { useState } from 'react';
 import { getTagColor, findSimilarResources } from '../utils';
 
@@ -27,6 +27,20 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
     await navigator.clipboard.writeText(resource.url);
     setCopied(true);
     setTimeout(() => setCopied(false), 1800);
+  };
+
+  const shareResource = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: resource.title,
+          text: resource.description[language] || resource.description.en,
+          url: resource.url,
+        });
+      } catch {}
+    } else {
+      copyUrl();
+    }
   };
 
   const similarResources = showSimilar ? findSimilarResources(resource, allCategories).slice(0, 4) : [];
@@ -103,6 +117,13 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
                 aria-label="Bookmark"
               >
                 <Bookmark className="w-4 h-4 sm:w-3.5 sm:h-3.5" fill={isBookmarked ? "currentColor" : "none"} />
+              </button>
+              <button 
+                onClick={shareResource}
+                className="w-9 h-9 sm:w-8 sm:h-8 grid place-items-center rounded-xl sm:rounded-lg bg-zinc-800/70 border border-zinc-700/50 text-zinc-400 hover:text-zinc-200 hover:border-zinc-600 active:bg-zinc-700 transition-all active:scale-95 touch-manipulation sm:hidden"
+                aria-label="Share"
+              >
+                <Share2 className="w-4 h-4" />
               </button>
               <button 
                 onClick={copyUrl}

@@ -13,6 +13,7 @@ interface HeaderProps {
 
 export function Header({ language, onLanguageChange, searchQuery, onSearchChange, toggleSidebar, onHomeClick, onSuggestClick }: HeaderProps) {
   const isAr = language === 'ar';
+  const isFr = language === 'fr';
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 border-b border-zinc-800/50 bg-[#050507]/80 backdrop-blur-2xl">
@@ -37,7 +38,7 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
             </div>
             <div className="hidden sm:block">
               <div className="font-bold text-[17px] leading-none tracking-tight text-white">AlgDevs</div>
-              <div className="text-[11px] text-zinc-500 -mt-0.5 font-medium">{isAr ? 'دليل المطور' : 'Dev Directory'}</div>
+              <div className="text-[11px] text-zinc-500 -mt-0.5 font-medium">{isAr ? 'دليل المطور' : isFr ? 'Annuaire Dev' : 'Dev Directory'}</div>
             </div>
           </button>
 
@@ -49,7 +50,7 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
                 type="text"
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
-                placeholder={isAr ? "ابحث عن أدوات، مواقع، موارد..." : "Search tools, sites, resources..."}
+                placeholder={isAr ? "ابحث عن أدوات، مواقع، موارد..." : isFr ? "Rechercher outils, sites..." : "Search tools, sites, resources..."}
                 className="w-full h-10 ps-10 pe-4 bg-zinc-900/60 border border-zinc-800 rounded-xl text-[14px] text-white placeholder-zinc-500 outline-none focus:bg-zinc-900 focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/10 transition-all"
               />
               <div className="absolute end-2 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-1">
@@ -66,7 +67,7 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
                 className="h-9 px-3 sm:px-3.5 inline-flex items-center gap-1.5 text-[13px] font-medium text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Plus className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">{isAr ? 'اقترح' : 'Suggest'}</span>
+                <span className="hidden sm:inline">{isAr ? 'اقترح' : isFr ? 'Suggérer' : 'Suggest'}</span>
               </button>
             )}
 
@@ -91,7 +92,7 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
               type="text"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder={isAr ? "بحث..." : "Search..."}
+              placeholder={isAr ? "بحث..." : isFr ? "Recherche..." : "Search..."}
               className="w-full h-10 ps-9 pe-3 bg-zinc-900/80 border border-zinc-800 rounded-xl text-[14px] text-white placeholder-zinc-500 outline-none focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/10"
             />
           </div>
