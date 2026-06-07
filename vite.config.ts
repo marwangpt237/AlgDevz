@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/',
+    base: '/', // Use absolute path for custom domains
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
