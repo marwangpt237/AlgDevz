@@ -1,6 +1,5 @@
-import { Category, Language } from '../types';
-import { Bookmark, ChevronDown, ChevronUp, Filter, X } from 'lucide-react';
-import { categoriesData } from '../data';
+import { Category, Language, SubCategory } from '../types';
+import { Bookmark, ChevronDown, ChevronUp, Filter, X, Loader2 } from 'lucide-react';
 import { ResourceCard } from './ResourceCard';
 import { useState, useMemo, useEffect } from 'react';
 
@@ -14,47 +13,69 @@ interface CategoryViewProps {
 export function CategoryView({ category, language, bookmarks, toggleBookmark }: CategoryViewProps) {
   const isAr = language === 'ar';
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [dynamicSubcategories, setDynamicSubcategories] = useState<SubCategory[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Track which subcategories are expanded - reset when category changes
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [visibleCount, setVisibleCount] = useState<Record<string, number>>({});
 
+  // Lazy load subcategories if they are not present
+  useEffect(() => {
+    if (category.id === 'home' || category.id === 'about' || category.id === 'bookmarks') {
+      setDynamicSubcategories(category.subcategories || []);
+      return;
+    }
+
+    setIsLoading(true);
+    // Dynamic import for the category data
+    import(`../data/${category.id}.ts`)
+      .then(m => {
+        setDynamicSubcategories(m.subcategories);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to load category data:', err);
+        setIsLoading(false);
+      });
+  }, [category.id, category.subcategories]);
+
   const allTags = useMemo(() => {
     const tags = new Set<string>();
-    category.subcategories.forEach(sub => {
+    dynamicSubcategories.forEach(sub => {
       sub.resources.forEach(res => {
         res.tags.forEach(tag => tags.add(tag));
       });
     });
     return Array.from(tags).sort();
-  }, [category]);
+  }, [dynamicSubcategories]);
 
   const filteredSubcategories = useMemo(() => {
-    if (selectedTags.length === 0) return category.subcategories;
-    return category.subcategories.map(sub => ({
+    if (selectedTags.length === 0) return dynamicSubcategories;
+    return dynamicSubcategories.map(sub => ({
       ...sub,
       resources: sub.resources.filter(res => 
         selectedTags.every(tag => res.tags.includes(tag))
       )
     })).filter(sub => sub.resources.length > 0);
-  }, [category, selectedTags]);
+  }, [dynamicSubcategories, selectedTags]);
 
-  const isEmpty = filteredSubcategories.length === 0;
+  const isEmpty = filteredSubcategories.length === 0 && !isLoading;
   const total = filteredSubcategories.reduce((a, s) => a + s.resources.length, 0);
 
   // Reset when category changes - critical for mobile performance
   useEffect(() => {
     const initial: Record<string, boolean> = {};
-    // Only open first subcategory by default, like Hosting & Cloud
-    if (category.subcategories[0]) {
-      initial[category.subcategories[0].id] = true;
+    // Only open first subcategory by default
+    if (dynamicSubcategories[0]) {
+      initial[dynamicSubcategories[0].id] = true;
     }
     setExpanded(initial);
     setVisibleCount({});
     setSelectedTags([]);
     // Scroll to top on category change
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [category.id]);
+  }, [category.id, dynamicSubcategories]);
 
   const toggleTag = (tag: string) => {
     setSelectedTags(prev => 
@@ -132,7 +153,12 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
         </div>
       ) : (
         <div className="space-y-4 sm:space-y-6">
-          {filteredSubcategories.map((sub) => {
+          {isLoading ? (
+            <div className="flex flex-col items-center justify-center py-20 text-zinc-500">
+              <Loader2 className="w-8 h-8 animate-spin mb-4" />
+              <p className="text-sm">{isAr ? 'جاري التحميل...' : 'Loading resources...'}</p>
+            </div>
+          ) : filteredSubcategories.map((sub) => {
             if (sub.resources.length === 0) return null;
             
             const isExpanded = expanded[sub.id] ?? false;
@@ -169,7 +195,6 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
                           language={language} 
                           isBookmarked={bookmarks.has(resource.url)}
                           onToggleBookmark={toggleBookmark}
-                          allCategories={categoriesData}
                         />
                       ))}
                     </div>

@@ -31,5 +31,5 @@ export interface Category {
     fr?: string;
   };
   iconName: string;
-  subcategories: SubCategory[];
+  subcategories?: SubCategory[];
 }

@@ -1,0 +1,41 @@
+name: Suggest a Resource
+description: Suggest a new resource for AlgDevs
+body:
+  - type: input
+    id: title
+    label: Resource Name
+    validations:
+      required: true
+  - type: input
+    id: url
+    label: URL
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    label: Category
+    options: 
+      - Hosting & Cloud
+      - Artificial Intelligence
+      - Adblock
+      - Development Tools
+      - Learning & Tutorials
+      - Design & UI
+      - Open Source
+      - Productivity
+      - Security
+    validations:
+      required: true
+  - type: input
+    id: tags
+    label: Tags (comma separated)
+  - type: textarea
+    id: description_en
+    label: Description (English)
+    validations:
+      required: true
+  - type: textarea
+    id: description_ar
+    label: Description (Arabic)
+    validations:
+      required: true

@@ -79,7 +79,6 @@ export function SearchResults({ query, categories, language, bookmarks, toggleBo
               isBookmarked={bookmarks.has(result.resource.url)}
               onToggleBookmark={toggleBookmark}
               breadcrumb={result.subTitle}
-              allCategories={categories}
             />
           ))}
         </div>
