@@ -1,6 +1,7 @@
 import { Category, Language, SubCategory } from '../types';
-import { Bookmark, ChevronDown, ChevronUp, Filter, X, Loader2 } from 'lucide-react';
+import { Bookmark, ChevronDown, ChevronUp, Filter, X } from 'lucide-react';
 import { ResourceCard } from './ResourceCard';
+import { CategorySkeleton } from './SkeletonLoader';
 import { useState, useMemo, useEffect } from 'react';
 
 interface CategoryViewProps {
@@ -91,6 +92,10 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
     setVisibleCount(prev => ({ ...prev, [id]: current + 24 }));
   };
 
+  if (isLoading) {
+    return <CategorySkeleton />;
+  }
+
   return (
     <div className="py-6 sm:py-8">
       <div className="mb-6 sm:mb-8">
@@ -153,12 +158,7 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
         </div>
       ) : (
         <div className="space-y-4 sm:space-y-6">
-          {isLoading ? (
-            <div className="flex flex-col items-center justify-center py-20 text-zinc-500">
-              <Loader2 className="w-8 h-8 animate-spin mb-4" />
-              <p className="text-sm">{isAr ? 'جاري التحميل...' : 'Loading resources...'}</p>
-            </div>
-          ) : filteredSubcategories.map((sub) => {
+          {filteredSubcategories.map((sub) => {
             if (sub.resources.length === 0) return null;
             
             const isExpanded = expanded[sub.id] ?? false;
