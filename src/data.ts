@@ -247,7 +247,27 @@ export const categoriesData: Category[] = [
               "en": "Edge functions free tier, 100K req/day. No credit card.",
               "ar": "وظائف حافة مجانية 100K طلب/يوم."
             },
-            \"url\": \"https://deno.com/deploy\",\n            \"tags\": [\"Hosting\", \"Edge\", \"Free\", \"NoCC\"]\n          },\n          {\n            \"title\": \"Supabase\",\n            \"description\": {\n              \"en\": \"Free Postgres DB, auth, storage. 500MB, no card required.\",\n              \"ar\": \"قاعدة بيانات مجانية 500MB.\"\n            },\n            \"url\": \"https://supabase.com/\",\n            \"tags\": [\"Backend\", \"Database\", \"Free\", \"NoCC\"]\n          },\n          {\n            \"title\": \"Tiiny Host\",\n            \"description\": {\n              \"en\": \"Drag-drop hosting, 3 sites free. No signup required.\",\n              \"ar\": \"استضافة بالسحب 3 مواقع مجاناً.\"\n            },\n            \"url\": \"https://tiiny.host/\",\n            \"tags\": [\"Hosting\", \"Simple\", \"Free\", \"NoCC\"]\n          },
+            "url": "https://deno.com/deploy",
+            "tags": ["Hosting", "Edge", "Free", "NoCC"]
+          },
+          {
+            "title": "Supabase",
+            "description": {
+              "en": "Free Postgres DB, auth, storage. 500MB, no card required.",
+              "ar": "قاعدة بيانات مجانية 500MB."
+            },
+            "url": "https://supabase.com/",
+            "tags": ["Backend", "Database", "Free", "NoCC"]
+          },
+          {
+            "title": "Tiiny Host",
+            "description": {
+              "en": "Drag-drop hosting, 3 sites free. No signup required.",
+              "ar": "استضافة بالسحب 3 مواقع مجاناً."
+            },
+            "url": "https://tiiny.host/",
+            "tags": ["Hosting", "Simple", "Free", "NoCC"]
+          },
           {
             "title": "DigitalOcean",
             "description": {
