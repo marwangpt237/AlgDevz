@@ -24,12 +24,15 @@ export default function App() {
 
   useEffect(() => {
     localStorage.setItem('algdevs-theme', theme);
+    const root = document.documentElement;
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
+      root.classList.add('dark');
+      root.classList.remove('light');
+      root.style.colorScheme = 'dark';
     } else {
-      document.documentElement.classList.add('light');
-      document.documentElement.classList.remove('dark');
+      root.classList.add('light');
+      root.classList.remove('dark');
+      root.style.colorScheme = 'light';
     }
   }, [theme]);
 
@@ -125,7 +128,7 @@ export default function App() {
       return (
         <div className="py-8 sm:py-12">
           {/* Hero */}
-          <div className="relative overflow-hidden rounded-[28px] border border-zinc-800/50 bg-gradient-to-b from-zinc-900/50 to-zinc-950/50 p-8 sm:p-12 mb-10">
+          <div className="relative overflow-hidden rounded-[28px] border border-zinc-800/50 dark:border-zinc-800/50 light:border-zinc-200 bg-gradient-to-b from-zinc-900/50 dark:from-zinc-900/50 light:from-white to-zinc-950/50 dark:to-zinc-950/50 light:to-zinc-50 p-8 sm:p-12 mb-10 shadow-sm light:shadow-zinc-200/50">
             <div className="absolute inset-0">
               <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px]" />
               <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-violet-500/10 rounded-full blur-[120px]" />
@@ -139,7 +142,7 @@ export default function App() {
                 {language === 'ar' ? 'محدث يومياً' : 'Updated daily'}
               </div>
               <h1 className="text-[32px] sm:text-[44px] font-bold tracking-tight leading-[1.1] mb-4">
-                <span className="bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-b from-white dark:from-white light:from-zinc-900 to-zinc-400 dark:to-zinc-400 light:to-zinc-600 bg-clip-text text-transparent">
                   {language === 'ar' ? 'دليل المطور الجزائري' : 'Algerian Dev Directory'}
                 </span>
               </h1>
@@ -150,17 +153,17 @@ export default function App() {
               </p>
               <div className="flex items-center gap-6 mt-6 text-sm">
                 <div>
-                  <div className="font-semibold text-white">{totalResources}+</div>
+                  <div className="font-semibold text-white dark:text-white light:text-zinc-900">{totalResources}+</div>
                   <div className="text-zinc-500 text-xs">{language === 'ar' ? 'مورد' : 'resources'}</div>
                 </div>
-                <div className="w-px h-8 bg-zinc-800" />
+                <div className="w-px h-8 bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-200" />
                 <div>
-                  <div className="font-semibold text-white">{categoriesData.length}</div>
+                  <div className="font-semibold text-white dark:text-white light:text-zinc-900">{categoriesData.length}</div>
                   <div className="text-zinc-500 text-xs">{language === 'ar' ? 'تصنيف' : 'categories'}</div>
                 </div>
-                <div className="w-px h-8 bg-zinc-800" />
+                <div className="w-px h-8 bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-200" />
                 <div>
-                  <div className="font-semibold text-white">100%</div>
+                  <div className="font-semibold text-white dark:text-white light:text-zinc-900">100%</div>
                   <div className="text-zinc-500 text-xs">{language === 'ar' ? 'مجاني' : 'free'}</div>
                 </div>
               </div>
@@ -179,18 +182,18 @@ export default function App() {
                     <button
                       key={c.id}
                       onClick={() => setSelectedCategoryId(c.id)}
-                      className="group relative overflow-hidden text-start p-[1px] rounded-2xl bg-gradient-to-b from-zinc-800 to-zinc-800/50 hover:from-zinc-700 hover:to-zinc-800 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20"
+                      className="group relative overflow-hidden text-start p-[1px] rounded-2xl bg-gradient-to-b from-zinc-800 dark:from-zinc-800 light:from-zinc-200 to-zinc-800/50 dark:to-zinc-800/50 light:to-zinc-100 hover:from-zinc-700 dark:hover:from-zinc-700 light:hover:from-emerald-500/20 hover:to-zinc-800 dark:hover:to-zinc-800 light:hover:to-emerald-500/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20"
                     >
-                      <div className="relative h-full bg-[#0c0c0e] rounded-2xl p-5">
+                      <div className="relative h-full bg-[#0c0c0e] dark:bg-[#0c0c0e] light:bg-white rounded-2xl p-5">
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
                           <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/[0.03] to-violet-500/[0.03]" />
                         </div>
                         <div className="relative flex items-start justify-between gap-4">
                           <div className="min-w-0 flex-1">
-                            <h3 className="font-semibold text-[15px] text-zinc-100 group-hover:text-white mb-1.5">{c.title[language] || c.title.en}</h3>
+                            <h3 className="font-semibold text-[15px] text-zinc-100 dark:text-zinc-100 light:text-zinc-800 group-hover:text-white dark:group-hover:text-white light:group-hover:text-emerald-600 mb-1.5">{c.title[language] || c.title.en}</h3>
                             <p className="text-[13px] text-zinc-500">{count} {language === 'ar' ? 'مورد' : 'resources'}</p>
                           </div>
-                          <div className="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-800 group-hover:border-zinc-700 flex items-center justify-center text-zinc-600 group-hover:text-zinc-400 transition-colors shrink-0">
+                          <div className="w-8 h-8 rounded-xl bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 group-hover:border-zinc-700 dark:group-hover:border-zinc-700 light:group-hover:border-emerald-500/30 flex items-center justify-center text-zinc-600 group-hover:text-zinc-400 transition-colors shrink-0">
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
                           </div>
                         </div>

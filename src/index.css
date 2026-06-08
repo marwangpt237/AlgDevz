@@ -7,6 +7,10 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
+/* Tailwind 4 uses a different approach for class-based dark mode */
+@custom-variant light (&:where(.light, .light *));
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   * {
     @apply border-zinc-800;
@@ -31,15 +35,17 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  :root.light body {
-    @apply bg-zinc-50 text-zinc-900;
-    background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16,185,129,0.05), transparent),
-      radial-gradient(ellipse 80% 50% at 80% 100%, rgba(139,92,246,0.03), transparent);
-  }
+  @variant light {
+    body {
+      @apply bg-zinc-50 text-zinc-900;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16,185,129,0.05), transparent),
+        radial-gradient(ellipse 80% 50% at 80% 100%, rgba(139,92,246,0.03), transparent);
+    }
 
-  :root.light * {
-    @apply border-zinc-200;
+    * {
+      @apply border-zinc-200;
+    }
   }
 
   #root {
