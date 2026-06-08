@@ -74,11 +74,11 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
     <div className="py-6 sm:py-8">
       <div className="mb-6 sm:mb-8">
         <div className="flex flex-wrap items-baseline gap-2 sm:gap-3 mb-3">
-          <h1 className="text-[24px] sm:text-[28px] md:text-[32px] font-bold tracking-tight text-white leading-tight">
+          <h1 className="text-[24px] sm:text-[28px] md:text-[32px] font-bold tracking-tight text-white dark:text-white light:text-zinc-900 leading-tight">
             {category.title[language] || category.title.en}
           </h1>
           {total > 0 && (
-            <span className="text-[12px] sm:text-[13px] font-medium px-2.5 py-1 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 shrink-0">
+            <span className="text-[12px] sm:text-[13px] font-medium px-2.5 py-1 rounded-lg bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 text-zinc-400 dark:text-zinc-400 light:text-zinc-500 shrink-0">
               {total.toLocaleString()} {isAr ? 'مورد' : ''}
             </span>
           )}
@@ -97,7 +97,7 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
                 className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-all border ${
                   selectedTags.includes(tag)
                     ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
-                    : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700 hover:text-zinc-300'
+                    : 'bg-zinc-900/50 dark:bg-zinc-900/50 light:bg-zinc-100 border-zinc-800 dark:border-zinc-800 light:border-zinc-200 text-zinc-500 dark:text-zinc-500 light:text-zinc-400 hover:border-zinc-700 dark:hover:border-zinc-700 light:hover:border-emerald-500/30 hover:text-zinc-300 dark:hover:text-zinc-300 light:hover:text-emerald-600'
                 }`}
               >
                 {tag}
@@ -119,14 +119,14 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
       </div>
 
       {isEmpty ? (
-        <div className="relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/20 p-8 sm:p-12 text-center">
-          <div className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-            <Bookmark className="w-5 h-5 text-zinc-600" />
+        <div className="relative overflow-hidden rounded-2xl border border-zinc-800/50 dark:border-zinc-800/50 light:border-zinc-200 bg-zinc-900/20 dark:bg-zinc-900/20 light:bg-zinc-50 p-8 sm:p-12 text-center">
+          <div className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 flex items-center justify-center">
+            <Bookmark className="w-5 h-5 text-zinc-600 dark:text-zinc-600 light:text-zinc-400" />
           </div>
-          <h3 className="text-[15px] font-medium text-zinc-200 mb-1">
+          <h3 className="text-[15px] font-medium text-zinc-200 dark:text-zinc-200 light:text-zinc-900 mb-1">
             {isAr ? 'لا توجد موارد محفوظة' : 'No saved resources yet'}
           </h3>
-          <p className="text-[13px] text-zinc-500 max-w-sm mx-auto">
+          <p className="text-[13px] text-zinc-500 dark:text-zinc-500 light:text-zinc-400 max-w-sm mx-auto">
             {isAr ? 'انقر على أيقونة الإشارة المرجعية لحفظ مواردك المفضلة.' : 'Click the bookmark icon on any resource to save it here.'}
           </p>
         </div>
@@ -145,15 +145,15 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
                 {/* Subcategory header - always visible, tappable */}
                 <button
                   onClick={() => toggleSub(sub.id)}
-                  className="w-full group flex items-center gap-3 p-3 -mx-3 rounded-xl hover:bg-zinc-900/50 transition-colors text-start"
+                  className="w-full group flex items-center gap-3 p-3 -mx-3 rounded-xl hover:bg-zinc-900/50 dark:hover:bg-zinc-900/50 light:hover:bg-zinc-100 transition-colors text-start"
                 >
-                  <div className={`p-1.5 rounded-lg transition-all ${isExpanded ? 'bg-emerald-500/15 text-emerald-400 rotate-180' : 'bg-zinc-800/50 text-zinc-500 group-hover:bg-zinc-800 group-hover:text-zinc-300'}`}>
+                  <div className={`p-1.5 rounded-lg transition-all ${isExpanded ? 'bg-emerald-500/15 text-emerald-400 rotate-180' : 'bg-zinc-800/50 dark:bg-zinc-800/50 light:bg-zinc-200 text-zinc-500 dark:text-zinc-500 light:text-zinc-400 group-hover:bg-zinc-800 dark:group-hover:bg-zinc-800 light:group-hover:bg-zinc-300 group-hover:text-zinc-300 dark:group-hover:text-zinc-300 light:group-hover:text-zinc-600'}`}>
                     <ChevronDown className="w-3.5 h-3.5 transition-transform" />
                   </div>
-                  <h2 className="text-[15px] sm:text-[16px] font-semibold text-zinc-100 flex-1 text-start">
+                  <h2 className="text-[15px] sm:text-[16px] font-semibold text-zinc-100 dark:text-zinc-100 light:text-zinc-900 flex-1 text-start">
                     {sub.title[language] || sub.title.en}
                   </h2>
-                  <span className="text-[11px] sm:text-[12px] px-2 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-500 font-medium shrink-0">
+                  <span className="text-[11px] sm:text-[12px] px-2 py-1 rounded-md bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 text-zinc-500 dark:text-zinc-500 light:text-zinc-400 font-medium shrink-0">
                     {sub.resources.length}
                   </span>
                 </button>
@@ -177,10 +177,10 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
                     {hasMore && (
                       <button
                         onClick={() => loadMore(sub.id, showCount)}
-                        className="mt-4 w-full sm:w-auto mx-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-[13px] font-medium text-zinc-300 hover:text-white transition-all active:scale-[0.98]"
+                        className="mt-4 w-full sm:w-auto mx-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-800 light:hover:bg-zinc-200 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 hover:border-zinc-700 rounded-xl text-[13px] font-medium text-zinc-300 dark:text-zinc-300 light:text-zinc-600 hover:text-white dark:hover:text-white light:hover:text-zinc-900 transition-all active:scale-[0.98]"
                       >
                         {isAr ? 'عرض المزيد' : 'Load more'}
-                        <span className="text-[11px] px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400">
+                        <span className="text-[11px] px-1.5 py-0.5 rounded bg-zinc-800 dark:bg-zinc-800 light:bg-zinc-200 text-zinc-400 dark:text-zinc-400 light:text-zinc-500">
                           +{Math.min(24, sub.resources.length - showCount)}
                         </span>
                       </button>

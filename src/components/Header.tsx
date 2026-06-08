@@ -18,7 +18,7 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
   const isFr = language === 'fr';
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-zinc-800/50 bg-[#050507]/80 backdrop-blur-2xl">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-zinc-800/50 dark:border-zinc-800/50 light:border-zinc-200 bg-[#050507]/80 dark:bg-[#050507]/80 light:bg-white/80 backdrop-blur-2xl transition-colors duration-300">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="flex h-[64px] items-center gap-3">
           {/* Mobile menu */}
@@ -39,7 +39,7 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
               </div>
             </div>
             <div className="hidden sm:block">
-              <div className="font-bold text-[17px] leading-none tracking-tight text-white">AlgDevs</div>
+              <div className="font-bold text-[17px] leading-none tracking-tight text-white dark:text-white light:text-zinc-900">AlgDevs</div>
               <div className="text-[11px] text-zinc-500 -mt-0.5 font-medium">{isAr ? 'دليل المطور' : isFr ? 'Annuaire Dev' : 'Dev Directory'}</div>
             </div>
           </button>
@@ -53,7 +53,7 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 placeholder={isAr ? "ابحث عن أدوات، مواقع، موارد..." : isFr ? "Rechercher outils, sites..." : "Search tools, sites, resources..."}
-                className="w-full h-10 ps-10 pe-4 bg-zinc-900/60 border border-zinc-800 rounded-xl text-[14px] text-white placeholder-zinc-500 outline-none focus:bg-zinc-900 focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/10 transition-all"
+                className="w-full h-10 ps-10 pe-4 bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-100 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 rounded-xl text-[14px] text-white dark:text-white light:text-zinc-900 placeholder-zinc-500 outline-none focus:bg-zinc-900 dark:focus:bg-zinc-900 light:focus:bg-white focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/10 transition-all"
               />
               <div className="absolute end-2 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-1">
                 <kbd className="px-1.5 py-0.5 text-[10px] font-medium bg-zinc-800 border border-zinc-700 rounded text-zinc-400">/</kbd>
@@ -66,7 +66,7 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
             {onSuggestClick && (
               <button
                 onClick={onSuggestClick}
-                className="h-9 px-3 sm:px-3.5 inline-flex items-center gap-1.5 text-[13px] font-medium text-white bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="h-9 px-3 sm:px-3.5 inline-flex items-center gap-1.5 text-[13px] font-medium text-white dark:text-white light:text-zinc-900 bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-800 light:hover:bg-zinc-200 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 hover:border-zinc-700 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">{isAr ? 'اقترح' : isFr ? 'Suggérer' : 'Suggest'}</span>
@@ -75,7 +75,7 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
 
             <button
               onClick={onThemeToggle}
-              className="h-9 w-9 grid place-items-center text-zinc-400 hover:text-white bg-zinc-900/60 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-all"
+              className="h-9 w-9 grid place-items-center text-zinc-400 hover:text-white dark:text-zinc-400 dark:hover:text-white light:text-zinc-500 light:hover:text-zinc-900 bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-800 light:hover:bg-zinc-200 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 rounded-xl transition-all"
               title={theme === 'dark' ? (isAr ? "الوضع المضيء" : "Light Mode") : (isAr ? "الوضع الليلي" : "Dark Mode")}
             >
               {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -86,7 +86,7 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
                 const next = isAr ? 'en' : language === 'en' ? 'fr' : 'ar';
                 onLanguageChange(next as Language);
               }}
-              className="h-9 w-9 grid place-items-center text-zinc-400 hover:text-white bg-zinc-900/60 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-all"
+              className="h-9 w-9 grid place-items-center text-zinc-400 hover:text-white dark:text-zinc-400 dark:hover:text-white light:text-zinc-500 light:hover:text-zinc-900 bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-800 light:hover:bg-zinc-200 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 rounded-xl transition-all"
               title={isAr ? "English" : language === 'en' ? "Français" : "العربية"}
             >
               <span className="text-[11px] font-bold">{language.toUpperCase()}</span>
