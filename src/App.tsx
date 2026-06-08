@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Language, Category } from './types';
 import { categoriesData } from './data';
 import { Sidebar } from './components/Sidebar';
@@ -67,11 +67,43 @@ export default function App() {
     );
   };
 
-  const bookmarkedResources = categoriesData.flatMap(c => 
-    c.subcategories.flatMap(s => 
-      s.resources.filter(r => bookmarks.includes(r.url))
-    )
-  );
+  const bookmarkedResources = useMemo(() =>
+    categoriesData.flatMap(c =>
+      c.subcategories.flatMap(s =>
+        s.resources.filter(r => bookmarks.includes(r.url))
+      )
+    ),
+  [bookmarks]);
+
+  const bookmarkSet = useMemo(() => new Set(bookmarks), [bookmarks]);
+
+  const exportBookmarks = () => {
+    if (bookmarkedResources.length === 0) return;
+
+    const lines: string[] = [
+      '# My AlgDevs Bookmarks',
+      `> Exported from https://algdevs.marwan-naili.me — ${new Date().toLocaleDateString()}`,
+      '',
+    ];
+
+    bookmarkedResources.forEach(resource => {
+      lines.push(`## ${resource.title}`);
+      lines.push(`**URL:** ${resource.url}`);
+      lines.push(resource.description.en);
+      if (resource.tags.length > 0) {
+        lines.push(`**Tags:** ${resource.tags.join(', ')}`);
+      }
+      lines.push('');
+    });
+
+    const blob = new Blob([lines.join('\n')], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'algdevs-bookmarks.md';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
 
   const bookmarksCategory: Category = {
     id: 'bookmarks',
@@ -117,7 +149,7 @@ export default function App() {
           query={searchQuery} 
           categories={categoriesData} 
           language={language} 
-          bookmarks={bookmarks}
+          bookmarks={bookmarkSet}
           toggleBookmark={toggleBookmark}
         />;
     }
@@ -263,12 +295,36 @@ export default function App() {
         </div>
       );
     }
+
+    if (selectedCategoryId === 'bookmarks' && bookmarkedResources.length > 0) {
+      return (
+        <>
+          <div className="pt-6 sm:pt-8 pb-2 flex items-center justify-end">
+            <button
+              onClick={exportBookmarks}
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-[13px] font-medium text-zinc-300 hover:text-white transition-all active:scale-[0.98]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              {language === 'ar' ? 'تصدير' : 'Export'}
+            </button>
+          </div>
+          <CategoryView 
+            category={currentCategory} 
+            language={language} 
+            bookmarks={bookmarkSet}
+            toggleBookmark={toggleBookmark}
+          />
+        </>
+      );
+    }
     
     return (
       <CategoryView 
         category={currentCategory} 
         language={language} 
-        bookmarks={bookmarks}
+        bookmarks={bookmarkSet}
         toggleBookmark={toggleBookmark}
       />
     );

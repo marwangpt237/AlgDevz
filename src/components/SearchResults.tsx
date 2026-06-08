@@ -6,7 +6,7 @@ interface SearchResultsProps {
   query: string;
   categories: Category[];
   language: Language;
-  bookmarks: string[];
+  bookmarks: Set<string>;
   toggleBookmark: (url: string) => void;
 }
 
@@ -76,7 +76,7 @@ export function SearchResults({ query, categories, language, bookmarks, toggleBo
               key={result.resource.url + i}
               resource={result.resource} 
               language={language} 
-              isBookmarked={bookmarks.includes(result.resource.url)}
+              isBookmarked={bookmarks.has(result.resource.url)}
               onToggleBookmark={toggleBookmark}
               breadcrumb={result.subTitle}
               allCategories={categories}

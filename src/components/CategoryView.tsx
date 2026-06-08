@@ -2,12 +2,12 @@ import { Category, Language } from '../types';
 import { Bookmark, ChevronDown, ChevronUp, Filter, X } from 'lucide-react';
 import { categoriesData } from '../data';
 import { ResourceCard } from './ResourceCard';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 
 interface CategoryViewProps {
   category: Category;
   language: Language;
-  bookmarks: string[];
+  bookmarks: Set<string>;
   toggleBookmark: (url: string) => void;
 }
 
@@ -43,7 +43,7 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
   const total = filteredSubcategories.reduce((a, s) => a + s.resources.length, 0);
 
   // Reset when category changes - critical for mobile performance
-  useMemo(() => {
+  useEffect(() => {
     const initial: Record<string, boolean> = {};
     // Only open first subcategory by default, like Hosting & Cloud
     if (category.subcategories[0]) {
@@ -167,7 +167,7 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
                           key={resource.url} 
                           resource={resource} 
                           language={language} 
-                          isBookmarked={bookmarks.includes(resource.url)}
+                          isBookmarked={bookmarks.has(resource.url)}
                           onToggleBookmark={toggleBookmark}
                           allCategories={categoriesData}
                         />

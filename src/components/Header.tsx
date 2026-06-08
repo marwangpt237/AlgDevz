@@ -1,5 +1,6 @@
 import { Search, Globe, Menu, Sparkles, Plus, Moon, Sun } from 'lucide-react';
 import { Language } from '../types';
+import { useRef, useEffect, useState } from 'react';
 
 interface HeaderProps {
   language: Language;
@@ -15,7 +16,36 @@ interface HeaderProps {
 
 export function Header({ language, onLanguageChange, theme, onThemeToggle, searchQuery, onSearchChange, toggleSidebar, onHomeClick, onSuggestClick }: HeaderProps) {
   const isAr = language === 'ar';
-  const isFr = language === 'fr';
+  
+  const searchRef = useRef<HTMLInputElement>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const [localQuery, setLocalQuery] = useState(searchQuery);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        searchRef.current?.focus();
+      }
+      if (e.key === 'Escape') {
+        searchRef.current?.blur();
+      }
+    };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, []);
+
+  const handleSearchChange = (value: string) => {
+    setLocalQuery(value); // immediate — keeps input responsive
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      onSearchChange(value); // debounced — triggers filter
+    }, 200);
+  };
+
+  useEffect(() => {
+    return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
+  }, []);
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 border-b border-zinc-800/50 dark:border-zinc-800/50 light:border-zinc-200 bg-[#050507]/80 dark:bg-[#050507]/80 light:bg-white/80 backdrop-blur-2xl transition-colors duration-300">
@@ -40,7 +70,7 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
             </div>
             <div className="hidden sm:block">
               <div className="font-bold text-[17px] leading-none tracking-tight text-white dark:text-white light:text-zinc-900">AlgDevs</div>
-              <div className="text-[11px] text-zinc-500 -mt-0.5 font-medium">{isAr ? 'دليل المطور' : isFr ? 'Annuaire Dev' : 'Dev Directory'}</div>
+              <div className="text-[11px] text-zinc-500 -mt-0.5 font-medium">{isAr ? 'دليل المطور' : 'Dev Directory'}</div>
             </div>
           </button>
 
@@ -49,10 +79,11 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
             <div className="relative w-full group">
               <Search className="absolute start-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 group-focus-within:text-emerald-400 transition-colors pointer-events-none" />
               <input
+                ref={searchRef}
                 type="text"
-                value={searchQuery}
-                onChange={(e) => onSearchChange(e.target.value)}
-                placeholder={isAr ? "ابحث عن أدوات، مواقع، موارد..." : isFr ? "Rechercher outils, sites..." : "Search tools, sites, resources..."}
+                value={localQuery}
+                onChange={(e) => handleSearchChange(e.target.value)}
+                placeholder={isAr ? "ابحث عن أدوات، مواقع، موارد..." : "Search tools, sites, resources..."}
                 className="w-full h-10 ps-10 pe-4 bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-100 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 rounded-xl text-[14px] text-white dark:text-white light:text-zinc-900 placeholder-zinc-500 outline-none focus:bg-zinc-900 dark:focus:bg-zinc-900 light:focus:bg-white focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/10 transition-all"
               />
               <div className="absolute end-2 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-1">
@@ -69,7 +100,7 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
                 className="h-9 px-3 sm:px-3.5 inline-flex items-center gap-1.5 text-[13px] font-medium text-white dark:text-white light:text-zinc-900 bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-800 light:hover:bg-zinc-200 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 hover:border-zinc-700 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Plus className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">{isAr ? 'اقترح' : isFr ? 'Suggérer' : 'Suggest'}</span>
+                <span className="hidden sm:inline">{isAr ? 'اقترح' : 'Suggest'}</span>
               </button>
             )}
 
@@ -83,13 +114,13 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
 
             <button
               onClick={() => {
-                const next = isAr ? 'en' : language === 'en' ? 'fr' : 'ar';
-                onLanguageChange(next as Language);
+                const next: Language = language === 'ar' ? 'en' : 'ar';
+                onLanguageChange(next);
               }}
               className="h-9 w-9 grid place-items-center text-zinc-400 hover:text-white dark:text-zinc-400 dark:hover:text-white light:text-zinc-500 light:hover:text-zinc-900 bg-zinc-900/60 dark:bg-zinc-900/60 light:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-800 light:hover:bg-zinc-200 border border-zinc-800 dark:border-zinc-800 light:border-zinc-200 rounded-xl transition-all"
-              title={isAr ? "English" : language === 'en' ? "Français" : "العربية"}
+              title={language === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}
             >
-              <span className="text-[11px] font-bold">{language.toUpperCase()}</span>
+              <span className="text-[11px] font-bold">{language === 'ar' ? 'EN' : 'AR'}</span>
             </button>
           </div>
         </div>
@@ -100,9 +131,9 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
             <Search className="absolute start-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 pointer-events-none" />
             <input
               type="text"
-              value={searchQuery}
-              onChange={(e) => onSearchChange(e.target.value)}
-              placeholder={isAr ? "بحث..." : isFr ? "Recherche..." : "Search..."}
+              value={localQuery}
+              onChange={(e) => handleSearchChange(e.target.value)}
+              placeholder={isAr ? "بحث..." : "Search..."}
               className="w-full h-10 ps-9 pe-3 bg-zinc-900/80 border border-zinc-800 rounded-xl text-[14px] text-white placeholder-zinc-500 outline-none focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/10"
             />
           </div>

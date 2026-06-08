@@ -14,51 +14,72 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
   const [description, setDescription] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [hasError, setIsError] = useState(false);
 
   const isAr = language === 'ar';
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleClose = () => {
+    onClose();
+    setIsError(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!url || !title) return;
-    
     setIsSubmitting(true);
-    
-    // Construct email body
-    const subject = encodeURIComponent(`New Resource Suggestion: ${title}`);
-    const body = encodeURIComponent(`Resource Name: ${title}\nURL: ${url}\nDescription: ${description}`);
-    const mailtoLink = `mailto:contact@marwan-naili.me?subject=${subject}&body=${body}`;
-    
-    // Open mail client
-    window.location.href = mailtoLink;
+    setIsError(false);
 
-    // Simulate network request for UI feedback
-    setTimeout(() => {
+    try {
+      const formData = {
+        access_key: 'cb115c84-e2dd-4c7e-a952-8250bf71c3e3',
+        subject: `AlgDevs Suggestion: ${title}`,
+        from_name: 'AlgDevs Directory',
+        message: `New resource suggestion:\n\nTitle: ${title}\nURL: ${url}${description ? `\nDescription: ${description}` : ''}`,
+        botcheck: '',
+      };
+
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setIsSuccess(true);
+        setTimeout(() => {
+          handleClose();
+          setIsSuccess(false);
+          setUrl('');
+          setTitle('');
+          setDescription('');
+        }, 2500);
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch {
+      // Fallback: open mailto if Web3Forms fails
+      setIsError(true);
+      const subject = encodeURIComponent(`AlgDevs Suggestion: ${title}`);
+      const body = encodeURIComponent(`URL: ${url}\nTitle: ${title}\nDescription: ${description}`);
+      window.open(`mailto:contact@marwan-naili.me?subject=${subject}&body=${body}`);
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      
-      // Reset after showing success
-      setTimeout(() => {
-        onClose();
-        setIsSuccess(false);
-        setUrl('');
-        setTitle('');
-        setDescription('');
-      }, 2000);
-    }, 1000);
+    }
   };
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
-        onClick={onClose}
+        onClick={handleClose}
       />
       
       <div className="relative bg-[#111113] border border-zinc-800 rounded-2xl w-full max-w-md p-6 shadow-2xl animate-in zoom-in-95 duration-200">
         <button 
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-4 end-4 p-2 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800/50 rounded-lg transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
@@ -155,6 +176,11 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
                   </>
                 )}
               </button>
+              {hasError && (
+                <p className="text-xs text-rose-400 text-center mt-2">
+                  {isAr ? 'فشل الإرسال. يرجى المحاولة مرة أخرى.' : 'Submission failed. Please try again.'}
+                </p>
+              )}
             </form>
           </>
         )}
