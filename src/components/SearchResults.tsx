@@ -1,6 +1,8 @@
 import { Category, Language, Resource } from '../types';
 import { SearchX } from 'lucide-react';
 import { ResourceCard } from './ResourceCard';
+import { useEffect } from 'react';
+import { trackSearch } from '../lib/analytics';
 
 interface SearchResultsProps {
   query: string;
@@ -16,6 +18,12 @@ export function SearchResults({ query, categories, language, bookmarks, toggleBo
   const searchTerms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
   
   const results: { categoryId: string, subTitle: string, resource: Resource }[] = [];
+
+  useEffect(() => {
+    if (query.trim()) {
+      trackSearch(query, results.length, language);
+    }
+  }, [query, results.length, language]);
   
   if (searchTerms.length > 0) {
     for (const category of categories) {

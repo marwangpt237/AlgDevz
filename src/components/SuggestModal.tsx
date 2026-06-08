@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Language } from '../types';
 import { X, Send, Link, FileText, CheckCircle2 } from 'lucide-react';
+import { trackSuggestion } from '../lib/analytics';
 
 interface SuggestModalProps {
   isOpen: boolean;
@@ -49,6 +50,7 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
       const data = await res.json();
       if (data.success) {
         setIsSuccess(true);
+        trackSuggestion('success');
         setTimeout(() => {
           handleClose();
           setIsSuccess(false);
@@ -62,6 +64,7 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
     } catch {
       // Fallback: open mailto if Web3Forms fails
       setIsError(true);
+      trackSuggestion('error');
       const subject = encodeURIComponent(`AlgDevs Suggestion: ${title}`);
       const body = encodeURIComponent(`URL: ${url}\nTitle: ${title}\nDescription: ${description}`);
       window.open(`mailto:contact@marwan-naili.me?subject=${subject}&body=${body}`);

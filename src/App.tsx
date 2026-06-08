@@ -7,6 +7,7 @@ import { Header } from './components/Header';
 import { CategoryView } from './components/CategoryView';
 import { SearchResults } from './components/SearchResults';
 import { SuggestModal } from './components/SuggestModal';
+import { trackPageView, trackLanguageChange, trackThemeChange, trackCategoryOpen, trackBookmark, trackScrollDepth, trackPWA } from './lib/analytics';
 
 export default function App() {
   const [language, setLanguage] = useState<Language>('ar');
@@ -17,15 +18,27 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#/', '');
+      let currentPath = '/';
+      let pageTitle = 'Home';
+
       if (hash.startsWith('search?q=')) {
         const q = decodeURIComponent(hash.replace('search?q=', ''));
         setSearchQuery(q);
+        currentPath = `/search?q=${q}`;
+        pageTitle = `Search: ${q}`;
       } else if (hash) {
         setSelectedCategoryId(hash);
+        currentPath = `/${hash}`;
+        pageTitle = hash.charAt(0).toUpperCase() + hash.slice(1);
+        if (hash !== 'bookmarks' && hash !== 'about') {
+          trackCategoryOpen(hash);
+        }
       } else {
         setSelectedCategoryId('home');
         setSearchQuery('');
       }
+
+      trackPageView(currentPath, pageTitle);
     };
 
     window.addEventListener('hashchange', handleHashChange);
@@ -64,6 +77,7 @@ export default function App() {
       root.classList.remove('dark');
       root.style.colorScheme = 'light';
     }
+    trackThemeChange(theme);
   }, [theme]);
 
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
@@ -138,6 +152,7 @@ export default function App() {
     a.download = 'algdevs-bookmarks.md';
     a.click();
     URL.revokeObjectURL(url);
+    trackBookmark('exported');
   };
 
   const bookmarksCategory: Category = {
@@ -176,7 +191,43 @@ export default function App() {
   useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
+    trackLanguageChange(language);
   }, [language]);
+
+  // Track scroll depth
+  useEffect(() => {
+    const trackedDepths = new Set<number>();
+    
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      
+      const scrollPercentage = Math.round((window.scrollY / scrollHeight) * 100);
+      const milestones: (25 | 50 | 75 | 100)[] = [25, 50, 75, 100];
+      
+      milestones.forEach(depth => {
+        if (scrollPercentage >= depth && !trackedDepths.has(depth)) {
+          trackScrollDepth(depth);
+          trackedDepths.add(depth);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [selectedCategoryId, searchQuery]);
+
+  // Track PWA events
+  useEffect(() => {
+    const handleInstall = () => trackPWA('installed');
+    window.addEventListener('appinstalled', handleInstall);
+    
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      trackPWA('launched');
+    }
+    
+    return () => window.removeEventListener('appinstalled', handleInstall);
+  }, []);
 
   const renderContent = () => {
     if (isSearching) {

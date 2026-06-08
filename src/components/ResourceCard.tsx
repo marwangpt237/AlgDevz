@@ -2,6 +2,7 @@ import { Language, Resource, Category } from '../types';
 import { ExternalLink, Copy, Check, Bookmark, Sparkles, ChevronDown, Share2, Heart } from 'lucide-react';
 import React, { useState, useMemo } from 'react';
 import { getTagColor, findSimilarResources } from '../utils';
+import { trackResourceOpen, trackBookmark, trackResourceAction } from '../lib/analytics';
 
 interface ResourceCardProps {
   resource: Resource;
@@ -49,6 +50,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
   const copyUrl = async () => {
     await navigator.clipboard.writeText(resource.url);
     setCopied(true);
+    trackResourceAction('copy', resource.title);
     setTimeout(() => setCopied(false), 1800);
   };
 
@@ -60,6 +62,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
           text: resource.description[language] || resource.description.en,
           url: resource.url,
         });
+        trackResourceAction('share', resource.title);
       } catch {}
     } else {
       copyUrl();
@@ -93,6 +96,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
                   href={resource.url} 
                   target="_blank" 
                   rel="noopener noreferrer"
+                  onClick={() => trackResourceOpen(resource.title, breadcrumb || 'General', language)}
                   className="text-[14px] sm:text-[15px] font-semibold leading-snug text-zinc-100 dark:text-zinc-100 light:text-zinc-900 hover:text-emerald-400 transition-colors break-words hyphens-auto flex-1 min-w-0"
                   style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}
                 >
@@ -149,7 +153,10 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
               </button>
 
               <button
-                onClick={() => onToggleBookmark(resource.url)}
+                onClick={() => {
+                  onToggleBookmark(resource.url);
+                  trackBookmark(isBookmarked ? 'removed' : 'added', resource.title, breadcrumb || 'General');
+                }}
                 className={`w-9 h-9 sm:w-8 sm:h-8 grid place-items-center rounded-xl sm:rounded-lg border transition-all active:scale-95 touch-manipulation ${
                   isBookmarked 
                     ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400' 
