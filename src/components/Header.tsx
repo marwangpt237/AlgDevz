@@ -1,9 +1,11 @@
-import { Search, Globe, Menu, Sparkles, Plus } from 'lucide-react';
+import { Search, Globe, Menu, Sparkles, Plus, Moon, Sun } from 'lucide-react';
 import { Language } from '../types';
 
 interface HeaderProps {
   language: Language;
   onLanguageChange: (lang: Language) => void;
+  theme: 'dark' | 'light';
+  onThemeToggle: () => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
   toggleSidebar: () => void;
@@ -11,7 +13,7 @@ interface HeaderProps {
   onSuggestClick?: () => void;
 }
 
-export function Header({ language, onLanguageChange, searchQuery, onSearchChange, toggleSidebar, onHomeClick, onSuggestClick }: HeaderProps) {
+export function Header({ language, onLanguageChange, theme, onThemeToggle, searchQuery, onSearchChange, toggleSidebar, onHomeClick, onSuggestClick }: HeaderProps) {
   const isAr = language === 'ar';
   const isFr = language === 'fr';
 
@@ -70,6 +72,14 @@ export function Header({ language, onLanguageChange, searchQuery, onSearchChange
                 <span className="hidden sm:inline">{isAr ? 'اقترح' : isFr ? 'Suggérer' : 'Suggest'}</span>
               </button>
             )}
+
+            <button
+              onClick={onThemeToggle}
+              className="h-9 w-9 grid place-items-center text-zinc-400 hover:text-white bg-zinc-900/60 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-all"
+              title={theme === 'dark' ? (isAr ? "الوضع المضيء" : "Light Mode") : (isAr ? "الوضع الليلي" : "Dark Mode")}
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
 
             <button
               onClick={() => {

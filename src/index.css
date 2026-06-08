@@ -19,7 +19,7 @@
   }
   
   body {
-    @apply bg-[#050507] text-zinc-200 antialiased;
+    @apply bg-[#050507] text-zinc-200 antialiased transition-colors duration-300;
     background-image: 
       radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16,185,129,0.15), transparent),
       radial-gradient(ellipse 80% 50% at 80% 100%, rgba(139,92,246,0.1), transparent);
@@ -29,6 +29,17 @@
     position: relative;
     touch-action: manipulation;
     -webkit-text-size-adjust: 100%;
+  }
+
+  .light body {
+    @apply bg-zinc-50 text-zinc-900;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16,185,129,0.05), transparent),
+      radial-gradient(ellipse 80% 50% at 80% 100%, rgba(139,92,246,0.03), transparent);
+  }
+
+  .light * {
+    @apply border-zinc-200;
   }
 
   #root {

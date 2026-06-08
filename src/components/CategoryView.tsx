@@ -1,5 +1,5 @@
 import { Category, Language } from '../types';
-import { Bookmark, ChevronDown, ChevronUp } from 'lucide-react';
+import { Bookmark, ChevronDown, ChevronUp, Filter, X } from 'lucide-react';
 import { categoriesData } from '../data';
 import { ResourceCard } from './ResourceCard';
 import { useState, useMemo } from 'react';
@@ -12,13 +12,35 @@ interface CategoryViewProps {
 }
 
 export function CategoryView({ category, language, bookmarks, toggleBookmark }: CategoryViewProps) {
-  const isEmpty = category.subcategories.every(sub => sub.resources.length === 0);
-  const total = category.subcategories.reduce((a, s) => a + s.resources.length, 0);
   const isAr = language === 'ar';
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // Track which subcategories are expanded - reset when category changes
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [visibleCount, setVisibleCount] = useState<Record<string, number>>({});
+
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    category.subcategories.forEach(sub => {
+      sub.resources.forEach(res => {
+        res.tags.forEach(tag => tags.add(tag));
+      });
+    });
+    return Array.from(tags).sort();
+  }, [category]);
+
+  const filteredSubcategories = useMemo(() => {
+    if (selectedTags.length === 0) return category.subcategories;
+    return category.subcategories.map(sub => ({
+      ...sub,
+      resources: sub.resources.filter(res => 
+        selectedTags.every(tag => res.tags.includes(tag))
+      )
+    })).filter(sub => sub.resources.length > 0);
+  }, [category, selectedTags]);
+
+  const isEmpty = filteredSubcategories.length === 0;
+  const total = filteredSubcategories.reduce((a, s) => a + s.resources.length, 0);
 
   // Reset when category changes - critical for mobile performance
   useMemo(() => {
@@ -29,9 +51,16 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
     }
     setExpanded(initial);
     setVisibleCount({});
+    setSelectedTags([]);
     // Scroll to top on category change
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [category.id]);
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    );
+  };
 
   const toggleSub = (id: string) => {
     setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
@@ -54,14 +83,39 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
             </span>
           )}
         </div>
-        <div className="h-px w-full bg-gradient-to-r from-emerald-500/30 via-zinc-800 to-transparent" />
-        {total > 100 && (
-          <p className="mt-3 text-[12px] text-zinc-500">
-            {isAr 
-              ? '💡 نصيحة: الفئات الكبيرة تُحمّل تدريجياً لتحسين الأداء على الهاتف'
-              : '💡 Tip: Large categories load progressively for better mobile performance'}
-          </p>
+        
+        {allTags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-4 mb-6">
+            <div className="flex items-center gap-2 me-2 text-zinc-500 text-[12px] font-medium">
+              <Filter className="w-3.5 h-3.5" />
+              {isAr ? 'تصفية:' : 'Filter:'}
+            </div>
+            {allTags.map(tag => (
+              <button
+                key={tag}
+                onClick={() => toggleTag(tag)}
+                className={`px-2.5 py-1 rounded-lg text-[11px] font-medium transition-all border ${
+                  selectedTags.includes(tag)
+                    ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+                    : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700 hover:text-zinc-300'
+                }`}
+              >
+                {tag}
+              </button>
+            ))}
+            {selectedTags.length > 0 && (
+              <button
+                onClick={() => setSelectedTags([])}
+                className="px-2.5 py-1 rounded-lg text-[11px] font-medium text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
+              >
+                <X className="w-3 h-3" />
+                {isAr ? 'مسح الكل' : 'Clear all'}
+              </button>
+            )}
+          </div>
         )}
+
+        <div className="h-px w-full bg-gradient-to-r from-emerald-500/30 via-zinc-800 to-transparent" />
       </div>
 
       {isEmpty ? (
@@ -78,7 +132,7 @@ export function CategoryView({ category, language, bookmarks, toggleBookmark }: 
         </div>
       ) : (
         <div className="space-y-4 sm:space-y-6">
-          {category.subcategories.map((sub) => {
+          {filteredSubcategories.map((sub) => {
             if (sub.resources.length === 0) return null;
             
             const isExpanded = expanded[sub.id] ?? false;

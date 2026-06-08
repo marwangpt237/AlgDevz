@@ -24,7 +24,16 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
     if (!url || !title) return;
     
     setIsSubmitting(true);
-    // Simulate network request
+    
+    // Construct email body
+    const subject = encodeURIComponent(`New Resource Suggestion: ${title}`);
+    const body = encodeURIComponent(`Resource Name: ${title}\nURL: ${url}\nDescription: ${description}`);
+    const mailtoLink = `mailto:contact@marwan-naili.me?subject=${subject}&body=${body}`;
+    
+    // Open mail client
+    window.location.href = mailtoLink;
+
+    // Simulate network request for UI feedback
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);

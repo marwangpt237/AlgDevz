@@ -13,6 +13,23 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSuggestModalOpen, setIsSuggestModalOpen] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('algdevs-theme');
+      if (saved) return saved as 'dark' | 'light';
+      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    return 'dark';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('algdevs-theme', theme);
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
 
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
     try {
@@ -253,10 +270,12 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#050507] text-zinc-100 selection:bg-emerald-500/20 selection:text-emerald-100 overflow-x-hidden ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+    <div className={`min-h-screen bg-[#050507] dark:bg-[#050507] light:bg-zinc-50 text-zinc-100 dark:text-zinc-100 light:text-zinc-900 selection:bg-emerald-500/20 selection:text-emerald-100 overflow-x-hidden ${language === 'ar' ? 'font-arabic' : 'font-sans'} transition-colors duration-300`}>
       <Header 
         language={language}
         onLanguageChange={setLanguage}
+        theme={theme}
+        onThemeToggle={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}

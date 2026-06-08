@@ -23,7 +23,8 @@ export const categoriesData: Category[] = [
               "ar": "منصة لأطر عمل الواجهات الأمامية والمواقع الثابتة. مجاني بدون بطاقة."
             },
             "url": "https://vercel.com/",
-            "tags": ["Hosting", "Cloud", "Free", "NoCC"]
+            "tags": ["Hosting", "Cloud", "Free", "NoCC"],
+            "updatedAt": "2026-06-05"
           },
           {
             "title": "Netlify",
@@ -316,7 +317,8 @@ export const categoriesData: Category[] = [
             "url": "https://chat.deepseek.com/",
             "tags": [
               "General"
-            ]
+            ],
+            "updatedAt": "2026-06-07"
           },
           {
             "title": "Google AI Studio",
