@@ -6,7 +6,7 @@ import { trackSuggestion } from '../lib/analytics';
 // === DOPPLER + CLOUDFLARE WORKER CONFIG ===
 // Replace with your actual values
 const WORKER_URL = 'https://alg-devs.marwannaili-23-07.workers.dev/';
-const SUGGEST_SECRET = 'REPLACE_WITH_YOUR_DOPPLER_SUGGEST_SECRET'; // Must exactly match the SUGGEST_SECRET value in your Doppler project
+const SUGGEST_SECRET = 'algdevs-2026-super-secret-xyz789'; // Must exactly match the SUGGEST_SECRET value in your Doppler project
 
 interface SuggestModalProps {
   isOpen: boolean;
