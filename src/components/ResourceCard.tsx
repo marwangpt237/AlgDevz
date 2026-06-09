@@ -107,12 +107,84 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
                     {isAr ? 'جديد' : 'New'}
                   </span>
                 )}
+                {resource.difficulty && (
+                  <span className={`inline-flex items-center px-1.5 py-0.5 rounded-md border text-[9px] font-bold uppercase tracking-wider shrink-0 ${
+                    resource.difficulty === 'beginner' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' :
+                    resource.difficulty === 'intermediate' ? 'bg-amber-500/10 border-amber-500/20 text-amber-400' :
+                    'bg-rose-500/10 border-rose-500/20 text-rose-400'
+                  }`}>
+                    {resource.difficulty}
+                  </span>
+                )}
                 <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-zinc-600 group-hover:text-zinc-400 mt-0.5 shrink-0 transition-colors" />
               </h3>
               
               <p className="text-[12px] sm:text-[13px] leading-[1.5] text-zinc-400 dark:text-zinc-400 light:text-zinc-600 mb-2.5 break-words" style={{ overflowWrap: 'anywhere', wordBreak: 'break-word', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                 {resource.description[language] || resource.description.en}
               </p>
+
+              {resource.metadata && (
+                <div className="mb-3 space-y-2 text-[11px] sm:text-[12px] border-t border-zinc-800/50 dark:border-zinc-800/50 light:border-zinc-100 pt-3">
+                  {resource.metadata.availableForAlgerians && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-zinc-500 font-medium shrink-0">{isAr ? 'التوفر في الجزائر:' : 'Availability in Algeria:'}</span>
+                      <span className={`px-1.5 py-0.5 rounded-md font-bold ${
+                        resource.metadata.availableForAlgerians === 'Fully Available' ? 'bg-emerald-500/10 text-emerald-400' :
+                        resource.metadata.availableForAlgerians === 'Partially Available' ? 'bg-amber-500/10 text-amber-400' :
+                        'bg-rose-500/10 text-rose-400'
+                      }`}>
+                        {resource.metadata.availableForAlgerians}
+                      </span>
+                    </div>
+                  )}
+                  {resource.metadata.pricing && (
+                    <div className="flex items-start gap-2">
+                      <span className="text-zinc-500 font-medium shrink-0">{isAr ? 'التسعير:' : 'Pricing:'}</span>
+                      <span className="text-zinc-300 dark:text-zinc-300 light:text-zinc-700">{resource.metadata.pricing}</span>
+                    </div>
+                  )}
+                  {resource.metadata.requirements && (
+                    <div className="flex items-start gap-2">
+                      <span className="text-zinc-500 font-medium shrink-0">{isAr ? 'المتطلبات:' : 'Requirements:'}</span>
+                      <span className="text-zinc-300 dark:text-zinc-300 light:text-zinc-700">{resource.metadata.requirements}</span>
+                    </div>
+                  )}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                    {resource.metadata.advantages && (
+                      <div className="space-y-1">
+                        <div className="text-emerald-500/80 font-bold uppercase tracking-wider text-[9px]">{isAr ? 'المميزات' : 'Advantages'}</div>
+                        <div className="text-zinc-400 leading-relaxed">{resource.metadata.advantages}</div>
+                      </div>
+                    )}
+                    {resource.metadata.limitations && (
+                      <div className="space-y-1">
+                        <div className="text-rose-500/80 font-bold uppercase tracking-wider text-[9px]">{isAr ? 'القيود' : 'Limitations'}</div>
+                        <div className="text-zinc-400 leading-relaxed">{resource.metadata.limitations}</div>
+                      </div>
+                    )}
+                  </div>
+                  {resource.metadata.recommendedFor && (
+                    <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                      <span className="text-zinc-500 font-medium shrink-0">{isAr ? 'ينصح به لـ:' : 'Recommended For:'}</span>
+                      {resource.metadata.recommendedFor.map(persona => (
+                        <span key={persona} className="px-1.5 py-0.5 rounded-md bg-zinc-800 text-zinc-400 border border-zinc-700">
+                          {persona}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {resource.metadata.useCases && (
+                    <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                      <span className="text-zinc-500 font-medium shrink-0">{isAr ? 'حالات الاستخدام:' : 'Use Cases:'}</span>
+                      {resource.metadata.useCases.map(useCase => (
+                        <span key={useCase} className="px-1.5 py-0.5 rounded-md bg-emerald-500/5 text-emerald-500/80 border border-emerald-500/10">
+                          {useCase}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
               
               <div className="flex flex-wrap items-center gap-1.5">
                 {resource.tags.slice(0, 4).map(tag => (

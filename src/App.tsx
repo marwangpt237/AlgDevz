@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Language, Category } from './types';
-import { categoriesData } from './data';
+import { categoriesData } from './data/index';
 import { updates } from './data/changelog';
 import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';

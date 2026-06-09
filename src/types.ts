@@ -11,6 +11,17 @@ export interface Resource {
   tags: string[];
   updatedAt?: string;
   difficulty?: 'beginner' | 'intermediate' | 'advanced';
+  metadata?: {
+    pricing?: string;
+    availableForAlgerians?: 'Fully Available' | 'Partially Available' | 'Not Available';
+    requirements?: string;
+    advantages?: string;
+    limitations?: string;
+    status?: string;
+    lastVerifiedDate?: string;
+    recommendedFor?: string[];
+    useCases?: string[];
+  };
 }
 
 export interface SubCategory {
