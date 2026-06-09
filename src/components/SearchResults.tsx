@@ -1,8 +1,9 @@
 import { Category, Language, Resource } from '../types';
-import { SearchX } from 'lucide-react';
+import { SearchX, Loader2 } from 'lucide-react';
 import { ResourceCard } from './ResourceCard';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { trackSearch } from '../lib/analytics';
+import { searchAllCategories, SearchResult } from '../lib/search';
 
 interface SearchResultsProps {
   query: string;
@@ -12,45 +13,36 @@ interface SearchResultsProps {
   toggleBookmark: (url: string) => void;
 }
 
-export function SearchResults({ query, categories, language, bookmarks, toggleBookmark }: SearchResultsProps) {
+export function SearchResults({ query, language, bookmarks, toggleBookmark }: SearchResultsProps) {
   const isAr = language === 'ar';
-  
-  const searchTerms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  
-  const results: { categoryId: string, subTitle: string, resource: Resource }[] = [];
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
-    if (query.trim()) {
-      trackSearch(query, results.length, language);
-    }
-  }, [query, results.length, language]);
-  
-  if (searchTerms.length > 0) {
-    for (const category of categories) {
-      if (!category.subcategories) continue;
-      for (const sub of category.subcategories) {
-        for (const resource of sub.resources) {
-          const match = searchTerms.every(term => {
-            return resource.title.toLowerCase().includes(term) ||
-                   resource.description.en.toLowerCase().includes(term) ||
-                   resource.description.ar.toLowerCase().includes(term) ||
-                   resource.tags.some(tag => tag.toLowerCase().includes(term));
-          });
-
-          if (match) {
-            results.push({
-              categoryId: category.id,
-              subTitle: sub.title[language] || sub.title.en,
-              resource
-            });
-            if (results.length >= 50) break;
-          }
-        }
-        if (results.length >= 50) break;
+    let isMounted = true;
+    
+    async function performSearch() {
+      if (!query.trim()) {
+        setResults([]);
+        return;
       }
-      if (results.length >= 50) break;
+
+      setIsSearching(true);
+      const searchResults = await searchAllCategories(query, language);
+      
+      if (isMounted) {
+        setResults(searchResults);
+        setIsSearching(false);
+        trackSearch(query, searchResults.length, language);
+      }
     }
-  }
+
+    performSearch();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [query, language]);
 
   return (
     <div className="py-6 sm:py-8">
@@ -59,11 +51,20 @@ export function SearchResults({ query, categories, language, bookmarks, toggleBo
           {isAr ? 'نتائج البحث' : 'Search results'}
         </h1>
         <p className="mt-1 text-[14px] text-zinc-500">
-          {results.length} {isAr ? 'نتيجة لـ' : 'results for'} <span className="text-zinc-300">"{query}"</span>
+          {isSearching ? (
+            <span className="flex items-center gap-2">
+              <Loader2 className="w-3 h-3 animate-spin" />
+              {isAr ? 'جاري البحث...' : 'Searching...'}
+            </span>
+          ) : (
+            <>
+              {results.length} {isAr ? 'نتيجة لـ' : 'results for'} <span className="text-zinc-300">"{query}"</span>
+            </>
+          )}
         </p>
       </div>
 
-      {results.length === 0 ? (
+      {!isSearching && results.length === 0 ? (
         <div className="relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/20 p-12 text-center">
           <div className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center">
             <SearchX className="w-5 h-5 text-zinc-600" />

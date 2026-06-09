@@ -2,561 +2,417 @@ import { SubCategory } from '../types';
 
 export const subcategories: SubCategory[] = [
   {
-    id: 'legal_registration',
+    id: 'local_banking',
     title: {
-      en: 'Legal & Registration',
-      ar: 'التسجيل القانوني',
+      en: 'Local Banking',
+      ar: 'الخدمات البنكية المحلية',
     },
     resources: [
       {
-        title: 'Auto-Entrepreneur (ANAE)',
+        title: 'CCP Business Cashless (Algerie Poste)',
+        url: 'https://www.poste.dz/',
         description: {
-          en: 'Simplified legal status for individual freelancers and entrepreneurs, offering tax advantages and simplified social security.',
-          ar: 'وضع قانوني مبسط للمقاولين الذاتيين في الجزائر.',
+          en: 'A fully digital commercial checking account by Algerie Poste for merchants and professionals to facilitate cashless transactions. It enables secure and fast fund management and payment reception through electronic channels.',
+          ar: 'حساب جاري تجاري رقمي بالكامل مقدم من بريد الجزائر، مخصص للتجار والمهنيين لتسهيل المعاملات غير النقدية. يتيح إدارة الأموال واستقبال المدفوعات بشكل آمن وسريع عبر القنوات الإلكترونية.'
         },
-        url: 'https://anae.dz/',
-        tags: ['Freelance', 'Legal', 'Tax', 'Algeria'],
+        tags: ['banking', 'local', 'free', 'no-cc'],
         difficulty: 'beginner',
         metadata: {
-          pricing: 'Free registration; 0.5% IFU tax on turnover',
           availableForAlgerians: 'Fully Available',
-          requirements: 'National ID, eligible professional activity, resident in Algeria.',
-          advantages: 'Simplified accounting, 0.5% tax rate, social security (CASNOS), right to export services',
-          limitations: 'Turnover capped at 5 million DZD per year',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'Developers', 'Students', 'Startup Founders'],
-          useCases: ['Create a legal business', 'Receive international payments', 'Export services internationally'],
-        },
+          recommendedFor: ['Freelancer', 'Developer', 'Digital Entrepreneur'],
+          useCases: ['Opening a local bank account', 'DZD transfers', 'Local payments'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://www.linkedin.com/posts/algeriatech_for-the-first-time-in-its-24-year-history-activity-7450100390370480128-WNtv'],
+          _lastVerified: '2026-06-09'
+        }
       },
       {
-        title: 'EURL Creation',
+        title: 'BaridiMob Merchant',
+        url: 'https://www.poste.dz/',
         description: {
-          en: 'Single-member limited liability company for individual entrepreneurs.',
-          ar: 'شركة ذات مسؤولية محدودة لشخص واحد.',
+          en: 'A mobile payment service by Algerie Poste that allows merchants to receive instant payments via QR codes. It is an ideal solution for small daily payments due to its large user base.',
+          ar: 'خدمة دفع عبر الهاتف المحمول تابعة لبريد الجزائر تتيح للتجار استقبال المدفوعات فورياً عبر رمز الاستجابة السريعة (QR Code). تعتبر الحل الأمثل للمدفوعات اليومية الصغيرة بفضل قاعدتها الجماهيرية الواسعة.'
         },
-        url: 'https://sidjilcom.cnrc.dz/',
-        tags: ['Company', 'Legal', 'EURL', 'Algeria'],
-        difficulty: 'intermediate',
-        metadata: {
-          pricing: 'Approximately 100,000 DZD setup costs',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'Statutes, notary deed, minimum capital, commercial lease',
-          advantages: 'Limited liability, professional image, scalable to SARL',
-          limitations: 'Higher administrative costs and taxes (IBS, TAP) compared to auto-entrepreneur',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Startup Founders', 'Small Businesses', 'Agencies'],
-          useCases: ['Create a legal business', 'Manage large contracts', 'Protect personal assets'],
-        },
-      },
-      {
-        title: 'SARL Creation',
-        description: {
-          en: 'Limited liability company for two or more partners.',
-          ar: 'شركة ذات مسؤولية محدودة لشريكين أو أكثر.',
-        },
-        url: 'https://sidjilcom.cnrc.dz/',
-        tags: ['Company', 'Legal', 'SARL', 'Algeria'],
-        difficulty: 'intermediate',
-        metadata: {
-          pricing: 'Approximately 120,000 DZD+ setup costs',
-          availableForAlgerians: 'Fully Available',
-          requirements: '2+ partners, statutes, notary deed, minimum capital, commercial lease',
-          advantages: 'Ideal for partnerships, limited liability, credible for large contracts',
-          limitations: 'Complex administrative management, mandatory audit above certain thresholds',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Startup Founders', 'Agencies', 'Small Businesses'],
-          useCases: ['Create a legal business', 'Raise startup funding', 'Manage partnerships'],
-        },
-      },
-      {
-        title: 'Startup Label',
-        description: {
-          en: 'Official recognition for innovative startups providing tax exemptions and market priority.',
-          ar: 'اعتراف رسمي للشركات الناشئة المبتكرة يوفر إعفاءات ضريبية.',
-        },
-        url: 'https://startup.dz/',
-        tags: ['Startup', 'Innovation', 'Tax-break', 'Algeria'],
-        difficulty: 'intermediate',
-        metadata: {
-          pricing: 'Free',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'Innovation, scalability, business model, established < 6 years',
-          advantages: 'Exemption from TAP and IBS taxes, access to public funding (ASF)',
-          limitations: 'Strict evaluation criteria by the national committee',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Startup Founders', 'SaaS Founders', 'Developers'],
-          useCases: ['Raise startup funding', 'Access tax exemptions'],
-        },
-      },
-      {
-        title: 'AAPI Portal',
-        description: {
-          en: 'Official investment promotion agency portal for streamlined procedures and land access.',
-          ar: 'بوابة الوكالة الوطنية لترقية الاستثمار.',
-        },
-        url: 'https://aapi.dz/',
-        tags: ['Investment', 'Legal', 'Government', 'Algeria'],
-        difficulty: 'advanced',
-        metadata: {
-          pricing: 'Free',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'Investment project details',
-          advantages: 'One-stop shop for investors, land allocation assistance',
-          limitations: 'Focused on industrial and larger scale investments',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Startup Founders', 'Small Businesses'],
-          useCases: ['Create a legal business', 'Access industrial land'],
-        },
-      },
-      {
-        title: 'JORADP',
-        description: {
-          en: 'Official Gazette of the Algerian Republic, the primary source for all laws and regulations.',
-          ar: 'الجريدة الرسمية للجمهورية الجزائرية.',
-        },
-        url: 'https://www.joradp.dz/',
-        tags: ['Legal', 'Laws', 'Official', 'Algeria'],
-        difficulty: 'advanced',
-        metadata: {
-          pricing: 'Free',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'None',
-          advantages: 'Most accurate source for legal compliance',
-          limitations: 'Difficult to navigate, PDF format only',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Startup Founders', 'Agencies', 'Legal Professionals'],
-          useCases: ['Create a legal business', 'Manage accounting'],
-        },
-      },
-    ],
-  },
-  {
-    id: 'tax_accounting',
-    title: {
-      en: 'Tax & Accounting',
-      ar: 'الضرائب والمحاسبة',
-    },
-    resources: [
-      {
-        title: 'DGI Portal',
-        description: {
-          en: 'Official website of the General Directorate of Taxes for tax guides and forms.',
-          ar: 'الموقع الرسمي للمديرية العامة للضرائب.',
-        },
-        url: 'https://www.mfdgi.gov.dz/',
-        tags: ['Tax', 'Government', 'Finance', 'Algeria'],
-        difficulty: 'intermediate',
-        metadata: {
-          pricing: 'Free',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'None',
-          advantages: 'Official tax forms, latest tax circulars',
-          limitations: 'User interface can be challenging',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'Startup Founders', 'Small Businesses'],
-          useCases: ['Manage accounting', 'Access tax forms'],
-        },
-      },
-      {
-        title: 'CASNOS Damancom',
-        description: {
-          en: 'Online platform for non-salaried workers to manage and pay social security contributions.',
-          ar: 'منصة إلكترونية لغير الأجراء لإدارة الضمان الاجتماعي.',
-        },
-        url: 'https://damancom.casnos.dz/',
-        tags: ['Social Security', 'Accounting', 'Online Service', 'Algeria'],
+        tags: ['banking', 'local', 'free', 'no-cc'],
         difficulty: 'beginner',
         metadata: {
-          pricing: 'Free (Service)',
           availableForAlgerians: 'Fully Available',
-          requirements: 'CASNOS affiliation number',
-          advantages: 'Pay contributions online, download certificates',
-          limitations: 'Requires initial in-person registration',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'Startup Founders', 'Small Businesses'],
-          useCases: ['Manage social security', 'Pay contributions online'],
-        },
-      },
-      {
-        title: 'Cegape',
-        description: {
-          en: 'Specialized software for payroll and HR management, widely used by large institutions.',
-          ar: 'برنامج متخصص في إدارة الأجور والموارد البشرية.',
-        },
-        url: 'https://cegape.fr',
-        tags: ['Accounting', 'Payroll', 'HR', 'France'],
-        difficulty: 'advanced',
-        metadata: {
-          pricing: 'Enterprise pricing',
-          availableForAlgerians: 'Partially Available',
-          requirements: 'Enterprise contract',
-          advantages: 'Robust payroll management, highly professional',
-          limitations: 'French-based, primarily for large organizations',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Agencies', 'Small Businesses', 'HR Managers'],
-          useCases: ['Manage accounting', 'Scale business operations'],
-        },
-      },
-      {
-        title: 'Odoo (Algeria)',
-        description: {
-          en: 'Comprehensive ERP with modules for accounting, sales, and CRM, with local support.',
-          ar: 'نظام ERP شامل مع وحدات للمحاسبة والمبيعات.',
-        },
-        url: 'https://www.odoo.com/',
-        tags: ['Accounting', 'ERP', 'Business Management', 'Global'],
-        difficulty: 'advanced',
-        metadata: {
-          pricing: 'Free Community version, Paid Enterprise',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'Email signup, technical setup',
-          advantages: 'Professional, scalable, widely used in Algeria',
-          limitations: 'Localization needs manual setup',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Agencies', 'Small Businesses', 'Startup Founders'],
-          useCases: ['Manage accounting', 'Scale business operations'],
-        },
-      },
-    ],
+          recommendedFor: ['Freelancer', 'Developer', 'Digital Entrepreneur'],
+          useCases: ['Opening a local bank account', 'DZD transfers', 'Local payments'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://www.linkedin.com/posts/algeriatech_algerias-biggest-payment-base-just-opened-activity-7459331561847590913-xymN'],
+          _lastVerified: '2026-06-09'
+        }
+      }
+    ]
   },
   {
-    id: 'payments_banking',
+    id: 'payment_processing',
     title: {
-      en: 'Payments & Banking',
-      ar: 'المدفوعات والخدمات البنكية',
+      en: 'Payment Processing',
+      ar: 'معالجة المدفوعات',
     },
     resources: [
       {
-        title: 'Chargily Pay',
+        title: 'SATIM / GIE Monétique',
+        url: 'https://www.satim.dz/',
         description: {
-          en: 'The leading Algerian payment gateway for CIB and Edahabia cards.',
-          ar: 'بوابة الدفع الجزائرية الرائدة لبطاقات CIB والذهبية.',
+          en: 'The interbank electronic payment network in Algeria, managing CIB and Edahabia card operations. It provides the necessary infrastructure for accepting online payments on local commercial websites.',
+          ar: 'الشركة المسؤولة عن شبكة الدفع الإلكتروني بين البنوك في الجزائر، تدير عمليات البطاقات البنكية (CIB) والذهبية. توفر البنية التحتية اللازمة لقبول الدفع عبر الإنترنت في المواقع التجارية المحلية.'
         },
-        url: 'https://chargily.com/',
-        tags: ['Payments', 'Algeria', 'Gateway', 'CIB'],
+        tags: ['payments', 'international', 'freemium', 'cc-unknown'],
         difficulty: 'intermediate',
         metadata: {
-          pricing: 'Transaction fees (2.5% - 3.5%)',
           availableForAlgerians: 'Fully Available',
-          requirements: 'Commercial Register (RC) or ANAE card, bank account',
-          advantages: 'Local card support, excellent developer documentation',
-          limitations: 'Does not support international cards yet',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Developers', 'SaaS Founders', 'E-commerce Sellers'],
-          useCases: ['Accept local payments', 'Build an online store'],
+          recommendedFor: ['Developer', 'SaaS Builder'],
+          useCases: ['Processing international card payments', 'Merchant accounts'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://www.satim.dz/'],
+          _lastVerified: '2026-06-09'
+        }
+      },
+      {
+        title: 'Paddle',
+        url: 'https://www.paddle.com/',
+        description: {
+          en: 'A specialized infrastructure platform for selling SaaS and digital products globally with full tax and compliance management. It supports Algerian developers in selling to international markets and receiving hard currency.',
+          ar: 'منصة بنية تحتية مخصصة لبيع برمجيات SaaS والمنتجات الرقمية عالمياً مع إدارة كاملة للضرائب والامتثال. تدعم المطورين في الجزائر لبيع منتجاتهم في الأسواق الدولية واستلام العوائد بالعملة الصعبة.'
         },
+        tags: ['saas', 'international', 'freemium', 'cc-unknown'],
+        difficulty: 'advanced',
+        metadata: {
+          availableForAlgerians: 'Fully Available',
+          recommendedFor: ['SaaS Builder', 'Developer'],
+          useCases: ['Selling SaaS globally', 'Subscription billing', 'MRR collection'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://developer.paddle.com/concepts/sell/supported-countries-locales/'],
+          _lastVerified: '2026-06-09'
+        }
       },
       {
         title: 'Lemon Squeezy',
+        url: 'https://www.lemonsqueezy.com/',
         description: {
-          en: 'Merchant of Record for global SaaS and digital sales, handling global tax.',
-          ar: 'تاجر السجل للمبيعات العالمية لـ SaaS والمنتجات الرقمية.',
+          en: 'An all-in-one platform for selling digital products and subscriptions, featuring ease of use and automatic tax management. It supports direct payouts to Algerian bank accounts.',
+          ar: 'منصة متكاملة لبيع المنتجات الرقمية والاشتراكات، تتميز بسهولة الاستخدام وإدارة الضرائب التلقائية. تدعم الدفع المباشر إلى الحسابات البنكية في الجزائر، مما يسهل عمل المبدعين المستقلين.'
         },
-        url: 'https://lemonsqueezy.com/',
-        tags: ['Payments', 'SaaS', 'Global', 'MoR'],
+        tags: ['digital-products', 'international', 'freemium', 'no-cc'],
         difficulty: 'beginner',
         metadata: {
-          pricing: '5% + 50c per transaction',
           availableForAlgerians: 'Fully Available',
-          requirements: 'Verified ID, product description',
-          advantages: 'Handles global tax, supports payouts to Algeria via bank transfer',
-          limitations: 'High transaction fees for small products',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['SaaS Founders', 'Developers', 'Freelancers'],
-          useCases: ['Sell SaaS products', 'Receive international payments'],
-        },
-      },
-      {
-        title: 'RedotPay',
-        description: {
-          en: 'Virtual and physical Visa cards fundable via crypto, ideal for online spending.',
-          ar: 'بطاقة فيزا افتراضية ومادية قابلة للتمويل عبر العملات المشفرة.',
-        },
-        url: 'https://redotpay.com/',
-        tags: ['Virtual Card', 'Visa', 'Crypto', 'Payments'],
-        difficulty: 'beginner',
-        metadata: {
-          pricing: '$10 for virtual card',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'ID verification (KYC)',
-          advantages: 'Easy setup, widely accepted for online services',
-          limitations: 'Requires crypto (USDT) for funding',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'Developers', 'Students'],
-          useCases: ['Pay for international services', 'Manage online subscriptions'],
-        },
-      },
-      {
-        title: 'Banxy',
-        description: {
-          en: 'The first mobile bank in Algeria by Natixis, offering easy account management.',
-          ar: 'أول بنك متنقل في الجزائر من ناتيكسيس.',
-        },
-        url: 'https://banxybank.com/',
-        tags: ['Banking', 'Local', 'Mobile', 'Algeria'],
-        difficulty: 'beginner',
-        metadata: {
-          pricing: 'Varies by account type',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'Smartphone, ID documents',
-          advantages: 'Mobile-first, modern banking experience',
-          limitations: 'Limited physical branch network',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'Students', 'Small Businesses'],
-          useCases: ['Accept local payments', 'Manage business finances'],
-        },
-      },
-      {
-        title: 'Firstbase.io',
-        description: {
-          en: 'Formation platform for non-US residents to incorporate a US LLC and access US banking.',
-          ar: 'منصة لتأسيس شركة أمريكية لغير المقيمين.',
-        },
-        url: 'https://firstbase.io/',
-        tags: ['Company', 'USA', 'Legal', 'Export'],
-        difficulty: 'advanced',
-        metadata: {
-          pricing: '$399 setup + annual fees',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'Valid passport',
-          advantages: 'Access to US bank accounts and Stripe',
-          limitations: 'Ongoing annual compliance and tax filing',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['SaaS Founders', 'Startup Founders', 'Agencies'],
-          useCases: ['Sell SaaS products', 'Export services internationally'],
-        },
-      },
-    ],
+          recommendedFor: ['Digital Entrepreneur', 'Developer', 'Freelancer'],
+          useCases: ['Selling e-books or templates', 'Digital downloads', 'Course selling'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://docs.lemonsqueezy.com/help/getting-started/supported-countries'],
+          _lastVerified: '2026-06-09'
+        }
+      }
+    ]
   },
   {
-    id: 'freelancing_platforms',
+    id: 'legal_tax',
     title: {
-      en: 'Freelancing & Platforms',
-      ar: 'العمل الحر والمنصات',
+      en: 'Legal & Tax',
+      ar: 'القانون والضرائب',
     },
     resources: [
       {
-        title: 'Upwork',
+        title: 'DGI Moussahamatic',
+        url: 'https://moussahamatic.dz/',
         description: {
-          en: 'World\'s largest freelance marketplace connecting professionals with global clients.',
-          ar: 'أكبر سوق للعمل الحر في العالم.',
+          en: 'The official electronic portal of the General Directorate of Taxes in Algeria, allowing taxpayers to declare and pay their obligations remotely. It aims to simplify administrative procedures.',
+          ar: 'البوابة الإلكترونية الرسمية للمديرية العامة للضرائب في الجزائر، تتيح للمكلفين بالضريبة التصريح ودفع التزاماتهم عن بُعد. تهدف إلى تبسيط الإجراءات الإدارية وتحسين الشفافية الجبائية للمؤسسات.'
         },
-        url: 'https://upwork.com/',
-        tags: ['Freelance', 'Jobs', 'Global', 'Remote'],
-        difficulty: 'beginner',
+        tags: ['tax', 'local', 'free', 'no-cc'],
+        difficulty: 'intermediate',
         metadata: {
-          pricing: '10% service fee on earnings',
           availableForAlgerians: 'Fully Available',
-          requirements: 'Verified profile, ID verification',
-          advantages: 'High volume of jobs, secure payments',
-          limitations: 'High competition, cost for bidding',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'Developers', 'Students'],
-          useCases: ['Find remote work', 'Export services internationally'],
-        },
+          recommendedFor: ['Freelancer', 'Digital Entrepreneur', 'Startup Founder'],
+          useCases: ['Filing taxes', 'Understanding IFU obligations', 'VAT compliance'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://moussahamatic.dz/'],
+          _lastVerified: '2026-06-09'
+        }
       },
       {
-        title: 'Mostaql',
+        title: 'Zoho Books',
+        url: 'https://www.zoho.com/books/',
         description: {
-          en: 'The leading freelance platform for the Arabic-speaking world.',
-          ar: 'منصة العمل الحر الرائدة في العالم العربي.',
+          en: 'A powerful cloud accounting software that helps businesses manage finances, track inventory, and issue invoices. It supports specific tax settings for Algeria for local compliance.',
+          ar: 'برنامج محاسبة سحابي قوي يساعد الشركات على إدارة شؤونها المالية ومتابعة المخزون وإصدار الفواتير. يدعم إعدادات الضرائب الخاصة بالجزائر، مما يجعله مناسباً للامتثال المالي المحلي.'
         },
-        url: 'https://mostaql.com/',
-        tags: ['Freelance', 'Arabic', 'Regional', 'Jobs'],
+        tags: ['accounting', 'software', 'freemium', 'no-cc'],
         difficulty: 'beginner',
         metadata: {
-          pricing: 'Commission-based',
           availableForAlgerians: 'Fully Available',
-          requirements: 'ID verification, profile',
-          advantages: 'Focused on the MENA market, Arabic interface',
-          limitations: 'Smaller market than global platforms',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'Developers', 'Students'],
-          useCases: ['Find remote work', 'Export services internationally'],
-        },
+          recommendedFor: ['Freelancer', 'Startup Founder', 'Digital Entrepreneur'],
+          useCases: ['Managing accounts', 'Expense tracking', 'Financial reporting'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://www.zoho.com/books/help/settings/tax-algeria.html'],
+          _lastVerified: '2026-06-09'
+        }
       },
       {
-        title: 'Payoneer',
+        title: 'CASNOS Damancom',
+        url: 'https://damancom.casnos.dz/',
         description: {
-          en: 'Global payment platform providing receiving accounts and cards for freelancers.',
-          ar: 'منصة دفع عالمية توفر حسابات استقبال وبطاقات للمستقلين.',
+          en: 'The digital platform for the National Social Security Fund for Non-Employees, allowing professionals and employers to declare activity and pay contributions for social coverage.',
+          ar: 'المنصة الرقمية للصندوق الوطني للضمان الاجتماعي لغير الأجراء، تتيح للمهنيين وأصحاب العمل التصريح بنشاطهم ودفع اشتراكاتهم. تضمن التغطية الاجتماعية والتقاعد للعاملين لحسابهم الخاص.'
         },
-        url: 'https://payoneer.com/',
-        tags: ['Payments', 'Banking', 'Mastercard', 'Freelance'],
-        difficulty: 'beginner',
+        tags: ['legal', 'local', 'free', 'no-cc'],
+        difficulty: 'advanced',
         metadata: {
-          pricing: '$29.95 annual fee + transaction fees',
           availableForAlgerians: 'Fully Available',
-          requirements: 'ID verification, proof of business',
-          advantages: 'Withdraw to local Algerian banks in USD/EUR',
-          limitations: 'High maintenance fees if inactive',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'SaaS Founders', 'Developers'],
-          useCases: ['Receive international payments', 'Pay for international services'],
+          recommendedFor: ['Startup Founder', 'Freelancer'],
+          useCases: ['Understanding business law', 'Contract compliance', 'Legal entity requirements'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://damancom.casnos.dz/'],
+          _lastVerified: '2026-06-09'
+        }
+      }
+    ]
+  },
+  {
+    id: 'funding_support',
+    title: {
+      en: 'Funding & Support',
+      ar: 'التمويل والدعم',
+    },
+    resources: [
+      {
+        title: 'ANGEM',
+        url: 'https://www.angem.dz/',
+        description: {
+          en: 'The National Agency for Micro-credit Management, aiming to fight unemployment by providing interest-free loans for small projects and home-based income-generating activities.',
+          ar: 'الوكالة الوطنية لتسيير القرض المصغر، تهدف إلى محاربة البطالة من خلال تقديم قروض بدون فوائد لتمويل المشاريع الصغيرة. تدعم المبادرات الفردية والأنشطة المنزلية المدرة للدخل.'
         },
+        tags: ['funding', 'local', 'free', 'no-cc'],
+        difficulty: 'advanced',
+        metadata: {
+          availableForAlgerians: 'Fully Available',
+          recommendedFor: ['Startup Founder', 'SaaS Builder'],
+          useCases: ['Securing seed funding', 'Applying for grants', 'Accessing public loans'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://www.angem.dz/'],
+          _lastVerified: '2026-06-09'
+        }
       },
-    ],
+      {
+        title: 'FGAR',
+        url: 'https://www.fgar.dz/',
+        description: {
+          en: 'The SME Loan Guarantee Fund, acting as a guarantor for projects with commercial banks to facilitate financing. It reduces lending risks and encourages private sector investment.',
+          ar: 'صندوق ضمان القروض للمؤسسات الصغيرة والمتوسطة، يعمل كضامن للمشاريع لدى البنوك التجارية لتسهيل الحصول على التمويل. يقلل من مخاطر الإقراض ويشجع الاستثمار في القطاع الخاص.'
+        },
+        tags: ['funding', 'local', 'free', 'no-cc'],
+        difficulty: 'advanced',
+        metadata: {
+          availableForAlgerians: 'Fully Available',
+          recommendedFor: ['Startup Founder', 'SaaS Builder'],
+          useCases: ['Securing seed funding', 'Applying for grants', 'Accessing public loans'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://www.fgar.dz/'],
+          _lastVerified: '2026-06-09'
+        }
+      }
+    ]
   },
   {
     id: 'startup_ecosystem',
     title: {
       en: 'Startup Ecosystem',
-      ar: 'بيئة الشركات الناشئة',
+      ar: 'بيئة المؤسسات الناشئة',
     },
     resources: [
       {
-        title: 'Algeria Venture',
+        title: 'ANADE (ex-ANSEJ)',
+        url: 'https://www.anade.dz/',
         description: {
-          en: 'National public accelerator dedicated to supporting and scaling Algerian startups.',
-          ar: 'المسرعة الوطنية العمومية المخصصة لدعم الشركات الناشئة الجزائرية.',
+          en: 'The National Agency for Support and Development of Entrepreneurship, providing financial support and guidance for young project holders to create micro-enterprises.',
+          ar: 'الوكالة الوطنية لدعم وتنمية المقاولاتية، توفر الدعم المالي والمرافقة للشباب حاملي المشاريع لإنشاء مؤسساتهم المصغرة. تقدم امتيازات ضريبية وتمويلات مشتركة مع البنوك.'
         },
+        tags: ['incubator', 'local', 'free', 'no-cc'],
+        difficulty: 'intermediate',
+        metadata: {
+          availableForAlgerians: 'Fully Available',
+          recommendedFor: ['Startup Founder'],
+          useCases: ['Getting mentorship', 'Early-stage support', 'Building MVP'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://www.anade.dz/'],
+          _lastVerified: '2026-06-09'
+        }
+      },
+      {
+        title: 'CNAC',
+        url: 'https://www.cnac.dz/',
+        description: {
+          en: 'The National Unemployment Insurance Fund, offering a special program to support unemployed individuals in creating their own enterprises through funding and technical follow-up.',
+          ar: 'الصندوق الوطني للتأمين عن البطالة، يقدم برنامجاً خاصاً لدعم العاطلين عن العمل في إنشاء مؤسساتهم الخاصة. يشمل الدعم التمويل والمتابعة التقنية لضمان استمرارية المشاريع.'
+        },
+        tags: ['incubator', 'local', 'free', 'no-cc'],
+        difficulty: 'intermediate',
+        metadata: {
+          availableForAlgerians: 'Fully Available',
+          recommendedFor: ['Startup Founder'],
+          useCases: ['Getting mentorship', 'Early-stage support', 'Building MVP'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://www.cnac.dz/en/dispositif-de-soutien-a-creation-et-a-lextension-dactivites-par-les-chomeurs-promoteurs-ages-de-30-a-55-ans'],
+          _lastVerified: '2026-06-09'
+        }
+      },
+      {
+        title: 'Algeria Venture (A-Venture)',
         url: 'https://aventure.dz/',
-        tags: ['Startup', 'Accelerator', 'Government', 'Algeria'],
+        description: {
+          en: 'The first state-owned startup accelerator in Algeria, providing an integrated innovation environment including mentoring, funding, and market access for scalable businesses.',
+          ar: 'أول مسرعة عمومية للمؤسسات الناشئة في الجزائر، توفر بيئة متكاملة للابتكار تشمل التوجيه، التمويل، والوصول إلى الأسواق. تهدف إلى تحويل الأفكار المبتكرة إلى شركات قابلة للتوسع عالمياً.'
+        },
+        tags: ['accelerator', 'local', 'free', 'no-cc'],
         difficulty: 'intermediate',
         metadata: {
-          pricing: 'Free',
           availableForAlgerians: 'Fully Available',
-          requirements: 'Innovative project, Startup Label preferred',
-          advantages: 'Intensive mentorship, access to corporate partners',
-          limitations: 'Selection is highly competitive',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Startup Founders', 'SaaS Founders', 'Developers'],
-          useCases: ['Raise startup funding', 'Access mentorship'],
-        },
+          recommendedFor: ['Startup Founder', 'SaaS Builder'],
+          useCases: ['Getting mentorship', 'Growth acceleration', 'Accessing funding'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://aventure.dz/'],
+          _lastVerified: '2026-06-09'
+        }
       },
       {
-        title: 'Algeria Startup Fund (ASF)',
+        title: 'Founder Institute Algiers',
+        url: 'https://fi.co/s/algiers',
         description: {
-          en: 'Public venture capital fund providing equity investment for labeled startups.',
-          ar: 'صندوق استثماري عمومي يوفر تمويلاً للشركات الناشئة.',
+          en: 'The local chapter of the global Founder Institute, a pre-seed accelerator program helping entrepreneurs build successful technology companies with international expertise.',
+          ar: 'الفرع المحلي لمعهد المؤسسين العالمي، وهو برنامج تسريع لمرحلة ما قبل التأسيس يساعد ريادي الأعمال على بناء شركات تقنية ناجحة. يوفر شبكة من الموجهين والخبرات الدولية.'
         },
-        url: 'https://asf.dz/',
-        tags: ['Funding', 'VC', 'Startup', 'Algeria'],
-        difficulty: 'advanced',
-        metadata: {
-          pricing: 'Equity-based investment',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'Startup Label, business plan',
-          advantages: 'Large capital injection, strategic support',
-          limitations: 'Requires giving up equity, rigorous reporting',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Startup Founders', 'SaaS Founders'],
-          useCases: ['Raise startup funding', 'Scale business operations'],
-        },
-      },
-      {
-        title: 'Leancubator',
-        description: {
-          en: 'Private incubator and innovation hub focused on sustainable startup growth.',
-          ar: 'حاضنة أعمال خاصة ومركز ابتكار.',
-        },
-        url: 'https://www.leancubator.co/',
-        tags: ['Incubator', 'Mentorship', 'Private', 'Algeria'],
+        tags: ['accelerator', 'local', 'free', 'no-cc'],
         difficulty: 'intermediate',
         metadata: {
-          pricing: 'Varies',
           availableForAlgerians: 'Fully Available',
-          requirements: 'Application',
-          advantages: 'High-quality mentorship, ecosystem networking',
-          limitations: 'Primarily based in Algiers',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Startup Founders', 'Developers'],
-          useCases: ['Raise startup funding', 'Access mentorship'],
-        },
+          recommendedFor: ['Early-stage Founders', 'Aspiring Entrepreneurs'],
+          useCases: ['Building a tech startup', 'Accessing global network'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://fi.co/apply/algiers'],
+          _lastVerified: '2026-06-09'
+        }
       },
-    ],
+      {
+        title: 'Algeria Startup Challenge',
+        url: 'https://algeriastartupchallenge.com/',
+        description: {
+          en: 'An annual national competition to discover and support top talent and innovative projects in Algeria across various fields like fintech, agriculture, and energy.',
+          ar: 'مسابقة وطنية سنوية تهدف إلى اكتشاف ودعم أفضل المواهب والمشاريع المبتكرة في الجزائر. تشمل تحديات في مجالات مختلفة مثل التكنولوجيا المالية، الزراعة، والطاقة، مع جوائز وفرص تمويل.'
+        },
+        tags: ['competition', 'local', 'free', 'no-cc'],
+        difficulty: 'intermediate',
+        metadata: {
+          availableForAlgerians: 'Fully Available',
+          recommendedFor: ['Innovative Startups', 'Students'],
+          useCases: ['Winning prizes', 'Gaining visibility', 'Networking'],
+          _confidenceLabel: 'official_verified',
+          _evidenceSources: ['https://algeriastartupchallenge.com/'],
+          _lastVerified: '2026-06-09'
+        }
+      }
+    ]
   },
   {
-    id: 'business_tools',
+    id: 'freelance_remote',
     title: {
-      en: 'Business Tools',
-      ar: 'أدوات الأعمال',
+      en: 'Freelance & Remote Work',
+      ar: 'العمل الحر وعن بعد',
     },
     resources: [
       {
-        title: 'Zoho Invoice',
+        title: 'Mostaql / Khamsat (Hsoub)',
+        url: 'https://mostaql.com/',
         description: {
-          en: 'Free invoicing software for small businesses to manage billing and expenses.',
-          ar: 'برنامج فوترة مجاني للمؤسسات الصغيرة.',
+          en: 'The largest Arabic freelancing platforms, connecting freelancers and project owners across the Arab world with a secure environment for payments and rights.',
+          ar: 'أكبر المنصات العربية للعمل الحر، تجمع بين المستقلين وأصحاب المشاريع من مختلف أنحاء العالم العربي. توفر بيئة آمنة لضمان الحقوق والمدفوعات، وتدعم المستخدمين في الجزائر بشكل واسع.'
         },
-        url: 'https://zoho.com/invoice',
-        tags: ['Invoicing', 'Accounting', 'Free', 'SaaS'],
+        tags: ['freelancing', 'international', 'free', 'no-cc'],
         difficulty: 'beginner',
         metadata: {
-          pricing: 'Free for small businesses',
           availableForAlgerians: 'Fully Available',
-          requirements: 'Email signup',
-          advantages: '100% free, professional templates, mobile app',
-          limitations: 'Limited features for large-scale operations',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'Small Businesses', 'Agencies'],
-          useCases: ['Manage accounting', 'Receive international payments'],
-        },
+          recommendedFor: ['Arabic-speaking Freelancers', 'Designers', 'Developers'],
+          useCases: ['Finding freelance work', 'Selling digital services'],
+          _confidenceLabel: 'implicitly_available',
+          _evidenceSources: ['https://mostaql.com/'],
+          _lastVerified: '2026-06-09'
+        }
       },
       {
-        title: 'Bubble',
+        title: 'Malt',
+        url: 'https://www.malt.com/',
         description: {
-          en: 'Powerful no-code platform for building and hosting full-stack web applications.',
-          ar: 'منصة برمجية بدون كود لبناء تطبيقات الويب.',
+          en: 'A leading European freelancing platform focusing on high-level tech and creative skills, allowing Algerian freelancers to build professional profiles and work with international firms.',
+          ar: 'منصة أوروبية رائدة للعمل الحر تركز على المهارات التقنية والإبداعية العالية. تتيح للمستقلين في الجزائر بناء ملفات شخصية مهنية والتعامل مع شركات دولية مع ضمان استلام المستحقات.'
         },
-        url: 'https://bubble.io/',
-        tags: ['No-Code', 'Development', 'SaaS', 'Startup'],
+        tags: ['freelancing', 'international', 'free', 'no-cc'],
+        difficulty: 'beginner',
+        metadata: {
+          availableForAlgerians: 'Fully Available',
+          recommendedFor: ['Tech Freelancers', 'Creative Professionals'],
+          useCases: ['Finding international clients', 'Building professional brand'],
+          _confidenceLabel: 'implicitly_available',
+          _evidenceSources: ['https://www.malt.com/'],
+          _lastVerified: '2026-06-09'
+        }
+      },
+      {
+        title: 'Western Union / MoneyGram (Algeria)',
+        url: 'https://www.westernunion.com/dz/',
+        description: {
+          en: 'Global money transfer services available in Algeria through a wide network of local banks, allowing individuals and freelancers to receive international transfers quickly.',
+          ar: 'خدمات عالمية لتحويل الأموال تتوفر في الجزائر عبر شبكة واسعة من البنوك المحلية مثل بنك التنمية المحلية (BDL). تتيح استقبال الحوالات الدولية بسرعة وسهولة للأفراد والمهنيين.'
+        },
+        tags: ['money-transfer', 'international', 'freemium', 'no-cc'],
+        difficulty: 'beginner',
+        metadata: {
+          availableForAlgerians: 'Fully Available',
+          recommendedFor: ['Freelancers', 'Individuals'],
+          useCases: ['Receiving international funds', 'Quick cash withdrawals'],
+          _confidenceLabel: 'implicitly_available',
+          _evidenceSources: ['https://www.westernunion.com/dz/en/home.html'],
+          _lastVerified: '2026-06-09'
+        }
+      },
+      {
+        title: 'SeedLegals',
+        url: 'https://seedlegals.com/',
+        description: {
+          en: 'A leading platform for automating legal documents and funding processes for startups, helping entrepreneurs issue professional contracts according to international standards.',
+          ar: 'منصة رائدة لأتمتة الوثائق القانونية وعمليات التمويل للمؤسسات الناشئة. تساعد ريادي الأعمال على إصدار عقود العمل واتفاقيات المساهمين بشكل احترافي وسريع وفق المعايير الدولية.'
+        },
+        tags: ['contracts', 'legal', 'freemium', 'no-cc'],
         difficulty: 'intermediate',
         metadata: {
-          pricing: 'Free for learning, paid for hosting',
           availableForAlgerians: 'Fully Available',
-          requirements: 'Web browser',
-          advantages: 'Rapid development, highly customizable',
-          limitations: 'Steep learning curve, platform dependency',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['SaaS Founders', 'Startup Founders', 'Developers'],
-          useCases: ['Build custom web apps', 'Sell SaaS products'],
-        },
+          recommendedFor: ['Startups', 'SaaS Builders'],
+          useCases: ['Generating legal contracts', 'Managing equity'],
+          _confidenceLabel: 'implicitly_available',
+          _evidenceSources: ['https://seedlegals.com/legal-documents/'],
+          _lastVerified: '2026-06-09'
+        }
       },
       {
-        title: 'Payhip',
+        title: 'Gumroad',
+        url: 'https://gumroad.com/',
         description: {
-          en: 'Simple platform to sell digital downloads, courses, and memberships.',
-          ar: 'منصة بسيطة لبيع التنزيلات الرقمية والدورات.',
+          en: 'A simple e-commerce platform allowing creators to sell works directly to their audience. It requires specific withdrawal methods or a linked PayPal for payouts in Algeria.',
+          ar: 'منصة تجارة إلكترونية بسيطة تتيح للمبدعين بيع أعمالهم مباشرة إلى جمهورهم. توفر خيارات دفع متعددة، وتتطلب حساب PayPal مفعل أو طرق سحب محددة لاستلام الأموال في الجزائر.'
         },
-        url: 'https://payhip.com/',
-        tags: ['E-commerce', 'Digital Products', 'SaaS', 'Global'],
+        tags: ['digital-products', 'international', 'freemium', 'no-cc'],
         difficulty: 'beginner',
         metadata: {
-          pricing: '5% transaction fee',
-          availableForAlgerians: 'Fully Available',
-          requirements: 'Email signup',
-          advantages: 'Very easy to setup, supports PayPal/Stripe',
-          limitations: 'Requires international payment method to receive funds',
-          status: 'Active',
-          lastVerifiedDate: '2026-06-09',
-          recommendedFor: ['Freelancers', 'SaaS Founders', 'Students'],
-          useCases: ['Sell digital products', 'Receive international payments'],
-        },
-      },
-    ],
-  },
+          availableForAlgerians: 'Partial Access',
+          recommendedFor: ['Digital Creators', 'Artists', 'Writers'],
+          useCases: ['Selling digital assets', 'Accepting international payments'],
+          _confidenceLabel: 'partial_access',
+          _evidenceSources: ['https://www.shareuhack.com/en/posts/digital-product-platform-comparison-asia-2026'],
+          _lastVerified: '2026-06-09'
+        }
+      }
+    ]
+  }
 ];

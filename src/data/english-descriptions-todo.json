@@ -1,0 +1,142 @@
+[
+  {
+    "title": "CCP Business Cashless (Algerie Poste)",
+    "url": "https://www.poste.dz/",
+    "category": "Business Banking (Local)",
+    "description_ar": "حساب جاري تجاري رقمي بالكامل مقدم من بريد الجزائر، مخصص للتجار والمهنيين لتسهيل المعاملات غير النقدية. يتيح إدارة الأموال واستقبال المدفوعات بشكل آمن وسريع عبر القنوات الإلكترونية.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "BaridiMob Merchant",
+    "url": "https://www.poste.dz/",
+    "category": "Business Banking (Local)",
+    "description_ar": "خدمة دفع عبر الهاتف المحمول تابعة لبريد الجزائر تتيح للتجار استقبال المدفوعات فورياً عبر رمز الاستجابة السريعة (QR Code). تعتبر الحل الأمثل للمدفوعات اليومية الصغيرة بفضل قاعدتها الجماهيرية الواسعة.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "SATIM / GIE Monétique",
+    "url": "https://www.satim.dz/",
+    "category": "Payment Processors (International)",
+    "description_ar": "الشركة المسؤولة عن شبكة الدفع الإلكتروني بين البنوك في الجزائر، تدير عمليات البطاقات البنكية (CIB) والذهبية. توفر البنية التحتية اللازمة لقبول الدفع عبر الإنترنت في المواقع التجارية المحلية.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Paddle",
+    "url": "https://www.paddle.com/",
+    "category": "SaaS Sales Infrastructure",
+    "description_ar": "منصة بنية تحتية مخصصة لبيع برمجيات SaaS والمنتجات الرقمية عالمياً مع إدارة كاملة للضرائب والامتثال. تدعم المطورين في الجزائر لبيع منتجاتهم في الأسواق الدولية واستلام العوائد بالعملة الصعبة.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Lemon Squeezy",
+    "url": "https://www.lemonsqueezy.com/",
+    "category": "Digital Product Selling",
+    "description_ar": "منصة متكاملة لبيع المنتجات الرقمية والاشتراكات، تتميز بسهولة الاستخدام وإدارة الضرائب التلقائية. تدعم الدفع المباشر إلى الحسابات البنكية في الجزائر، مما يسهل عمل المبدعين المستقلين.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "DGI Moussahamatic",
+    "url": "https://moussahamatic.dz/",
+    "category": "Tax Resources",
+    "description_ar": "البوابة الإلكترونية الرسمية للمديرية العامة للضرائب في الجزائر، تتيح للمكلفين بالضريبة التصريح ودفع التزاماتهم عن بُعد. تهدف إلى تبسيط الإجراءات الإدارية وتحسين الشفافية الجبائية للمؤسسات.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Zoho Books",
+    "url": "https://www.zoho.com/books/",
+    "category": "Accounting Software",
+    "description_ar": "برنامج محاسبة سحابي قوي يساعد الشركات على إدارة شؤونها المالية ومتابعة المخزون وإصدار الفواتير. يدعم إعدادات الضرائب الخاصة بالجزائر، مما يجعله مناسباً للامتثال المالي المحلي.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "CASNOS Damancom",
+    "url": "https://damancom.casnos.dz/",
+    "category": "Legal Resources",
+    "description_ar": "المنصة الرقمية للصندوق الوطني للضمان الاجتماعي لغير الأجراء، تتيح للمهنيين وأصحاب العمل التصريح بنشاطهم ودفع اشتراكاتهم. تضمن التغطية الاجتماعية والتقاعد للعاملين لحسابهم الخاص.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "ANGEM",
+    "url": "https://www.angem.dz/",
+    "category": "Funding & Grants",
+    "description_ar": "الوكالة الوطنية لتسيير القرض المصغر، تهدف إلى محاربة البطالة من خلال تقديم قروض بدون فوائد لتمويل المشاريع الصغيرة. تدعم المبادرات الفردية والأنشطة المنزلية المدرة للدخل.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "FGAR",
+    "url": "https://www.fgar.dz/",
+    "category": "Funding & Grants",
+    "description_ar": "صندوق ضمان القروض للمؤسسات الصغيرة والمتوسطة، يعمل كضامن للمشاريع لدى البنوك التجارية لتسهيل الحصول على التمويل. يقلل من مخاطر الإقراض ويشجع الاستثمار في القطاع الخاص.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "ANADE (ex-ANSEJ)",
+    "url": "https://www.anade.dz/",
+    "category": "Startup Incubators",
+    "description_ar": "الوكالة الوطنية لدعم وتنمية المقاولاتية، توفر الدعم المالي والمرافقة للشباب حاملي المشاريع لإنشاء مؤسساتهم المصغرة. تقدم امتيازات ضريبية وتمويلات مشتركة مع البنوك.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "CNAC",
+    "url": "https://www.cnac.dz/",
+    "category": "Startup Incubators",
+    "description_ar": "الصندوق الوطني للتأمين عن البطالة، يقدم برنامجاً خاصاً لدعم العاطلين عن العمل في إنشاء مؤسساتهم الخاصة. يشمل الدعم التمويل والمتابعة التقنية لضمان استمرارية المشاريع.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Algeria Venture (A-Venture)",
+    "url": "https://aventure.dz/",
+    "category": "Startup Accelerators",
+    "description_ar": "أول مسرعة عمومية للمؤسسات الناشئة في الجزائر، توفر بيئة متكاملة للابتكار تشمل التوجيه، التمويل، والوصول إلى الأسواق. تهدف إلى تحويل الأفكار المبتكرة إلى شركات قابلة للتوسع عالمياً.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Founder Institute Algiers",
+    "url": "https://fi.co/s/algiers",
+    "category": "Startup Accelerators",
+    "description_ar": "الفرع المحلي لمعهد المؤسسين العالمي، وهو برنامج تسريع لمرحلة ما قبل التأسيس يساعد ريادي الأعمال على بناء شركات تقنية ناجحة. يوفر شبكة من الموجهين والخبرات الدولية.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Algeria Startup Challenge",
+    "url": "https://algeriastartupchallenge.com/",
+    "category": "Startup Competitions",
+    "description_ar": "مسابقة وطنية سنوية تهدف إلى اكتشاف ودعم أفضل المواهب والمشاريع المبتكرة في الجزائر. تشمل تحديات في مجالات مختلفة مثل التكنولوجيا المالية، الزراعة، والطاقة، مع جوائز وفرص تمويل.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Mostaql / Khamsat (Hsoub)",
+    "url": "https://mostaql.com/",
+    "category": "Freelancing Platforms",
+    "description_ar": "أكبر المنصات العربية للعمل الحر، تجمع بين المستقلين وأصحاب المشاريع من مختلف أنحاء العالم العربي. توفر بيئة آمنة لضمان الحقوق والمدفوعات، وتدعم المستخدمين في الجزائر بشكل واسع.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Malt",
+    "url": "https://www.malt.com/",
+    "category": "Freelancing Platforms",
+    "description_ar": "منصة أوروبية رائدة للعمل الحر تركز على المهارات التقنية والإبداعية العالية. تتيح للمستقلين في الجزائر بناء ملفات شخصية مهنية والتعامل مع شركات دولية مع ضمان استلام المستحقات.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Western Union / MoneyGram (Algeria)",
+    "url": "https://www.westernunion.com/dz/",
+    "category": "Money Transfer & Withdrawal",
+    "description_ar": "خدمات عالمية لتحويل الأموال تتوفر في الجزائر عبر شبكة واسعة من البنوك المحلية مثل بنك التنمية المحلية (BDL). تتيح استقبال الحوالات الدولية بسرعة وسهولة للأفراد والمهنيين.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "SeedLegals",
+    "url": "https://seedlegals.com/",
+    "category": "Contracts & Legal Templates",
+    "description_ar": "منصة رائدة لأتمتة الوثائق القانونية وعمليات التمويل للمؤسسات الناشئة. تساعد ريادي الأعمال على إصدار عقود العمل واتفاقيات المساهمين بشكل احترافي وسريع وفق المعايير الدولية.",
+    "description_en": "TODO"
+  },
+  {
+    "title": "Gumroad",
+    "url": "https://gumroad.com/",
+    "category": "Digital Product Selling",
+    "description_ar": "منصة تجارة إلكترونية بسيطة تتيح للمبدعين بيع أعمالهم مباشرة إلى جمهورهم. توفر خيارات دفع متعددة، وتتطلب حساب PayPal مفعل أو طرق سحب محددة لاستلام الأموال في الجزائر.",
+    "description_en": "TODO"
+  }
+]

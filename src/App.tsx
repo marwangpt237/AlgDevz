@@ -232,12 +232,11 @@ export default function App() {
   const renderContent = () => {
     if (isSearching) {
        return <SearchResults 
-          query={searchQuery} 
-          categories={categoriesData} 
-          language={language} 
-          bookmarks={bookmarkSet}
-          toggleBookmark={toggleBookmark}
-        />;
+	          query={searchQuery} 
+	          language={language} 
+	          bookmarks={bookmarkSet}
+	          toggleBookmark={toggleBookmark}
+	        />;
     }
     
     if (selectedCategoryId === 'home') {
