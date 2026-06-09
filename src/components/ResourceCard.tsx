@@ -1,5 +1,5 @@
 import { Language, Resource, Category } from '../types';
-import { ExternalLink, Copy, Check, Bookmark, Sparkles, ChevronDown, Share2, Heart } from 'lucide-react';
+import { ExternalLink, Copy, Check, Bookmark, Sparkles, ChevronDown, Share2 } from 'lucide-react';
 import React, { useState, useMemo } from 'react';
 import { getTagColor, findSimilarResources } from '../utils';
 import { trackResourceOpen, trackBookmark, trackResourceAction } from '../lib/analytics';
@@ -23,20 +23,6 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
 }) => {
   const [copied, setCopied] = useState(false);
   const [showSimilar, setShowSimilar] = useState(false);
-  const [likes, setLikes] = useState<number>(() => {
-    const saved = localStorage.getItem(`likes-${resource.url}`);
-    return saved ? parseInt(saved) : Math.floor(Math.random() * 20); // Simulated initial likes
-  });
-  const [isLiked, setIsLiked] = useState(() => localStorage.getItem(`isLiked-${resource.url}`) === 'true');
-
-  const toggleLike = () => {
-    const newIsLiked = !isLiked;
-    setIsLiked(newIsLiked);
-    const newLikes = newIsLiked ? likes + 1 : likes - 1;
-    setLikes(newLikes);
-    localStorage.setItem(`isLiked-${resource.url}`, String(newIsLiked));
-    localStorage.setItem(`likes-${resource.url}`, String(newLikes));
-  };
 
   const isNew = useMemo(() => {
     if (!resource.updatedAt) return false;
@@ -105,6 +91,11 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
                 {isNew && (
                   <span className="inline-flex items-center px-1.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-bold uppercase tracking-wider text-emerald-400 shrink-0">
                     {isAr ? 'جديد' : 'New'}
+                  </span>
+                )}
+                {(resource.metadata?.lastVerifiedDate || resource.metadata?._confidenceLabel === 'official_verified' || resource.metadata?.availableForAlgerians === 'Fully Available') && (
+                  <span className=\"inline-flex items-center px-1.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-bold uppercase tracking-wider text-emerald-400 shrink-0\">
+                    {isAr ? 'موثق' : 'Verified'}
                   </span>
                 )}
                 {resource.difficulty && (
@@ -209,21 +200,8 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
               </div>
             </div>
 
-            {/* Actions - larger touch targets for mobile */}
+            {/* Actions - larger touch targets for mobile (fake likes removed per strategic audit) */}
             <div className="flex sm:flex-col items-center gap-1.5 shrink-0 -me-1">
-              <button
-                onClick={toggleLike}
-                className={`group/like w-9 h-9 sm:w-8 sm:h-8 flex flex-col items-center justify-center rounded-xl sm:rounded-lg border transition-all active:scale-95 touch-manipulation ${
-                  isLiked 
-                    ? 'bg-rose-500/15 border-rose-500/30 text-rose-400' 
-                    : 'bg-zinc-800/70 dark:bg-zinc-800/70 light:bg-zinc-100 border-zinc-700/50 dark:border-zinc-700/50 light:border-zinc-200 text-zinc-400 dark:text-zinc-400 light:text-zinc-500 hover:text-rose-400 hover:border-rose-500/30'
-                }`}
-                aria-label="Like"
-              >
-                <Heart className={`w-3.5 h-3.5 ${isLiked ? 'fill-current' : 'group-hover/like:fill-rose-400/20'}`} />
-                <span className="text-[9px] font-bold mt-0.5">{likes}</span>
-              </button>
-
               <button
                 onClick={() => {
                   onToggleBookmark(resource.url);

@@ -240,7 +240,7 @@ export default function App() {
     }
     
     if (selectedCategoryId === 'home') {
-      const totalResources = 4247;
+      const totalResources = 4160; // Updated per strategic audit: removed Torrenting category (~87 resources). Uses "4000+" language in hero for positioning.
       
       return (
         <div className="py-8 sm:py-12">
@@ -260,13 +260,13 @@ export default function App() {
               </div>
               <h1 className="text-[32px] sm:text-[44px] font-bold tracking-tight leading-[1.1] mb-4">
                 <span className="bg-gradient-to-b from-white dark:from-white light:from-zinc-900 to-zinc-400 dark:to-zinc-400 light:to-zinc-600 bg-clip-text text-transparent">
-                  {language === 'ar' ? 'دليل المطور الجزائري' : 'Algerian Dev Directory'}
+                  {language === 'ar' ? 'أكبر دليل منظم للموارد الرقمية المجانية للجزائريين' : 'The Largest Curated Directory of Free Digital Resources for Algerians.'}
                 </span>
               </h1>
               <p className="text-[15px] sm:text-[17px] leading-relaxed text-zinc-400 max-w-2xl">
                 {language === 'ar' 
-                  ? "مجموعة منتقاة بعناية من أفضل الأدوات والموارد والمنصات للمطورين. كل شيء في مكان واحد، سريع وبدون إعلانات." 
-                  : "Carefully curated tools, resources, and platforms for developers. Everything in one place — fast, clean, and ad-free."}
+                  ? "اكتشف أكثر من 4000 أداة ومنصة ومواد تعليمية للمطورين والمستقلين والطلاب والمحترفين الرقميين. كل شيء في مكان واحد، سريع وبدون إعلانات." 
+                  : "Discover 4,000+ tools, platforms, and learning materials for developers, freelancers, students, and digital professionals."}
               </p>
               <div className="flex items-center gap-6 mt-6 text-sm">
                 <div>

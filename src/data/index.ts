@@ -1,5 +1,15 @@
 import { Category } from '../types';
 export const categoriesData: Category[] = [
+  // Core Tools (أدوات أساسية) - Promoted per strategic audit
+  {
+    "id": "artificial-intelligence",
+    "title": {
+      "en": "Artificial Intelligence",
+      "ar": "الذكاء الاصطناعي"
+    },
+    "iconName": "List",
+    "resourceCount": 351
+  },
   {
     "id": "hosting-cloud",
     "title": {
@@ -10,14 +20,24 @@ export const categoriesData: Category[] = [
     "resourceCount": 29
   },
   {
-    "id": "artificial-intelligence",
+    id: 'business-payments',
+    title: {
+      en: 'Business & Payments',
+      ar: 'الأعمال والمدفوعات',
+    },
+    iconName: 'Briefcase',
+    resourceCount: 24,
+  },
+  {
+    "id": "reading",
     "title": {
-      "en": "Artificial Intelligence",
-      "ar": "الذكاء الاصطناعي"
+      "en": "Reading",
+      "ar": "الكتب والقراءة"
     },
     "iconName": "List",
-    "resourceCount": 351
+    "resourceCount": 790
   },
+  // Productivity & Utilities (أدوات الإنتاجية)
   {
     "id": "adblock",
     "title": {
@@ -36,15 +56,7 @@ export const categoriesData: Category[] = [
     "iconName": "List",
     "resourceCount": 125
   },
-  {
-    "id": "torrenting",
-    "title": {
-      "en": "Torrenting",
-      "ar": "التورنت"
-    },
-    "iconName": "List",
-    "resourceCount": 87
-  },
+  // Leisure & Lifestyle (أسلوب حياة) - De-emphasized (shown lower in nav/grid)
   {
     "id": "streaming",
     "title": {
@@ -71,23 +83,5 @@ export const categoriesData: Category[] = [
     },
     "iconName": "List",
     "resourceCount": 793
-  },
-  {
-    "id": "reading",
-    "title": {
-      "en": "Reading",
-      "ar": "الكتب والقراءة"
-    },
-    "iconName": "List",
-    "resourceCount": 790
-  },
-  {
-    id: 'business-payments',
-    title: {
-      en: 'Business & Payments',
-      ar: 'الأعمال والمدفوعات',
-    },
-    iconName: 'Briefcase',
-    resourceCount: 24,
   },
 ];
