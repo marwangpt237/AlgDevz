@@ -94,7 +94,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({
                   </span>
                 )}
                 {(resource.metadata?.lastVerifiedDate || resource.metadata?._confidenceLabel === 'official_verified' || resource.metadata?.availableForAlgerians === 'Fully Available') && (
-                  <span className=\"inline-flex items-center px-1.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-bold uppercase tracking-wider text-emerald-400 shrink-0\">
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-bold uppercase tracking-wider text-emerald-400 shrink-0">
                     {isAr ? 'موثق' : 'Verified'}
                   </span>
                 )}
