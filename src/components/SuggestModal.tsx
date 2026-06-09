@@ -3,51 +3,10 @@ import { Language } from '../types';
 import { X, Send, Link, FileText, CheckCircle2 } from 'lucide-react';
 import { trackSuggestion } from '../lib/analytics';
 
+// === DOPPLER + CLOUDFLARE WORKER CONFIG ===
+// Replace with your actual values
 const WORKER_URL = 'https://alg-devs.marwannaili-23-07.workers.dev/';
-const SUGGEST_SECRET = 'algdevs-2026-super-secret-xyz789';
-
-function sanitizeInput(value: string | undefined, maxLength: number): string {
-  if (!value) return '';
-  return value
-    .trim()
-    .replace(/<[^>]*>/g, '')
-    .replace(/[\x00-\x1F\x7F]/g, '')
-    .slice(0, maxLength);
-}
-
-function isValidHttpUrl(url: string): boolean {
-  try {
-    const parsed = new URL(url);
-    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') && parsed.hostname.length > 3;
-  } catch {
-    return false;
-  }
-}
-
-const RATE_LIMIT_KEY = 'algdevs:suggest:rate';
-const RATE_WINDOW = 5 * 60 * 1000;
-const MAX_ATTEMPTS = 2;
-
-function getRateLimitStatus(): { allowed: boolean; retryAfter?: number } {
-  try {
-    const raw = localStorage.getItem(RATE_LIMIT_KEY);
-    const now = Date.now();
-    let attempts: number[] = raw ? JSON.parse(raw) : [];
-
-    attempts = attempts.filter((ts) => now - ts < RATE_WINDOW);
-
-    if (attempts.length >= MAX_ATTEMPTS) {
-      const retryAfter = Math.ceil((RATE_WINDOW - (now - attempts[0])) / 1000);
-      return { allowed: false, retryAfter };
-    }
-
-    attempts.push(now);
-    localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(attempts));
-    return { allowed: true };
-  } catch {
-    return { allowed: true };
-  }
-}
+const SUGGEST_SECRET = 'algdevs-2026-super-secret-xyz789'; // Must exactly match the SUGGEST_SECRET value in your Doppler project
 
 interface SuggestModalProps {
   isOpen: boolean;
@@ -61,86 +20,60 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
   const [description, setDescription] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [honeypot, setHoneypot] = useState('');
-  const [error, setError] = useState('');
 
   const isAr = language === 'ar';
 
   if (!isOpen) return null;
 
-  const close = () => {
+  const handleClose = () => {
     onClose();
     setIsSuccess(false);
-    setHoneypot('');
-    setError('');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!url || !title) return;
-
-    if (honeypot.trim()) {
-      setIsSuccess(true);
-      trackSuggestion('honeypot');
-      setTimeout(close, 2500);
-      return;
-    }
-
-    const rate = getRateLimitStatus();
-    if (!rate.allowed) {
-      const minutes = Math.ceil((rate.retryAfter || 0) / 60);
-      setError(`Rate limited. Try again in ~${minutes} minute(s).`);
-      setTimeout(() => setError(''), 4000);
-      return;
-    }
-
     setIsSubmitting(true);
-    setError('');
-
-    const cleanTitle = sanitizeInput(title, 200);
-    const cleanUrl = sanitizeInput(url, 500);
-    const cleanDesc = sanitizeInput(description, 1000);
-
-    if (!cleanTitle || !cleanUrl || !isValidHttpUrl(cleanUrl)) {
-      setError('Please provide a valid title and URL.');
-      setIsSubmitting(false);
-      return;
-    }
 
     const payload = {
-      title: cleanTitle,
-      url: cleanUrl,
-      description: cleanDesc,
+      title,
+      url,
+      description: description || '',
       language: isAr ? 'ar' : 'en',
       timestamp: new Date().toISOString(),
     };
 
     try {
+      // Send to Cloudflare Worker (which securely fetches Telegram token from Doppler)
       await fetch(WORKER_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-Secret': SUGGEST_SECRET,
+          'X-Secret': SUGGEST_SECRET, // Verified in the Worker against Doppler
         },
         body: JSON.stringify(payload),
       });
 
+      // Always treat as success for the user (delivery is best-effort)
       setIsSuccess(true);
       trackSuggestion('success');
 
+      // Reset form and close after showing success
       setTimeout(() => {
-        close();
+        handleClose();
         setUrl('');
         setTitle('');
         setDescription('');
       }, 2500);
     } catch (err) {
-      console.warn('Suggestion submission failed:', err);
+      // Silent fail on network error - still show success to user
+      // Do NOT expose details (keeps credentials secure)
+      console.warn('Suggestion submission failed (network or Worker issue):', err);
       setIsSuccess(true);
-      trackSuggestion('error');
+      trackSuggestion('error'); // still track for monitoring
+
       setTimeout(() => {
-        close();
+        handleClose();
         setUrl('');
         setTitle('');
         setDescription('');
@@ -154,11 +87,12 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
-        onClick={close}
+        onClick={handleClose}
       />
+      
       <div className="relative bg-[#111113] border border-zinc-800 rounded-2xl w-full max-w-md p-6 shadow-2xl animate-in zoom-in-95 duration-200">
         <button 
-          onClick={close}
+          onClick={handleClose}
           className="absolute top-4 end-4 p-2 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800/50 rounded-lg transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
@@ -240,22 +174,6 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
                   className="w-full bg-zinc-900/50 border border-zinc-800 text-sm rounded-lg focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 block p-3 text-zinc-200 placeholder-zinc-600 outline-none transition-all resize-none"
                 />
               </div>
-
-              <div style={{ display: 'none' }} aria-hidden="true">
-                <input
-                  type="text"
-                  value={honeypot}
-                  onChange={(e) => setHoneypot(e.target.value)}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-              </div>
-
-              {error && (
-                <div className="text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg p-3">
-                  {error}
-                </div>
-              )}
 
               <button
                 type="submit"
