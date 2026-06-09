@@ -2,416 +2,318 @@ import { SubCategory } from '../types';
 
 export const subcategories: SubCategory[] = [
   {
-    "id": "cloud_providers",
-    "title": {
-      "en": "Cloud Providers",
-      "ar": "مزودي الخدمات السحابية"
+    id: "cloud_providers",
+    title: {
+      en: "Cloud Providers",
+      ar: "مزودي الخدمات السحابية"
     },
-    "resources": [
+    resources: [
       {
-        "title": "Vercel",
-        "description": {
-          "en": "Platform for frontend frameworks and static sites. Free tier, no credit card.",
-          "ar": "منصة لأطر عمل الواجهات الأمامية والمواقع الثابتة. مجاني بدون بطاقة."
+        title: "Vercel",
+        description: {
+          en: "Platform for deploying frontend frameworks and static sites with automatic Git integration and global CDN. The free tier is sufficient for most personal projects and small sites without requiring a credit card.",
+          ar: "منصة لنشر أطر عمل الواجهات الأمامية والمواقع الثابتة مع تكامل Git تلقائي وشبكة توصيل محتوى عالمية. الطبقة المجانية كافية لمعظم المشاريع الشخصية والمواقع الصغيرة بدون الحاجة إلى بطاقة ائتمان."
         },
-        "url": "https://vercel.com/",
-        "tags": [
-          "Hosting",
-          "Cloud",
-          "Free",
-          "NoCC"
-        ],
-        "updatedAt": "2026-06-05"
+        url: "https://vercel.com/",
+        tags: ["hosting", "static", "frontend", "free-tier", "cdn", "git-deploy"],
+        updatedAt: "2026-06-05",
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "Student", "Freelancer"],
+          useCases: ["Deploying Next.js or React sites", "Static site hosting with previews", "Quick client project delivery"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Netlify",
-        "description": {
-          "en": "Build, deploy, and scale modern web projects. 100GB free, no credit card.",
-          "ar": "بناء ونشر مشاريع الويب. 100GB مجاناً بدون بطاقة."
+        title: "Netlify",
+        description: {
+          en: "Service for building, deploying, and scaling modern web projects. Offers generous free bandwidth and build minutes. Popular for static sites and Jamstack applications.",
+          ar: "خدمة لبناء ونشر وتوسيع مشاريع الويب الحديثة. توفر نطاق ترددي مجاني كبير ودقائق بناء. شائعة للمواقع الثابتة وتطبيقات Jamstack."
         },
-        "url": "https://www.netlify.com/",
-        "tags": [
-          "Hosting",
-          "Cloud",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://www.netlify.com/",
+        tags: ["hosting", "static", "jamstack", "free-tier", "cdn"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "Student"],
+          useCases: ["Hosting static sites", "Form handling and serverless functions", "Continuous deployment from Git"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Cloudflare Pages",
-        "description": {
-          "en": "Unlimited bandwidth static hosting on global CDN. No credit card required.",
-          "ar": "استضافة ثابتة بنطاق غير محدود. بدون بطاقة ائتمان."
+        title: "Cloudflare Pages",
+        description: {
+          en: "Static site hosting on Cloudflare's global network with unlimited bandwidth on the free plan. Strong performance and security features included by default.",
+          ar: "استضافة مواقع ثابتة على شبكة Cloudflare العالمية مع نطاق ترددي غير محدود في الخطة المجانية. أداء وأمان قويان بشكل افتراضي."
         },
-        "url": "https://pages.cloudflare.com/",
-        "tags": [
-          "Hosting",
-          "CDN",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://pages.cloudflare.com/",
+        tags: ["hosting", "static", "cdn", "free-tier", "security"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "Student", "Freelancer"],
+          useCases: ["High-traffic static sites", "Sites needing strong DDoS protection", "Free unlimited bandwidth projects"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "GitHub Pages",
-        "description": {
-          "en": "Host static sites directly from GitHub repo. Unlimited, free, no card.",
-          "ar": "استضافة مواقع ثابتة من GitHub. مجاني تماماً."
+        title: "GitHub Pages",
+        description: {
+          en: "Free static site hosting directly from a GitHub repository. Simple to set up with custom domains supported. Good for documentation, portfolios, and personal sites.",
+          ar: "استضافة مجانية للمواقع الثابتة مباشرة من مستودع GitHub. سهلة الإعداد مع دعم النطاقات المخصصة. مناسبة للتوثيق والملفات الشخصية والمواقع الشخصية."
         },
-        "url": "https://pages.github.com/",
-        "tags": [
-          "Hosting",
-          "Git",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://pages.github.com/",
+        tags: ["hosting", "static", "github", "free-tier", "documentation"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "Student"],
+          useCases: ["Project documentation", "Personal portfolios", "Open source project sites"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Render",
-        "description": {
-          "en": "Free static sites and 750hrs/month for backends. No credit card, sleeps after 15min.",
-          "ar": "مواقع ثابتة مجانية و750 ساعة شهرياً. بدون بطاقة."
+        title: "Render",
+        description: {
+          en: "Platform offering free static site hosting and limited hours for web services and databases. Includes automatic SSL and Git-based deploys.",
+          ar: "منصة توفر استضافة مجانية للمواقع الثابتة وساعات محدودة للخدمات الويب وقواعد البيانات. تشمل SSL تلقائي ونشر من Git."
         },
-        "url": "https://render.com/",
-        "tags": [
-          "Hosting",
-          "Server",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://render.com/",
+        tags: ["hosting", "static", "backend", "free-tier", "paas"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "Student"],
+          useCases: ["Full-stack apps on free tier", "Static sites with occasional backend needs", "Learning deployment"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Firebase Hosting",
-        "description": {
-          "en": "Google's hosting with global CDN. Free tier, no credit card needed.",
-          "ar": "استضافة جوجل مع CDN عالمي. مجاني بدون بطاقة."
+        title: "Firebase Hosting",
+        description: {
+          en: "Google's hosting solution with global CDN and integration with other Firebase services. Free tier available for static content and basic dynamic features.",
+          ar: "حل استضافة من Google مع شبكة توصيل محتوى عالمية وتكامل مع خدمات Firebase الأخرى. طبقة مجانية متاحة للمحتوى الثابت والميزات الديناميكية الأساسية."
         },
-        "url": "https://firebase.google.com/products/hosting",
-        "tags": [
-          "Hosting",
-          "Google",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://firebase.google.com/products/hosting",
+        tags: ["hosting", "static", "google", "free-tier", "cdn"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "Student"],
+          useCases: ["Firebase-integrated apps", "Static sites with simple backend", "Quick prototypes"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Static.run",
-        "description": {
-          "en": "Drag & drop hosting, no login required. 5 sites free, no credit card.",
-          "ar": "استضافة بالسحب والإفلات بدون تسجيل. 5 مواقع مجاناً."
+        title: "Static.run",
+        description: {
+          en: "Simple drag-and-drop static hosting that requires no login for basic use. Limited number of sites on the free plan.",
+          ar: "استضافة ثابتة بسيطة بالسحب والإفلات لا تتطلب تسجيل الدخول للاستخدام الأساسي. عدد محدود من المواقع في الخطة المجانية."
         },
-        "url": "https://static.run/",
-        "tags": [
-          "Hosting",
-          "Simple",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://static.run/",
+        tags: ["hosting", "static", "simple", "free-tier", "no-login"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Student", "Freelancer"],
+          useCases: ["Quick one-off sites", "Testing static HTML", "No-account deployments"],
+          _confidenceLabel: "community_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Surge.sh",
-        "description": {
-          "en": "CLI deployment for static sites. No account needed for basic use.",
-          "ar": "نشر عبر سطر الأوامر. بدون حساب للاستخدام الأساسي."
+        title: "Surge.sh",
+        description: {
+          en: "Command-line tool for deploying static sites. Basic usage works without an account; paid plans add custom domains and more features.",
+          ar: "أداة سطر أوامر لنشر المواقع الثابتة. الاستخدام الأساسي يعمل بدون حساب؛ الخطط المدفوعة تضيف نطاقات مخصصة وميزات إضافية."
         },
-        "url": "https://surge.sh/",
-        "tags": [
-          "Hosting",
-          "CLI",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://surge.sh/",
+        tags: ["hosting", "static", "cli", "free-tier"],
+        difficulty: "intermediate",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer"],
+          useCases: ["CLI-based deployments", "Simple static sites from terminal", "Quick sharing of builds"],
+          _confidenceLabel: "community_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Koyeb",
-        "description": {
-          "en": "Free tier with 1 service, no credit card. Global edge deployment.",
-          "ar": "طبقة مجانية بخدمة واحدة. بدون بطاقة."
+        title: "Koyeb",
+        description: {
+          en: "Edge deployment platform with a free tier for one service. Supports containers and git deploys with global distribution.",
+          ar: "منصة نشر على الحافة مع طبقة مجانية لخدمة واحدة. تدعم الحاويات والنشر من Git مع توزيع عالمي."
         },
-        "url": "https://www.koyeb.com/",
-        "tags": [
-          "Hosting",
-          "Server",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://www.koyeb.com/",
+        tags: ["hosting", "serverless", "edge", "free-tier", "containers"],
+        difficulty: "intermediate",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "SaaS Builder"],
+          useCases: ["Global edge applications", "Containerized services on free tier", "Serverless backends"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Fly.io",
-        "description": {
-          "en": "Free tier: 2x 256MB VMs, 3GB storage. No card for trial.",
-          "ar": "طبقة مجانية: 2 VMs. بدون بطاقة للتجربة."
+        title: "Fly.io",
+        description: {
+          en: "Platform for deploying full applications close to users with a free allowance of VMs and storage. Good for global apps that need low latency.",
+          ar: "منصة لنشر التطبيقات الكاملة قريباً من المستخدمين مع حصة مجانية من الآلات الافتراضية والتخزين. جيدة للتطبيقات العالمية التي تحتاج زمن استجابة منخفض."
         },
-        "url": "https://fly.io/",
-        "tags": [
-          "Hosting",
-          "PaaS",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://fly.io/",
+        tags: ["hosting", "paas", "global", "free-tier", "vms"],
+        difficulty: "intermediate",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer"],
+          useCases: ["Low-latency global apps", "Docker-based deployments", "Persistent services on free tier"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Deta Space",
-        "description": {
-          "en": "Free backend hosting for Node/Python. No credit card required.",
-          "ar": "استضافة خلفية مجانية. بدون بطاقة."
+        title: "Glitch",
+        description: {
+          en: "Online environment for building and hosting full-stack web apps with instant previews. Free tier includes public projects and some resource limits.",
+          ar: "بيئة عبر الإنترنت لبناء واستضافة تطبيقات ويب كاملة مع معاينات فورية. الطبقة المجانية تشمل مشاريع عامة وبعض حدود الموارد."
         },
-        "url": "https://deta.space/",
-        "tags": [
-          "Hosting",
-          "Backend",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://glitch.com/",
+        tags: ["hosting", "fullstack", "ide", "free-tier", "prototyping"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Student", "Developer"],
+          useCases: ["Rapid prototyping", "Learning full-stack development", "Small collaborative projects"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Glitch",
-        "description": {
-          "en": "Free full-stack apps, instant deploy. No credit card.",
-          "ar": "تطبيقات كاملة مجانية. بدون بطاقة."
+        title: "Replit",
+        description: {
+          en: "Browser-based IDE with built-in hosting and deployment. Free tier allows running and sharing projects with some compute limits.",
+          ar: "بيئة تطوير متكاملة في المتصفح مع استضافة ونشر مدمجين. الطبقة المجانية تسمح بتشغيل ومشاركة المشاريع مع بعض حدود الحوسبة."
         },
-        "url": "https://glitch.com/",
-        "tags": [
-          "Hosting",
-          "Fullstack",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://replit.com/",
+        tags: ["hosting", "ide", "fullstack", "free-tier", "education"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Student", "Developer"],
+          useCases: ["Learning to code", "Quick prototypes and demos", "Collaborative coding sessions"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Replit",
-        "description": {
-          "en": "Online IDE with free hosting. Deploy instantly, no card.",
-          "ar": "بيئة تطوير مع استضافة مجانية."
+        title: "Oracle Cloud Always Free",
+        description: {
+          en: "Oracle's always-free tier includes two ARM VMs with significant RAM and storage, plus other services. Useful for persistent servers and learning infrastructure.",
+          ar: "الطبقة المجانية الدائمة من Oracle تشمل جهازين افتراضيين ARM مع ذاكرة وتخزين كبيرين، بالإضافة إلى خدمات أخرى. مفيدة للخوادم الدائمة وتعلم البنية التحتية."
         },
-        "url": "https://replit.com/",
-        "tags": [
-          "Hosting",
-          "IDE",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://www.oracle.com/cloud/free/",
+        tags: ["cloud", "vps", "free-tier", "always-free", "arm", "infrastructure"],
+        difficulty: "intermediate",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "Student"],
+          useCases: ["Always-on personal servers", "Hosting databases or services", "Learning cloud and Linux administration"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Oracle Cloud Always Free",
-        "description": {
-          "en": "2 ARM VMs (24GB RAM total), 200GB storage. Forever free, no card needed.",
-          "ar": "2 خوادم مجانية للأبد. بدون بطاقة."
+        title: "Serv00.com",
+        description: {
+          en: "Free hosting with SSH access, support for Node.js, Python, PHP, and multiple databases. Includes a generous storage and site allowance with no credit card required.",
+          ar: "استضافة مجانية مع وصول SSH، دعم Node.js وPython وPHP وقواعد بيانات متعددة. تشمل مساحة تخزين وعدد مواقع سخية بدون الحاجة إلى بطاقة ائتمان."
         },
-        "url": "https://www.oracle.com/cloud/free/",
-        "tags": [
-          "Cloud",
-          "VPS",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://serv00.com/",
+        tags: ["hosting", "vps", "ssh", "free-tier", "no-cc", "student-friendly"],
+        difficulty: "intermediate",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Student", "Developer"],
+          useCases: ["Learning server administration", "Hosting personal projects with SSH", "Running scripts and small services"],
+          _confidenceLabel: "community_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Adaptable",
-        "description": {
-          "en": "Free tier for apps, 256MB RAM. No credit card.",
-          "ar": "طبقة مجانية للتطبيقات. بدون بطاقة."
+        title: "HelioHost",
+        description: {
+          en: "Non-profit free hosting community that has been running since 2005. Offers cPanel, no ads, and reliable service supported by volunteers.",
+          ar: "مجتمع استضافة مجانية غير ربحي يعمل منذ 2005. يوفر cPanel وبدون إعلانات وخدمة موثوقة مدعومة من المتطوعين."
         },
-        "url": "https://adaptable.io/",
-        "tags": [
-          "Hosting",
-          "PaaS",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://heliohost.org/",
+        tags: ["hosting", "cpanel", "free-tier", "nonprofit", "no-cc"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Student", "Freelancer"],
+          useCases: ["Traditional cPanel hosting for free", "PHP and MySQL projects", "Long-term free personal sites"],
+          _confidenceLabel: "community_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "Serv00.com",
-        "description": {
-          "en": "FREE for life: 3GB storage, SSH, Node.js/Python/PHP, 100 sites, no credit card. Perfect for students.",
-          "ar": "مجاني مدى الحياة: 3GB، SSH، Node.js، 100 موقع. بدون بطاقة - مثالي للطلاب."
+        title: "InfinityFree",
+        description: {
+          en: "Unlimited free hosting with PHP, MySQL, and no forced ads. Includes a control panel and is popular for simple websites and learning.",
+          ar: "استضافة مجانية غير محدودة مع PHP وMySQL وبدون إعلانات قسرية. تشمل لوحة تحكم وشائعة للمواقع البسيطة والتعلم."
         },
-        "url": "https://serv00.com/",
-        "tags": [
-          "Hosting",
-          "VPS",
-          "Free",
-          "NoCC",
-          "SSH"
-        ]
+        url: "https://www.infinityfree.com/",
+        tags: ["hosting", "php", "mysql", "free-tier", "unlimited", "no-cc"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Student", "Freelancer"],
+          useCases: ["Simple PHP websites", "Learning web hosting basics", "Personal blogs or portfolios"],
+          _confidenceLabel: "community_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "HelioHost",
-        "description": {
-          "en": "Free cPanel hosting since 2005. No ads, no credit card. Community supported.",
-          "ar": "استضافة مجانية منذ 2005. بدون إعلانات أو بطاقة."
+        title: "Neocities",
+        description: {
+          en: "Free static hosting focused on creative and personal websites. Includes 1GB of storage and a simple editor. Popular for portfolios and experimental sites.",
+          ar: "استضافة ثابتة مجانية تركز على المواقع الإبداعية والشخصية. تشمل 1 جيجابايت تخزين ومحرر بسيط. شائعة للملفات الشخصية والمواقع التجريبية."
         },
-        "url": "https://heliohost.org/",
-        "tags": [
-          "Hosting",
-          "cPanel",
-          "Free",
-          "NoCC"
-        ]
+        url: "https://neocities.org/",
+        tags: ["hosting", "static", "creative", "free-tier", "portfolios"],
+        difficulty: "beginner",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Student", "Freelancer", "Designer"],
+          useCases: ["Personal portfolios", "Creative or experimental sites", "Learning basic web development"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       },
       {
-        "title": "InfinityFree",
-        "description": {
-          "en": "Unlimited free hosting with PHP/MySQL. No credit card, no ads.",
-          "ar": "استضافة غير محدودة PHP/MySQL. بدون بطاقة."
+        title: "Supabase",
+        description: {
+          en: "Open-source Firebase alternative providing a free Postgres database, authentication, and storage. Useful for building full-stack applications quickly.",
+          ar: "بديل مفتوح المصدر لـ Firebase يوفر قاعدة بيانات Postgres مجانية ومصادقة وتخزين. مفيد لبناء تطبيقات كاملة بسرعة."
         },
-        "url": "https://www.infinityfree.com/",
-        "tags": [
-          "Hosting",
-          "PHP",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "ByetHost",
-        "description": {
-          "en": "Free hosting with 5 MySQL DBs, cPanel. No credit card.",
-          "ar": "استضافة مجانية مع 5 قواعد بيانات."
-        },
-        "url": "https://byet.host/",
-        "tags": [
-          "Hosting",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "FreeHostia",
-        "description": {
-          "en": "250MB storage, 6GB bandwidth, free SSL. No card required.",
-          "ar": "250MB تخزين مع SSL مجاني."
-        },
-        "url": "https://www.freehostia.com/",
-        "tags": [
-          "Hosting",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "FreeHostingNoAds",
-        "description": {
-          "en": "1 domain, 3 subdomains, PHP/MySQL. Truly free, no card.",
-          "ar": "دومين واحد و3 نطاقات فرعية مجاناً."
-        },
-        "url": "https://freehostingnoads.net/",
-        "tags": [
-          "Hosting",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "Serv00.com",
-        "description": {
-          "en": "FREE FOR LIFE: 3GB, SSH, Node.js/Python/PHP, 100 sites, 10 MySQL, 3 PostgreSQL, 3 MongoDB. No credit card ever.",
-          "ar": "مجاني مدى الحياة: 3GB، SSH، Node.js، 100 موقع. بدون بطاقة نهائياً."
-        },
-        "url": "https://serv00.com/",
-        "tags": [
-          "Hosting",
-          "VPS",
-          "Free",
-          "NoCC",
-          "SSH"
-        ]
-      },
-      {
-        "title": "HelioHost",
-        "description": {
-          "en": "Non-profit free hosting since 2005. 1GB storage, no ads, no card.",
-          "ar": "استضافة غير ربحية منذ 2005. بدون إعلانات."
-        },
-        "url": "https://www.heliohost.org/",
-        "tags": [
-          "Hosting",
-          "NonProfit",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "Neocities",
-        "description": {
-          "en": "Free static hosting, 1GB, no credit card. Perfect for portfolios.",
-          "ar": "استضافة ثابتة مجانية 1GB."
-        },
-        "url": "https://neocities.org/",
-        "tags": [
-          "Hosting",
-          "Static",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "GitLab Pages",
-        "description": {
-          "en": "Free static hosting from GitLab, CI/CD included. No card.",
-          "ar": "استضافة من GitLab مع CI/CD."
-        },
-        "url": "https://docs.gitlab.com/ee/user/project/pages/",
-        "tags": [
-          "Hosting",
-          "Git",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "Deno Deploy",
-        "description": {
-          "en": "Edge functions free tier, 100K req/day. No credit card.",
-          "ar": "وظائف حافة مجانية 100K طلب/يوم."
-        },
-        "url": "https://deno.com/deploy",
-        "tags": [
-          "Hosting",
-          "Edge",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "Supabase",
-        "description": {
-          "en": "Free Postgres DB, auth, storage. 500MB, no card required.",
-          "ar": "قاعدة بيانات مجانية 500MB."
-        },
-        "url": "https://supabase.com/",
-        "tags": [
-          "Backend",
-          "Database",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "Tiiny Host",
-        "description": {
-          "en": "Drag-drop hosting, 3 sites free. No signup required.",
-          "ar": "استضافة بالسحب 3 مواقع مجاناً."
-        },
-        "url": "https://tiiny.host/",
-        "tags": [
-          "Hosting",
-          "Simple",
-          "Free",
-          "NoCC"
-        ]
-      },
-      {
-        "title": "DigitalOcean",
-        "description": {
-          "en": "Developer cloud provider. Free trial requires card - listed for reference.",
-          "ar": "مزود سحابي للمطورين. يتطلب بطاقة للتجربة."
-        },
-        "url": "https://www.digitalocean.com/",
-        "tags": [
-          "Cloud",
-          "Server",
-          "Trial"
-        ]
+        url: "https://supabase.com/",
+        tags: ["backend", "database", "auth", "free-tier", "postgres"],
+        difficulty: "intermediate",
+        metadata: {
+          availableForAlgerians: "Fully Available",
+          recommendedFor: ["Developer", "Startup Founder"],
+          useCases: ["Building MVPs with database and auth", "Replacing Firebase for Postgres users", "Full-stack prototypes"],
+          _confidenceLabel: "official_verified",
+          _lastVerified: "2026-06-09"
+        }
       }
     ]
   }
