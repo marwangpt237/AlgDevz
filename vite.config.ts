@@ -60,5 +60,24 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
       allowedHosts: true,
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              if (id.includes('react') || id.includes('react-dom')) return 'vendor-react';
+              if (id.includes('lucide-react')) return 'vendor-icons';
+              return 'vendor';
+            }
+            if (id.includes('/src/data/')) {
+              return 'data-categories';
+            }
+            if (id.includes('/src/components/')) {
+              return 'components';
+            }
+          }
+        }
+      }
+    }
   };
 });

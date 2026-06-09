@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://algdevs.marwan-naili.me/sitemap.xml
