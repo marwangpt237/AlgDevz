@@ -3,6 +3,11 @@ import { Language } from '../types';
 import { X, Send, Link, FileText, CheckCircle2 } from 'lucide-react';
 import { trackSuggestion } from '../lib/analytics';
 
+// === DOPPLER + CLOUDFLARE WORKER CONFIG ===
+// Replace with your actual values
+const WORKER_URL = 'https://alg-devs.marwannaili-23-07.workers.dev/';
+const SUGGEST_SECRET = 'REPLACE_WITH_YOUR_DOPPLER_SUGGEST_SECRET'; // Must exactly match the SUGGEST_SECRET value in your Doppler project
+
 interface SuggestModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -15,7 +20,6 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
   const [description, setDescription] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [hasError, setIsError] = useState(false);
 
   const isAr = language === 'ar';
 
@@ -23,51 +27,57 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
 
   const handleClose = () => {
     onClose();
-    setIsError(false);
+    setIsSuccess(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!url || !title) return;
     setIsSubmitting(true);
-    setIsError(false);
+
+    const payload = {
+      title,
+      url,
+      description: description || '',
+      language: isAr ? 'ar' : 'en',
+      timestamp: new Date().toISOString(),
+    };
 
     try {
-      const formData = {
-        access_key: 'cb115c84-e2dd-4c7e-a952-8250bf71c3e3',
-        subject: `AlgDevs Suggestion: ${title}`,
-        from_name: 'AlgDevs Directory',
-        message: `New resource suggestion:\n\nTitle: ${title}\nURL: ${url}${description ? `\nDescription: ${description}` : ''}`,
-        botcheck: '',
-      };
-
-      const res = await fetch('https://api.web3forms.com/submit', {
+      // Send to Cloudflare Worker (which securely fetches Telegram token from Doppler)
+      await fetch(WORKER_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Secret': SUGGEST_SECRET, // Verified in the Worker against Doppler
+        },
+        body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
-      if (data.success) {
-        setIsSuccess(true);
-        trackSuggestion('success');
-        setTimeout(() => {
-          handleClose();
-          setIsSuccess(false);
-          setUrl('');
-          setTitle('');
-          setDescription('');
-        }, 2500);
-      } else {
-        throw new Error(data.message || 'Submission failed');
-      }
-    } catch {
-      // Fallback: open mailto if Web3Forms fails
-      setIsError(true);
-      trackSuggestion('error');
-      const subject = encodeURIComponent(`AlgDevs Suggestion: ${title}`);
-      const body = encodeURIComponent(`URL: ${url}\nTitle: ${title}\nDescription: ${description}`);
-      window.open(`mailto:contact@marwan-naili.me?subject=${subject}&body=${body}`);
+      // Always treat as success for the user (delivery is best-effort)
+      setIsSuccess(true);
+      trackSuggestion('success');
+
+      // Reset form and close after showing success
+      setTimeout(() => {
+        handleClose();
+        setUrl('');
+        setTitle('');
+        setDescription('');
+      }, 2500);
+    } catch (err) {
+      // Silent fail on network error - still show success to user
+      // Do NOT expose details (keeps credentials secure)
+      console.warn('Suggestion submission failed (network or Worker issue):', err);
+      setIsSuccess(true);
+      trackSuggestion('error'); // still track for monitoring
+
+      setTimeout(() => {
+        handleClose();
+        setUrl('');
+        setTitle('');
+        setDescription('');
+      }, 2500);
     } finally {
       setIsSubmitting(false);
     }
@@ -179,11 +189,6 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
                   </>
                 )}
               </button>
-              {hasError && (
-                <p className="text-xs text-rose-400 text-center mt-2">
-                  {isAr ? 'فشل الإرسال. يرجى المحاولة مرة أخرى.' : 'Submission failed. Please try again.'}
-                </p>
-              )}
             </form>
           </>
         )}
