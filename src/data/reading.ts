@@ -1,5 +1,4 @@
 import { SubCategory } from '../types';
-
 export const subcategories: SubCategory[] = [
   {
     "id": "public_domain",
@@ -11,8 +10,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Project Gutenberg",
         "description": {
-          "en": "or [Lex](https://lex-books.com/) - Historical Fiction / Nonfiction / [Australia](https://gutenberg.net.au/) / [Canada](https://gutenberg.ca/index.html) / [Nordic](https://runeberg.org/)",
-          "ar": "or [Lex](https://lex-books.com/) - Historical Fiction / Nonfiction / [Australia](https://gutenberg.net.au/) / [Canada](https://gutenberg.ca/index.html) / [Nordic](https://runeberg.org/)"
+          "en": "Offers a vast collection of free eBooks, primarily older works for which U.S. copyright has expired. It provides access to classic literature, historical documents, and reference materials in various formats. Ideal for students, researchers, and general readers seeking public domain texts for study, enjoyment, or digital archiving. Useful for accessing foundational works without cost.",
+          "ar": "يوفر مجموعة ضخمة من الكتب الإلكترونية المجانية، معظمها أعمال قديمة انتهت حقوق نشرها. يتيح الوصول إلى الأدب الكلاسيكي والوثائق التاريخية والمواد المرجعية بصيغ متعددة. مثالي للطلاب والباحثين والقراء الذين يبحثون عن نصوص الملكية العامة للدراسة أو المتعة أو الأرشفة الرقمية. مفيد للحصول على الأعمال الأساسية مجانًا."
         },
         "url": "https://www.gutenberg.org/",
         "tags": [
@@ -22,8 +21,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Unglue.it",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "A platform that facilitates the \"ungluing\" of copyrighted books, making them freely available as public domain or under open licenses. It enables readers to crowdfund the release of specific titles, expanding access to a diverse range of works. Useful for promoting open access to knowledge and for readers interested in supporting the liberation of books from copyright restrictions.",
+          "ar": "منصة تسهل \"تحرير\" الكتب المحمية بحقوق الطبع والنشر، لجعلها متاحة مجانًا كملكية عامة أو بموجب تراخيص مفتوحة. تمكن القراء من تمويل إصدار عناوين محددة جماعيًا، مما يوسع الوصول إلى مجموعة متنوعة من الأعمال. مفيد لتعزيز الوصول المفتوح للمعرفة وللقراء المهتمين بدعم تحرير الكتب من قيود حقوق النشر."
         },
         "url": "https://unglue.it/",
         "tags": [
@@ -33,8 +32,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Wikisource",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "An online digital library of free-content textual sources, operating as a Wikimedia project. It hosts original source texts in many languages, including books, documents, and historical records, verified by volunteers. Valuable for researchers, students, and anyone needing access to primary source materials for academic study, historical research, or general knowledge.",
+          "ar": "مكتبة رقمية على الإنترنت لمصادر نصوص المحتوى الحر، تعمل كمشروع تابع لمؤسسة ويكيميديا. تستضيف نصوصًا أصلية بلغات متعددة، بما في ذلك الكتب والوثائق والسجلات التاريخية، يتم التحقق منها من قبل المتطوعين. قيمة للباحثين والطلاب وأي شخص يحتاج إلى الوصول إلى مواد المصادر الأولية للدراسة الأكاديمية أو البحث التاريخي أو المعرفة العامة."
         },
         "url": "https://wikisource.org",
         "tags": [
@@ -44,8 +43,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Open Library",
         "description": {
-          "en": "/ [GitHub](https://github.com/internetarchive/openlibrary)",
-          "ar": "/ [GitHub](https://github.com/internetarchive/openlibrary)"
+          "en": "An initiative of the Internet Archive, aiming to create a web page for every book ever published. It offers access to millions of digitized books, including public domain works and in-copyright titles available through controlled digital lending. Useful for researchers, students, and general readers seeking a vast catalog of books for reading, research, and discovery.",
+          "ar": "مبادرة من أرشيف الإنترنت تهدف إلى إنشاء صفحة ويب لكل كتاب تم نشره على الإطلاق. توفر الوصول إلى ملايين الكتب الرقمية، بما في ذلك أعمال الملكية العامة والعناوين المحمية بحقوق الطبع والنشر المتاحة من خلال الإعارة الرقمية المتحكم بها. مفيد للباحثين والطلاب والقراء الذين يبحثون عن فهرس ضخم من الكتب للقراءة والبحث والاكتشاف."
         },
         "url": "https://openlibrary.org/",
         "tags": [
@@ -55,8 +54,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "OpenChapter",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "A platform dedicated to providing free access to books, often focusing on public domain works or those released under open licenses. It aims to make literature widely available to readers globally. Useful for students, educators, and general readers looking for a straightforward way to discover and read a variety of texts without cost.",
+          "ar": "منصة مخصصة لتوفير الوصول المجاني إلى الكتب، غالبًا ما تركز على أعمال الملكية العامة أو تلك الصادرة بموجب تراخيص مفتوحة. تهدف إلى جعل الأدب متاحًا على نطاق واسع للقراء في جميع أنحاء العالم. مفيد للطلاب والمعلمين والقراء الذين يبحثون عن طريقة مباشرة لاكتشاف وقراءة مجموعة متنوعة من النصوص مجانًا."
         },
         "url": "https://openchapter.io/",
         "tags": [
@@ -66,8 +65,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Page by Page Books",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Offers a collection of classic literature and public domain books available for online reading. The platform provides a simple interface for accessing full texts directly in a web browser. It is suitable for casual readers, students, and anyone interested in exploring timeless works of fiction and non-fiction without needing to download files.",
+          "ar": "يقدم مجموعة من الأدب الكلاسيكي وكتب الملكية العامة المتاحة للقراءة عبر الإنترنت. توفر المنصة واجهة بسيطة للوصول إلى النصوص الكاملة مباشرة في متصفح الويب. مناسب للقراء العاديين والطلاب وأي شخص مهتم باستكشاف الأعمال الخالدة من الخيال وغير الخيال دون الحاجة إلى تنزيل الملفات."
         },
         "url": "https://www.pagebypagebooks.com/",
         "tags": [
@@ -77,8 +76,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Standard EBooks",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Produces high-quality, carefully formatted, and proofread public domain eBooks. It takes texts from sources like Project Gutenberg and enhances them for modern reading devices, offering a superior reading experience. Ideal for readers who appreciate well-designed digital books and want to enjoy classic literature with improved typography and aesthetics.",
+          "ar": "ينتج كتبًا إلكترونية عالية الجودة، منسقة بعناية ومدققة من الملكية العامة. يأخذ نصوصًا من مصادر مثل مشروع غوتنبرغ ويحسنها لأجهزة القراءة الحديثة، مما يوفر تجربة قراءة فائقة. مثالي للقراء الذين يقدرون الكتب الرقمية المصممة جيدًا ويرغبون في الاستمتاع بالأدب الكلاسيكي بتحسينات في الطباعة والجماليات."
         },
         "url": "https://standardebooks.org/",
         "tags": [
@@ -88,8 +87,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Manybooks",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Provides a vast library of free eBooks, primarily focusing on public domain titles and works from independent authors. It offers books in various genres and formats, catering to diverse reading preferences. Useful for readers seeking a wide selection of free literature, including classics and contemporary indie works, for personal enjoyment or study.",
+          "ar": "يوفر مكتبة ضخمة من الكتب الإلكترونية المجانية، تركز بشكل أساسي على عناوين الملكية العامة وأعمال المؤلفين المستقلين. يقدم كتبًا في أنواع وتنسيقات مختلفة، لتلبية تفضيلات القراءة المتنوعة. مفيد للقراء الذين يبحثون عن مجموعة واسعة من الأدب المجاني، بما في ذلك الكلاسيكيات والأعمال المستقلة المعاصرة، للمتعة الشخصية أو الدراسة."
         },
         "url": "https://manybooks.net/",
         "tags": [
@@ -99,8 +98,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "JustFreeBooks",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "A search engine designed to help users find free books available across various online sources. It aggregates links to public domain books and other free content from multiple platforms, simplifying the discovery process. Beneficial for students, researchers, and avid readers looking for a centralized tool to locate free digital books efficiently.",
+          "ar": "محرك بحث مصمم لمساعدة المستخدمين في العثور على الكتب المجانية المتاحة عبر مصادر مختلفة على الإنترنت. يجمع روابط لكتب الملكية العامة والمحتوى المجاني الآخر من منصات متعددة، مما يبسط عملية الاكتشاف. مفيد للطلاب والباحثين والقراء المتحمسين الذين يبحثون عن أداة مركزية لتحديد موقع الكتب الرقمية المجانية بكفاءة."
         },
         "url": "https://www.justfreebooks.info/",
         "tags": [
@@ -110,8 +109,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Global Grey",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Offers a curated collection of public domain books, meticulously formatted and available in multiple eBook formats. The focus is on providing high-quality, easy-to-read versions of classic literature and non-fiction. Ideal for readers who appreciate well-presented digital texts and wish to explore a diverse range of historical and literary works.",
+          "ar": "يقدم مجموعة منسقة من كتب الملكية العامة، منسقة بدقة ومتاحة بتنسيقات كتب إلكترونية متعددة. ينصب التركيز على توفير إصدارات عالية الجودة وسهلة القراءة من الأدب الكلاسيكي وغير الخيالي. مثالي للقراء الذين يقدرون النصوص الرقمية المعروضة جيدًا ويرغبون في استكشاف مجموعة متنوعة من الأعمال التاريخية والأدبية."
         },
         "url": "https://www.globalgreyebooks.com/index.html",
         "tags": [
@@ -121,8 +120,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "DPLA",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "The Digital Public Library of America aggregates millions of items from libraries, archives, and museums across the United States. It provides a central access point to digitized cultural heritage materials, including books, images, and audio. Valuable for researchers, educators, and the general public seeking diverse primary sources and historical content.",
+          "ar": "تجمع المكتبة الرقمية العامة الأمريكية ملايين العناصر من المكتبات والأرشيفات والمتاحف في جميع أنحاء الولايات المتحدة. توفر نقطة وصول مركزية للمواد التراثية الثقافية الرقمية، بما في ذلك الكتب والصور والتسجيلات الصوتية. قيمة للباحثين والمعلمين والجمهور العام الذين يبحثون عن مصادر أولية متنوعة ومحتوى تاريخي."
         },
         "url": "https://dp.la/",
         "tags": [
@@ -132,8 +131,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Fadedpage",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "A Canadian project dedicated to digitizing and making available public domain books, primarily focusing on works whose copyright has expired in Canada. It offers a growing collection of classic literature and historical texts in various eBook formats. Useful for readers and researchers interested in Canadian public domain content and broader classic literature.",
+          "ar": "مشروع كندي مخصص لرقمنة وإتاحة كتب الملكية العامة، مع التركيز بشكل أساسي على الأعمال التي انتهت حقوق نشرها في كندا. يقدم مجموعة متزايدة من الأدب الكلاسيكي والنصوص التاريخية بتنسيقات كتب إلكترونية مختلفة. مفيد للقراء والباحثين المهتمين بمحتوى الملكية العامة الكندي والأدب الكلاسيكي الأوسع."
         },
         "url": "https://www.fadedpage.com/",
         "tags": [
@@ -143,8 +142,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "E-Book Mecca",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Provides a collection of free eBooks, often focusing on public domain works and classic literature. It offers a straightforward platform for discovering and downloading texts in various formats. Suitable for readers looking for a simple way to access a range of free books for personal reading, study, or educational purposes.",
+          "ar": "يوفر مجموعة من الكتب الإلكترونية المجانية، غالبًا ما تركز على أعمال الملكية العامة والأدب الكلاسيكي. يقدم منصة مباشرة لاكتشاف وتنزيل النصوص بتنسيقات مختلفة. مناسب للقراء الذين يبحثون عن طريقة بسيطة للوصول إلى مجموعة من الكتب المجانية للقراءة الشخصية أو الدراسة أو الأغراض التعليمية."
         },
         "url": "https://ebook-mecca.com/",
         "tags": [
@@ -154,8 +153,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Planet eBook",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Offers a selection of classic literature and public domain books, formatted for easy reading on modern devices. It provides free downloads of popular titles in PDF, Epub, and Mobi formats. Ideal for students and general readers who want convenient access to well-known literary works for study or leisure reading.",
+          "ar": "يقدم مجموعة مختارة من الأدب الكلاسيكي وكتب الملكية العامة، منسقة لتسهيل القراءة على الأجهزة الحديثة. يوفر تنزيلات مجانية للعناوين الشهيرة بتنسيقات PDF و Epub و Mobi. مثالي للطلاب والقراء الذين يرغبون في الوصول المريح إلى الأعمال الأدبية المعروفة للدراسة أو القراءة الترفيهية."
         },
         "url": "https://www.planetebook.com/",
         "tags": [
@@ -165,8 +164,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Loyal Books",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Specializes in free public domain audiobooks and eBooks. It offers a wide array of classic literature, children's stories, and non-fiction titles, available for streaming or download. Excellent for commuters, visually impaired individuals, or anyone who prefers listening to books, as well as readers seeking free digital texts.",
+          "ar": "متخصص في الكتب الصوتية والكتب الإلكترونية المجانية من الملكية العامة. يقدم مجموعة واسعة من الأدب الكلاسيكي وقصص الأطفال والعناوين غير الخيالية، المتاحة للبث أو التنزيل. ممتاز للمسافرين، والأشخاص ضعاف البصر، أو أي شخص يفضل الاستماع إلى الكتب، بالإضافة إلى القراء الذين يبحثون عن نصوص رقمية مجانية."
         },
         "url": "https://www.loyalbooks.com/",
         "tags": [
@@ -176,8 +175,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Planet Publish",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Provides a collection of classic literature and public domain texts, formatted for easy reading and download. It focuses on making well-known works accessible to a broad audience. Useful for students, educators, and general readers seeking free, high-quality digital versions of foundational literary works for study, teaching, or personal enjoyment.",
+          "ar": "يوفر مجموعة من الأدب الكلاسيكي ونصوص الملكية العامة، منسقة لتسهيل القراءة والتنزيل. يركز على جعل الأعمال المعروفة متاحة لجمهور واسع. مفيد للطلاب والمعلمين والقراء الذين يبحثون عن إصدارات رقمية مجانية وعالية الجودة من الأعمال الأدبية الأساسية للدراسة أو التدريس أو المتعة الشخصية."
         },
         "url": "https://www.planetpublish.com/",
         "tags": [
@@ -187,8 +186,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "BAEN",
         "description": {
-          "en": "No description",
-          "ar": "بدون وصف"
+          "en": "Baen Books is a science fiction and fantasy publisher known for offering a selection of free eBooks, often referred to as \"Free Library\" or \"Baen Free Reads.\" These include full novels and short stories, primarily from their published authors. Useful for fans of science fiction and fantasy genres looking for free, high-quality content.",
+          "ar": "Baen Books هو ناشر لأدب الخيال العلمي والفانتازيا، معروف بتقديمه مجموعة مختارة من الكتب الإلكترونية المجانية، غالبًا ما يشار إليها باسم \"المكتبة المجانية\" أو \"قراءات Baen المجانية\". تتضمن روايات كاملة وقصصًا قصيرة، بشكل أساسي من مؤلفيهم المنشورين. مفيد لمحبي أنواع الخيال العلمي والفانتازيا الذين يبحثون عن محتوى مجاني وعالي الجودة."
         },
         "url": "https://www.baen.com/allbooks/category/index/id/2012",
         "tags": [
@@ -198,8 +197,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Ebookzy",
         "description": {
-          "en": "Classics",
-          "ar": "Classics"
+          "en": "Offers a collection of free eBooks, primarily focusing on public domain titles and classic literature. It provides a platform for users to discover and download various texts in common eBook formats. Suitable for general readers and students seeking accessible, no-cost digital books for leisure reading, academic purposes, or personal enrichment.",
+          "ar": "يقدم مجموعة من الكتب الإلكترونية المجانية، تركز بشكل أساسي على عناوين الملكية العامة والأدب الكلاسيكي. يوفر منصة للمستخدمين لاكتشاف وتنزيل نصوص متنوعة بتنسيقات الكتب الإلكترونية الشائعة. مناسب للقراء والطلاب الذين يبحثون عن كتب رقمية مجانية ومتاحة للقراءة الترفيهية أو الأغراض الأكاديمية أو الإثراء الشخصي."
         },
         "url": "https://ebookzy.com/",
         "tags": [
@@ -209,8 +208,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "⁠By the Fireplace",
         "description": {
-          "en": "Classics",
-          "ar": "Classics"
+          "en": "A website that provides free access to classic literature and public domain books, often presented with a focus on a comfortable reading experience. It curates a selection of timeless works for online reading. Ideal for readers who enjoy a curated collection of classics and prefer to read directly in their web browser without downloads.",
+          "ar": "موقع يوفر وصولاً مجانيًا إلى الأدب الكلاسيكي وكتب الملكية العامة، غالبًا ما يتم تقديمه مع التركيز على تجربة قراءة مريحة. يقوم بتنسيق مجموعة مختارة من الأعمال الخالدة للقراءة عبر الإنترنت. مثالي للقراء الذين يستمتعون بمجموعة منسقة من الكلاسيكيات ويفضلون القراءة مباشرة في متصفح الويب دون تنزيلات."
         },
         "url": "https://bythefireplace.com/",
         "tags": [
@@ -220,8 +219,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "DigiLibraries",
         "description": {
-          "en": "Classics",
-          "ar": "Classics"
+          "en": "Offers a large collection of free eBooks, including public domain works and titles from independent authors. It provides books across various genres and categories, available for download in multiple formats. Useful for readers seeking a diverse range of free digital literature for personal enjoyment, educational purposes, or research.",
+          "ar": "يقدم مجموعة كبيرة من الكتب الإلكترونية المجانية، بما في ذلك أعمال الملكية العامة وعناوين من مؤلفين مستقلين. يوفر كتبًا عبر أنواع وفئات مختلفة، متاحة للتنزيل بتنسيقات متعددة. مفيد للقراء الذين يبحثون عن مجموعة متنوعة من الأدب الرقمي المجاني للمتعة الشخصية أو الأغراض التعليمية أو البحث."
         },
         "url": "https://digilibraries.com/",
         "tags": [
@@ -339,8 +338,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "OceanOfPDF",
         "description": {
-          "en": "Books / Comics",
-          "ar": "Books / Comics"
+          "en": "A platform for searching and downloading PDF documents across various categories. It provides access to a wide range of e-books, academic papers, and manuals, useful for students, researchers, and professionals seeking specific information or learning materials. It facilitates quick access to digital content for reading and reference.",
+          "ar": "منصة للبحث وتنزيل مستندات PDF في مجالات متعددة. توفر وصولاً إلى مجموعة واسعة من الكتب الإلكترونية، الأوراق الأكاديمية، والأدلة، مما يجعلها مفيدة للطلاب، الباحثين، والمهنيين الذين يبحثون عن معلومات محددة أو مواد تعليمية. تسهل الوصول السريع للمحتوى الرقمي للقراءة والمرجع."
         },
         "url": "https://oceanofpdf.com/",
         "tags": [
@@ -350,8 +349,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "pdfroom",
         "description": {
-          "en": "Books / Comics",
-          "ar": "Books / Comics"
+          "en": "An online repository offering a collection of free PDF books and documents. Users can search for and download materials across diverse subjects, including technology, science, and literature. It serves as a resource for students, self-learners, and anyone needing digital books for study, research, or general reading.",
+          "ar": "مستودع إلكتروني يقدم مجموعة من كتب ومستندات PDF المجانية. يمكن للمستخدمين البحث عن المواد وتنزيلها في مواضيع متنوعة، بما في ذلك التكنولوجيا، العلوم، والأدب. يعتبر مصدراً للطلاب، المتعلمين الذاتيين، وأي شخص يحتاج إلى كتب رقمية للدراسة، البحث، أو القراءة العامة."
         },
         "url": "https://pdfroom.com/",
         "tags": [
@@ -361,8 +360,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Ebook PDF",
         "description": {
-          "en": "Books",
-          "ar": "Books"
+          "en": "A dedicated search engine for finding and accessing e-books in PDF format. It indexes a broad spectrum of titles, from academic texts to popular fiction, making it suitable for students, educators, and general readers. The platform aims to simplify the process of locating specific digital books for educational or personal use.",
+          "ar": "محرك بحث متخصص للعثور على الكتب الإلكترونية بصيغة PDF والوصول إليها. يقوم بفهرسة مجموعة واسعة من العناوين، من النصوص الأكاديمية إلى الروايات الشائعة، مما يجعله مناسباً للطلاب، المعلمين، والقراء بشكل عام. يهدف إلى تبسيط عملية تحديد موقع الكتب الرقمية للاستخدام التعليمي أو الشخصي."
         },
         "url": "https://ebookpdf.com/",
         "tags": [
@@ -372,8 +371,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "KuPDF",
         "description": {
-          "en": "Books",
-          "ar": "Books"
+          "en": "An online service for discovering and downloading PDF files. It offers a searchable database of documents covering various topics, including academic papers, reports, and e-books. This resource is beneficial for individuals seeking specific information, research materials, or supplementary reading for their studies or professional development.",
+          "ar": "خدمة إلكترونية لاكتشاف وتنزيل ملفات PDF. توفر قاعدة بيانات قابلة للبحث للمستندات التي تغطي مواضيع مختلفة، بما في ذلك الأوراق الأكاديمية، التقارير، والكتب الإلكترونية. هذا المصدر مفيد للأفراد الذين يبحثون عن معلومات محددة، مواد بحثية، أو قراءات إضافية لدراساتهم أو تطويرهم المهني."
         },
         "url": "https://kupdf.net/",
         "tags": [
@@ -383,8 +382,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "ePDF",
         "description": {
-          "en": ", [2](https://epdf.pub/) - Books",
-          "ar": ", [2](https://epdf.pub/) - Books"
+          "en": "A platform designed for searching and accessing a wide array of PDF documents. It provides users with the ability to find e-books, articles, and other digital content across numerous subjects. This resource supports students, researchers, and professionals in locating relevant materials for academic work, professional development, or personal interest.",
+          "ar": "منصة مصممة للبحث والوصول إلى مجموعة واسعة من مستندات PDF. توفر للمستخدمين القدرة على العثور على الكتب الإلكترونية، المقالات، والمحتوى الرقمي الآخر عبر مواضيع عديدة. يدعم هذا المصدر الطلاب، الباحثين، والمهنيين في تحديد موقع المواد ذات الصلة للعمل الأكاديمي، التطوير المهني، أو الاهتمام الشخصي."
         },
         "url": "https://epdf.pub/",
         "tags": [
@@ -394,8 +393,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "PDFCoffee",
         "description": {
-          "en": "Books",
-          "ar": "Books"
+          "en": "An online library providing access to a diverse collection of PDF documents. Users can browse and download e-books, academic papers, and various reports. It serves as a practical resource for students, researchers, and anyone needing quick access to digital content for study, reference, or general knowledge acquisition.",
+          "ar": "مكتبة إلكترونية توفر الوصول إلى مجموعة متنوعة من مستندات PDF. يمكن للمستخدمين تصفح وتنزيل الكتب الإلكترونية، الأوراق الأكاديمية، والتقارير المختلفة. يعتبر مصدراً عملياً للطلاب، الباحثين، وأي شخص يحتاج إلى وصول سريع للمحتوى الرقمي للدراسة، المرجع، أو اكتساب المعرفة العامة."
         },
         "url": "https://pdfcoffee.com",
         "tags": [
@@ -405,8 +404,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "PDFCookie",
         "description": {
-          "en": "Books",
-          "ar": "Books"
+          "en": "A web-based service for finding and downloading PDF files. It offers a searchable index of documents, including e-books, manuals, and academic articles, covering a range of subjects. This resource is useful for students, professionals, and self-learners seeking specific information or educational materials in digital format.",
+          "ar": "خدمة قائمة على الويب للعثور على ملفات PDF وتنزيلها. توفر فهرساً قابلاً للبحث للمستندات، بما في ذلك الكتب الإلكترونية، الأدلة، والمقالات الأكاديمية، التي تغطي مجموعة من المواضيع. هذا المصدر مفيد للطلاب، المهنيين، والمتعلمين الذاتيين الذين يبحثون عن معلومات محددة أو مواد تعليمية بصيغة رقمية."
         },
         "url": "https://pdfcookie.com/",
         "tags": [
@@ -416,8 +415,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "iDoc",
         "description": {
-          "en": "Books",
-          "ar": "Books"
+          "en": "An online platform for searching and accessing various types of documents, including PDF files. It provides a repository for e-books, research papers, and other digital content. This resource is beneficial for students, academics, and professionals who require quick retrieval of specific documents for study, research, or reference purposes.",
+          "ar": "منصة إلكترونية للبحث والوصول إلى أنواع مختلفة من المستندات، بما في ذلك ملفات PDF. توفر مستودعاً للكتب الإلكترونية، الأوراق البحثية، والمحتوى الرقمي الآخر. هذا المصدر مفيد للطلاب، الأكاديميين، والمهنيين الذين يحتاجون إلى استرجاع سريع لمستندات محددة لأغراض الدراسة، البحث، أو المرجع."
         },
         "url": "https://idoc.tips/",
         "tags": [
@@ -427,8 +426,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "freepdfbook",
         "description": {
-          "en": "Books",
-          "ar": "Books"
+          "en": "A website dedicated to providing free e-books in PDF format across numerous categories. It offers a collection of titles for various interests, from technical subjects to general knowledge. This resource is suitable for students, self-learners, and anyone looking for accessible digital books for education, skill development, or leisure reading.",
+          "ar": "موقع إلكتروني مخصص لتوفير كتب إلكترونية مجانية بصيغة PDF عبر فئات عديدة. يقدم مجموعة من العناوين لمختلف الاهتمامات، من المواضيع التقنية إلى المعرفة العامة. هذا المصدر مناسب للطلاب، المتعلمين الذاتيين، وأي شخص يبحث عن كتب رقمية سهلة الوصول للتعليم، تطوير المهارات، أو القراءة الترفيهية."
         },
         "url": "https://freepdfbook.com/",
         "tags": [
@@ -438,8 +437,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "AWS S3",
         "description": {
-          "en": "Find PDFs on AWS",
-          "ar": "Find PDFs on AWS"
+          "en": "Amazon Web Services Simple Storage Service (S3) is an object storage service offering scalability, data availability, security, and performance. It is used for storing and retrieving any amount of data from anywhere on the web. Developers and businesses utilize it for website hosting, data backup, archiving, and big data analytics.",
+          "ar": "خدمة التخزين البسيط (S3) من خدمات الويب من أمازون (AWS) هي خدمة تخزين كائنات توفر قابلية التوسع، توفر البيانات، الأمان، والأداء. تُستخدم لتخزين واسترجاع أي كمية من البيانات من أي مكان على الويب. يستخدمها المطورون والشركات لاستضافة المواقع، النسخ الاحتياطي للبيانات، الأرشفة، وتحليلات البيانات الضخمة."
         },
         "url": "https://www.google.com/search?q=site%3As3.amazonaws.com+%3CSearch+term%3E+filetype%3Apdf",
         "tags": [
@@ -533,8 +532,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Ebook Reader Index",
         "description": {
-          "en": "or [Mobile Read](https://www.mobileread.com/) - Ebook Reader Indexes",
-          "ar": "or [Mobile Read](https://www.mobileread.com/) - Ebook Reader Indexes"
+          "en": "This resource serves as an index or directory for various ebook reader applications and tools. It helps users discover different options available for reading digital books across multiple platforms. Developers, students, and researchers can use it to find suitable software for their specific reading needs, comparing features and compatibility.",
+          "ar": "يقدم هذا المورد فهرسًا أو دليلًا لتطبيقات وأدوات قراءة الكتب الإلكترونية المتنوعة. يساعد المستخدمين على اكتشاف الخيارات المتاحة لقراءة الكتب الرقمية عبر منصات متعددة. يمكن للمطورين والطلاب والباحثين استخدامه للعثور على البرامج المناسبة لاحتياجاتهم القرائية المحددة، ومقارنة الميزات والتوافق."
         },
         "url": "https://wiki.mobileread.com/wiki/E-book_software",
         "tags": [
@@ -545,8 +544,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Android",
         "description": {
-          "en": "/ [iOS](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25BA_ios_reading)** - Mobile Ebook Readers",
-          "ar": "/ [iOS](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25BA_ios_reading)** - Mobile Ebook Readers"
+          "en": "This resource refers to an ebook reader application designed for mobile devices. It supports reading various digital book formats on both Android and Apple iOS platforms. Users can access their digital libraries on the go, making it useful for students, commuters, and anyone who prefers reading on smartphones or tablets.",
+          "ar": "يشير هذا المورد إلى تطبيق لقراءة الكتب الإلكترونية مصمم للأجهزة المحمولة. يدعم قراءة صيغ الكتب الرقمية المختلفة على منصتي أندرويد و iOS. يمكن للمستخدمين الوصول إلى مكتباتهم الرقمية أثناء التنقل، مما يجعله مفيدًا للطلاب والمسافرين وكل من يفضل القراءة على الهواتف الذكية أو الأجهزة اللوحية."
         },
         "url": "https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/android#wiki_.25BA_android_reading",
         "tags": [
@@ -558,8 +557,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Readest",
         "description": {
-          "en": "Ebook Reader / All Platforms / [Subreddit](https://reddit.com/r/readest) / [Discord](https://discord.gg/gntyVNk3BJ) / [GitHub](https://github.com/readest/readest)",
-          "ar": "Ebook Reader / All Platforms / [Subreddit](https://reddit.com/r/readest) / [Discord](https://discord.gg/gntyVNk3BJ) / [GitHub](https://github.com/readest/readest)"
+          "en": "Readest is an ebook reader application focused on providing a comfortable reading experience. It supports common ebook formats, allowing users to customize text, background, and layout settings. This tool is beneficial for casual readers and students seeking a straightforward application to manage and read their digital book collections.",
+          "ar": "Readest هو تطبيق لقراءة الكتب الإلكترونية يركز على توفير تجربة قراءة مريحة. يدعم صيغ الكتب الإلكترونية الشائعة، مما يتيح للمستخدمين تخصيص إعدادات النص والخلفية والتخطيط. يعد هذا التطبيق مفيدًا للقراء العاديين والطلاب الذين يبحثون عن أداة بسيطة لإدارة وقراءة مجموعاتهم من الكتب الرقمية."
         },
         "url": "https://readest.com/",
         "tags": [
@@ -569,8 +568,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Koodo",
         "description": {
-          "en": "Ebook Reader / All Platforms / [GitHub](https://github.com/koodo-reader/koodo-reader)",
-          "ar": "Ebook Reader / All Platforms / [GitHub](https://github.com/koodo-reader/koodo-reader)"
+          "en": "Koodo Reader is a desktop ebook reader that supports a wide range of formats, including EPUB, PDF, MOBI, and more. It offers features like annotations, highlights, and customizable reading modes. This tool is suitable for students, researchers, and professionals who need a versatile application to manage and study their digital documents on a computer.",
+          "ar": "Koodo Reader هو قارئ كتب إلكترونية مكتبي يدعم مجموعة واسعة من الصيغ، بما في ذلك EPUB و PDF و MOBI وغيرها. يوفر ميزات مثل التعليقات التوضيحية والتظليل وأنماط القراءة القابلة للتخصيص. هذه الأداة مناسبة للطلاب والباحثين والمهنيين الذين يحتاجون إلى تطبيق متعدد الاستخدامات لإدارة ودراسة مستنداتهم الرقمية على الكمبيوتر."
         },
         "url": "https://www.koodoreader.com/",
         "tags": [
@@ -580,8 +579,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "KOReader",
         "description": {
-          "en": "Ebook Reader / Windows, Linux, Android / [Plugins](https://github.com/koreader/contrib) / [GitHub](https://github.com/koreader/koreader)",
-          "ar": "Ebook Reader / Windows, Linux, Android / [Plugins](https://github.com/koreader/contrib) / [GitHub](https://github.com/koreader/koreader)"
+          "en": "KOReader is an open-source document viewer primarily designed for e-ink devices, but also available on Linux and Android. It supports various formats like PDF, DjVu, EPUB, and CBZ, offering advanced features such as reflow, dictionary lookups, and custom rendering. It's ideal for users who require a highly customizable and feature-rich reader for technical documents and ebooks.",
+          "ar": "KOReader هو عارض مستندات مفتوح المصدر مصمم بشكل أساسي لأجهزة الحبر الإلكتروني، ومتوفر أيضًا على لينكس وأندرويد. يدعم صيغًا متعددة مثل PDF و DjVu و EPUB، ويوفر ميزات متقدمة كإعادة التنسيق والبحث في القواميس. إنه مثالي للمستخدمين الذين يحتاجون إلى قارئ قابل للتخصيص وغني بالميزات للوثائق التقنية والكتب الإلكترونية."
         },
         "url": "https://koreader.rocks/",
         "tags": [
@@ -593,8 +592,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "SumatraPDFReader",
         "description": {
-          "en": "Ebook & PDF Reader / Windows",
-          "ar": "Ebook & PDF Reader / Windows"
+          "en": "SumatraPDF is a lightweight and fast PDF, eBook (ePub, Mobi), DjVu, CHM, Comic Book (CBZ, CBR) reader for Windows. It focuses on speed and simplicity, providing essential viewing functionalities without unnecessary bloat. This tool is useful for users who need a quick and efficient way to open and read various document types on their Windows machines.",
+          "ar": "SumatraPDF هو قارئ خفيف وسريع لملفات PDF والكتب الإلكترونية (ePub, Mobi) و DjVu و CHM والقصص المصورة (CBZ, CBR) لنظام ويندوز. يركز على السرعة والبساطة، ويوفر وظائف العرض الأساسية دون تعقيدات. هذه الأداة مفيدة للمستخدمين الذين يحتاجون إلى طريقة سريعة وفعالة لفتح وقراءة أنواع مختلفة من المستندات على أجهزة ويندوز الخاصة بهم."
         },
         "url": "https://www.sumatrapdfreader.org/free-pdf-reader",
         "tags": [
@@ -604,8 +603,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Sioyek",
         "description": {
-          "en": "PDF / Windows, Mac, Linux",
-          "ar": "PDF / Windows, Mac, Linux"
+          "en": "Sioyek is a PDF viewer designed for technical papers and books, primarily for Linux. It offers powerful features like smart jump, custom keybindings, and extensive navigation options, making it efficient for researchers and students. Its focus on keyboard-driven interaction and advanced search capabilities enhances productivity when working with complex documents.",
+          "ar": "Sioyek هو عارض PDF مصمم خصيصًا للأوراق والكتب التقنية، ويعمل بشكل أساسي على لينكس. يوفر ميزات قوية مثل التنقل الذكي واختصارات لوحة المفاتيح المخصصة وخيارات الملاحة الشاملة، مما يجعله فعالاً للباحثين والطلاب. يركز على التفاعل عبر لوحة المفاتيح وقدرات البحث المتقدمة لزيادة الإنتاجية مع المستندات المعقدة."
         },
         "url": "https://sioyek.info/",
         "tags": [
@@ -615,8 +614,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Foxit",
         "description": {
-          "en": "PDF Reader / All Platforms / [Features](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/download#wiki_.25BA_software_sites) (search) / [Warning](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/foxit-warning.md)",
-          "ar": "PDF Reader / All Platforms / [Features](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/download#wiki_.25BA_software_sites) (search) / [Warning](https://github.com/fmhy/edit/blob/main/docs/.vitepress/notes/foxit-warning.md)"
+          "en": "Foxit Reader is a popular PDF reader known for its speed, security, and comprehensive features. It allows users to view, annotate, fill out forms, and sign PDF documents. This tool is widely used by professionals, students, and businesses for managing and interacting with PDF files, offering a robust alternative to other PDF solutions.",
+          "ar": "Foxit Reader هو قارئ PDF شهير معروف بسرعته وأمانه وميزاته الشاملة. يتيح للمستخدمين عرض مستندات PDF والتعليق عليها وملء النماذج وتوقيعها. يستخدمه المحترفون والطلاب والشركات على نطاق واسع لإدارة ملفات PDF والتفاعل معها، ويوفر بديلاً قويًا لحلول PDF الأخرى."
         },
         "url": "https://www.foxit.com/pdf-reader/",
         "tags": [
@@ -628,8 +627,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "PlayTorrio",
         "description": {
-          "en": "Ebook Reader / Windows, Mac, Linux, Android / [Subreddit](https://www.reddit.com/r/PlayTorrio/) / [Discord](https://discord.gg/bbkVHRHnRk) / [GitHub](https://github.com/ayman708-UX/PlayTorrioV2)",
-          "ar": "Ebook Reader / Windows, Mac, Linux, Android / [Subreddit](https://www.reddit.com/r/PlayTorrio/) / [Discord](https://discord.gg/bbkVHRHnRk) / [GitHub](https://github.com/ayman708-UX/PlayTorrioV2)"
+          "en": "PlayTorrio is a versatile application available on Linux and Android, offering functionalities for both gaming and reading. As an ebook reader, it supports various digital formats, providing users with a platform to access their books. Its dual nature might appeal to users who seek an integrated environment for entertainment and educational content on their devices.",
+          "ar": "PlayTorrio هو تطبيق متعدد الاستخدامات متاح على لينكس وأندرويد، يقدم وظائف للألعاب والقراءة. كقارئ كتب إلكترونية، يدعم صيغًا رقمية متنوعة، ويوفر للمستخدمين منصة للوصول إلى كتبهم. قد يجذب طبيعته المزدوجة المستخدمين الذين يبحثون عن بيئة متكاملة للترفيه والمحتوى التعليمي على أجهزتهم."
         },
         "url": "https://playtorrio.xyz/",
         "tags": [
@@ -642,8 +641,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "EBook Reader",
         "description": {
-          "en": "Ebook Reader / Windows, Mac, Android, iOS",
-          "ar": "Ebook Reader / Windows, Mac, Android, iOS"
+          "en": "This resource refers to a general ebook reader application designed for mobile operating systems. It enables users to read digital books across Android and Apple iOS devices, supporting common ebook formats. It serves as a convenient tool for accessing personal digital libraries on smartphones and tablets for everyday reading.",
+          "ar": "يشير هذا المورد إلى تطبيق عام لقراءة الكتب الإلكترونية مصمم لأنظمة التشغيل المحمولة. يتيح للمستخدمين قراءة الكتب الرقمية عبر أجهزة أندرويد و iOS، ويدعم صيغ الكتب الإلكترونية الشائعة. يعد أداة مريحة للوصول إلى المكتبات الرقمية الشخصية على الهواتف الذكية والأجهزة اللوحية للقراءة اليومية."
         },
         "url": "https://epub-reader.online/",
         "tags": [
@@ -655,8 +654,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Jane Reader",
         "description": {
-          "en": "Ebook Reader / Windows, Mac",
-          "ar": "Ebook Reader / Windows, Mac"
+          "en": "Jane Reader is an ebook reader application designed to provide a user-friendly experience for reading digital books. It typically supports standard ebook formats and offers basic customization options for text and display. This tool is suitable for individuals looking for a straightforward and reliable application to enjoy their digital reading material.",
+          "ar": "Jane Reader هو تطبيق لقراءة الكتب الإلكترونية مصمم لتوفير تجربة سهلة الاستخدام لقراءة الكتب الرقمية. يدعم عادةً صيغ الكتب الإلكترونية القياسية ويوفر خيارات تخصيص أساسية للنص والعرض. هذه الأداة مناسبة للأفراد الذين يبحثون عن تطبيق بسيط وموثوق للاستمتاع بموادهم القرائية الرقمية."
         },
         "url": "https://janereader.com/",
         "tags": [
@@ -666,8 +665,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "FBReader",
         "description": {
-          "en": "Ebook Reader / Windows, Android, iOS",
-          "ar": "Ebook Reader / Windows, Android, iOS"
+          "en": "FBReader is a popular, multi-platform ebook reader supporting various formats like EPUB, FB2, MOBI, and plain text. It offers extensive customization for fonts, colors, and page-turning animations, along with integration with network libraries. Available on Android, iOS, and other platforms, it's a versatile choice for readers seeking a customizable and feature-rich experience.",
+          "ar": "FBReader هو قارئ كتب إلكترونية شهير ومتعدد المنصات يدعم صيغًا متنوعة مثل EPUB و FB2 و MOBI والنص العادي. يوفر تخصيصًا واسعًا للخطوط والألوان والرسوم المتحركة لتقليب الصفحات، بالإضافة إلى التكامل مع المكتبات الشبكية. متاح على أندرويد و iOS ومنصات أخرى، وهو خيار متعدد الاستخدامات للقراء الذين يبحثون عن تجربة غنية بالميزات وقابلة للتخصيص."
         },
         "url": "https://fbreader.org/",
         "tags": [
@@ -679,8 +678,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Anx Reader",
         "description": {
-          "en": "Ebook Reader / Windows, Mac, Android, iOS / [GitHub](https://github.com/anxcye/anx-reader)",
-          "ar": "Ebook Reader / Windows, Mac, Android, iOS / [GitHub](https://github.com/anxcye/anx-reader)"
+          "en": "Anx Reader is an ebook reader application available for both Android and Apple iOS devices. It focuses on providing a clean interface and essential reading functionalities for various digital book formats. This tool is useful for mobile users who need a reliable application to access and read their ebooks on their smartphones or tablets.",
+          "ar": "Anx Reader هو تطبيق لقراءة الكتب الإلكترونية متاح لأجهزة أندرويد و iOS. يركز على توفير واجهة نظيفة ووظائف قراءة أساسية لمختلف صيغ الكتب الرقمية. هذه الأداة مفيدة لمستخدمي الأجهزة المحمولة الذين يحتاجون إلى تطبيق موثوق للوصول إلى كتبهم الإلكترونية وقراءتها على هواتفهم الذكية أو الأجهزة اللوحية."
         },
         "url": "https://anx.anxcye.com/",
         "tags": [
@@ -692,8 +691,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Alexandria",
         "description": {
-          "en": "Ebook Reader / Windows, Mac, Linux",
-          "ar": "Ebook Reader / Windows, Mac, Linux"
+          "en": "Alexandria is an open-source ebook management and reading application primarily for Linux. It helps users organize their digital book collections, offering features like metadata editing and basic reading capabilities. This tool is beneficial for Linux users who prefer open-source solutions for managing and accessing their ebooks in a structured manner.",
+          "ar": "Alexandria هو تطبيق مفتوح المصدر لإدارة وقراءة الكتب الإلكترونية، مصمم بشكل أساسي لنظام لينكس. يساعد المستخدمين على تنظيم مجموعاتهم من الكتب الرقمية، ويوفر ميزات مثل تحرير البيانات الوصفية وقدرات القراءة الأساسية. هذه الأداة مفيدة لمستخدمي لينكس الذين يفضلون الحلول مفتوحة المصدر لإدارة كتبهم الإلكترونية والوصول إليها بطريقة منظمة."
         },
         "url": "https://github.com/btpf/Alexandria",
         "tags": [
@@ -705,8 +704,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Librum",
         "description": {
-          "en": "Ebook Reader / Windows, Mac, Linux / [GitHub](https://github.com/Librum-Reader/Librum)",
-          "ar": "Ebook Reader / Windows, Mac, Linux / [GitHub](https://github.com/Librum-Reader/Librum)"
+          "en": "Librum is an ebook reader application designed for Linux environments. It supports common ebook formats and provides a focused reading experience with customizable display options. This tool is suitable for Linux users who need a dedicated and efficient application to read their digital books without unnecessary distractions.",
+          "ar": "Librum هو تطبيق لقراءة الكتب الإلكترونية مصمم لبيئات لينكس. يدعم صيغ الكتب الإلكترونية الشائعة ويوفر تجربة قراءة مركزة مع خيارات عرض قابلة للتخصيص. هذه الأداة مناسبة لمستخدمي لينكس الذين يحتاجون إلى تطبيق مخصص وفعال لقراءة كتبهم الرقمية دون تشتيت الانتباه."
         },
         "url": "https://librumreader.com",
         "tags": [
@@ -717,8 +716,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Thorium",
         "description": {
-          "en": "Ebook Reader / Windows, Mac, Linux",
-          "ar": "Ebook Reader / Windows, Mac, Linux"
+          "en": "Thorium Reader is a free and open-source desktop ebook reader, particularly well-suited for Linux. It supports EPUB 3, LCP, and other formats, offering accessibility features and a clean interface. This tool is valuable for students, educators, and general readers who require a robust and accessible application for consuming digital publications on their Linux systems.",
+          "ar": "Thorium Reader هو قارئ كتب إلكترونية مكتبي مجاني ومفتوح المصدر، ومناسب بشكل خاص لنظام لينكس. يدعم EPUB 3 و LCP وصيغًا أخرى، ويوفر ميزات إمكانية الوصول وواجهة نظيفة. هذه الأداة قيمة للطلاب والمعلمين والقراء بشكل عام الذين يحتاجون إلى تطبيق قوي ومتاح لاستهلاك المنشورات الرقمية على أنظمة لينكس الخاصة بهم."
         },
         "url": "https://thorium.edrlab.org/",
         "tags": [
@@ -729,8 +728,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Okular",
         "description": {
-          "en": "PDF / Windows, Mac, Linux",
-          "ar": "PDF / Windows, Mac, Linux"
+          "en": "Okular is a universal document viewer developed by KDE, widely used on Linux. It supports a vast array of document formats, including PDF, DjVu, EPUB, MOBI, and various image formats. This versatile tool is essential for students, researchers, and professionals who need a single application to view and annotate diverse types of digital content.",
+          "ar": "Okular هو عارض مستندات شامل طورته KDE، ويستخدم على نطاق واسع في لينكس. يدعم مجموعة كبيرة من صيغ المستندات، بما في ذلك PDF و DjVu و EPUB و MOBI وصيغ الصور المختلفة. هذه الأداة متعددة الاستخدامات ضرورية للطلاب والباحثين والمهنيين الذين يحتاجون إلى تطبيق واحد لعرض أنواع مختلفة من المحتوى الرقمي والتعليق عليها."
         },
         "url": "https://okular.kde.org/",
         "tags": [
@@ -740,8 +739,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Aquile Reader",
         "description": {
-          "en": "Ebook Reader / Windows",
-          "ar": "Ebook Reader / Windows"
+          "en": "Aquile Reader is a modern ebook reader application designed for Windows, supporting EPUB, PDF, and other formats. It offers a customizable reading environment with themes, fonts, and layout adjustments. This tool is beneficial for Windows users who seek an aesthetically pleasing and functional application to manage and read their digital book collections.",
+          "ar": "Aquile Reader هو تطبيق حديث لقراءة الكتب الإلكترونية مصمم لنظام ويندوز، ويدعم صيغ EPUB و PDF وغيرها. يوفر بيئة قراءة قابلة للتخصيص مع سمات وخطوط وتعديلات في التخطيط. هذه الأداة مفيدة لمستخدمي ويندوز الذين يبحثون عن تطبيق جذاب وعملي لإدارة وقراءة مجموعاتهم من الكتب الرقمية."
         },
         "url": "https://apps.microsoft.com/detail/9p08t4jltqnk",
         "tags": [
@@ -751,8 +750,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Icecream Reader",
         "description": {
-          "en": "Ebook Reader / Windows",
-          "ar": "Ebook Reader / Windows"
+          "en": "Icecream Ebook Reader is a free application for Windows that allows users to read ebooks in various formats like EPUB, MOBI, PDF, and FB2. It provides features such as reading progress tracking, bookmarks, and a customizable interface. This tool is suitable for Windows users who need a simple yet effective solution for organizing and enjoying their digital books.",
+          "ar": "Icecream Ebook Reader هو تطبيق مجاني لنظام ويندوز يتيح للمستخدمين قراءة الكتب الإلكترونية بصيغ مختلفة مثل EPUB و MOBI و PDF و FB2. يوفر ميزات مثل تتبع تقدم القراءة والإشارات المرجعية وواجهة قابلة للتخصيص. هذه الأداة مناسبة لمستخدمي ويندوز الذين يحتاجون إلى حل بسيط وفعال لتنظيم كتبهم الرقمية والاستمتاع بها."
         },
         "url": "https://icecreamapps.com/Ebook-Reader/",
         "tags": [
@@ -762,8 +761,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Foliate",
         "description": {
-          "en": "Ebook Reader / Linux",
-          "ar": "Ebook Reader / Linux"
+          "en": "Foliate is a simple and elegant ebook reader for Linux desktops, focusing on a distraction-free reading experience. It supports EPUB, MOBI, AZW, and FB2 formats, offering customizable fonts, themes, and reading modes. This tool is ideal for Linux users who prioritize a clean interface and a comfortable environment for reading digital books.",
+          "ar": "Foliate هو قارئ كتب إلكترونية بسيط وأنيق لأسطح مكتب لينكس، يركز على توفير تجربة قراءة خالية من التشتيت. يدعم صيغ EPUB و MOBI و AZW و FB2، ويوفر خطوطًا وسمات وأنماط قراءة قابلة للتخصيص. هذه الأداة مثالية لمستخدمي لينكس الذين يفضلون واجهة نظيفة وبيئة مريحة لقراءة الكتب الرقمية."
         },
         "url": "https://johnfactotum.github.io/foliate/",
         "tags": [
@@ -4742,7 +4741,7 @@ export const subcategories: SubCategory[] = [
         ]
       },
       {
-        "title": "Encyclopaedia Iranica",
+        "title": "Encyclopedia Iranica",
         "description": {
           "en": "Iranian Culture Encyclopedia",
           "ar": "Iranian Culture Encyclopedia"
@@ -7468,8 +7467,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "EatTheFruit",
         "description": {
-          "en": "Ancient Texts / Mythology",
-          "ar": "Ancient Texts / Mythology"
+          "en": "This resource offers a curated collection of texts and documents, likely exploring alternative perspectives, self-improvement, and less conventional topics. It serves individuals seeking diverse information beyond mainstream sources, providing materials for personal growth and intellectual exploration. Useful for those interested in expanding their knowledge base with unique insights and varied viewpoints.",
+          "ar": "يقدم هذا المصدر مجموعة من النصوص والوثائق، غالبًا ما تستكشف وجهات نظر بديلة، وتطوير الذات، ومواضيع غير تقليدية. يخدم الأفراد الباحثين عن معلومات متنوعة تتجاوز المصادر السائدة، ويوفر مواد للنمو الشخصي والاستكشاف الفكري. مفيد للمهتمين بتوسيع معارفهم برؤى فريدة ووجهات نظر متعددة."
         },
         "url": "https://www.eatthefruit.com/media-library/pdf-library/",
         "tags": [
@@ -7479,8 +7478,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Awakening-Intuition",
         "description": {
-          "en": "Esoterica / Occult",
-          "ar": "Esoterica / Occult"
+          "en": "This resource provides a collection of reading materials focused on developing intuition, personal growth, and spiritual awareness. It offers texts, articles, and guides for individuals interested in self-discovery and enhancing their inner understanding. Useful for those on a spiritual or self-improvement journey, seeking to deepen their connection with their inner wisdom and consciousness.",
+          "ar": "يوفر هذا المصدر مجموعة من المواد القرائية الموجهة لتطوير الحدس والنمو الشخصي والوعي الروحي. يقدم نصوصًا ومقالات وإرشادات للأفراد المهتمين بالاستكشاف الذاتي وتعزيز فهمهم الداخلي. مفيد للباحثين عن التطور الروحي والشخصي، ويسعون لتعميق اتصالهم بحكمتهم الداخلية ووعيهم."
         },
         "url": "https://www.awakening-intuition.com/ebooks.html",
         "tags": [
@@ -7490,8 +7489,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Biblioteca Pleyades",
         "description": {
-          "en": "Mythology / Conspiracy / Esoterica",
-          "ar": "Mythology / Conspiracy / Esoterica"
+          "en": "This digital library offers a wide array of texts and documents, often covering esoteric, spiritual, ancient history, and alternative science topics. It serves researchers and curious individuals seeking information outside conventional academic or mainstream sources. Useful for exploring diverse perspectives on human knowledge, consciousness, and historical narratives from a non-traditional viewpoint.",
+          "ar": "تقدم هذه المكتبة الرقمية مجموعة واسعة من النصوص والوثائق، غالبًا ما تغطي مواضيع باطنية وروحية وتاريخ قديم وعلوم بديلة. تخدم الباحثين والأفراد الفضوليين الذين يبحثون عن معلومات خارج المصادر الأكاديمية أو السائدة. مفيدة لاستكشاف وجهات نظر متنوعة حول المعرفة البشرية والوعي والسرديات التاريخية من منظور غير تقليدي."
         },
         "url": "https://www.bibliotecapleyades.net/esp_tema.htm",
         "tags": [
@@ -7501,8 +7500,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Gnostic Society Library",
         "description": {
-          "en": "Gnosticism",
-          "ar": "Gnosticism"
+          "en": "This specialized library is dedicated to Gnostic texts, scriptures, and scholarly resources. It provides access to primary Gnostic writings, commentaries, and historical analyses, benefiting researchers, theologians, and students of ancient religions and philosophy. Useful for in-depth study of Gnosticism, its historical context, and its influence on early Christian and philosophical thought.",
+          "ar": "هذه المكتبة المتخصصة مكرسة للنصوص الغنوصية والمخطوطات والموارد الأكاديمية. توفر وصولاً إلى الكتابات الغنوصية الأصلية، والتعليقات، والتحليلات التاريخية، مما يفيد الباحثين وعلماء اللاهوت وطلاب الأديان والفلسفة القديمة. مفيدة للدراسة المتعمقة للغنوصية وسياقها التاريخي وتأثيرها على الفكر المسيحي والفلسفي المبكر."
         },
         "url": "http://www.gnosis.org/library.html",
         "tags": [
@@ -7512,8 +7511,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Logoi Library",
         "description": {
-          "en": "Gnosticism / Hermeticism",
-          "ar": "Gnosticism / Hermeticism"
+          "en": "This digital repository likely contains a variety of texts, possibly with a focus on philosophical, spiritual, or esoteric subjects. It offers resources for individuals interested in exploring different schools of thought, ancient wisdom, and metaphysical concepts. Useful for intellectual inquiry, personal study, and gaining insights into diverse perspectives on existence and meaning.",
+          "ar": "يحتوي هذا المستودع الرقمي على مجموعة متنوعة من النصوص، ربما مع التركيز على المواضيع الفلسفية أو الروحية أو الباطنية. يقدم موارد للأفراد المهتمين باستكشاف مدارس فكرية مختلفة، والحكمة القديمة، والمفاهيم الميتافيزيقية. مفيد للبحث الفكري، والدراسة الشخصية، واكتساب رؤى حول وجهات نظر متنوعة حول الوجود والمعنى."
         },
         "url": "https://logoilibrary.com/",
         "tags": [
@@ -7523,8 +7522,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "The Library of Consciousness",
         "description": {
-          "en": "Esoterica",
-          "ar": "Esoterica"
+          "en": "This resource offers a collection of materials exploring various aspects of consciousness, mind, and human experience. It provides texts, articles, and research on psychology, spirituality, philosophy, and neuroscience, benefiting those interested in understanding the nature of consciousness. Useful for interdisciplinary study, personal reflection, and gaining deeper insights into mental and spiritual phenomena.",
+          "ar": "يقدم هذا المصدر مجموعة من المواد التي تستكشف جوانب مختلفة من الوعي والعقل والتجربة البشرية. يوفر نصوصًا ومقالات وأبحاثًا في علم النفس، الروحانية، الفلسفة، وعلم الأعصاب، مما يفيد المهتمين بفهم طبيعة الوعي. مفيد للدراسة متعددة التخصصات، والتأمل الشخصي، واكتساب رؤى أعمق في الظواهر العقلية والروحية."
         },
         "url": "https://www.organism.earth/library/",
         "tags": [
@@ -7534,8 +7533,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Esoteric Archive",
         "description": {
-          "en": "Esoterica",
-          "ar": "Esoterica"
+          "en": "This extensive archive is dedicated to esoteric literature, occult studies, and mystical traditions from various cultures and historical periods. It provides a vast collection of rare books, manuscripts, and articles for researchers, practitioners, and students of hidden knowledge. Useful for exploring ancient wisdom, secret societies, and the historical development of mystical thought.",
+          "ar": "هذا الأرشيف الواسع مخصص للأدب الباطني، والدراسات الغامضة، والتقاليد الصوفية من ثقافات وفترات تاريخية مختلفة. يوفر مجموعة ضخمة من الكتب النادرة والمخطوطات والمقالات للباحثين والممارسين وطلاب المعرفة الخفية. مفيد لاستكشاف الحكمة القديمة، والجمعيات السرية، والتطور التاريخي للفكر الصوفي."
         },
         "url": "https://esotericarchives.com/",
         "tags": [
@@ -7545,8 +7544,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "magZtore",
         "description": {
-          "en": "Esoterica / Telegram",
-          "ar": "Esoterica / Telegram"
+          "en": "This digital platform offers a collection of magazines, likely covering a range of topics. It provides access to various publications, potentially including niche interests, current affairs, or specialized subjects. Useful for casual reading, staying informed, or exploring diverse periodical content across different fields of interest and cultural topics.",
+          "ar": "تقدم هذه المنصة الرقمية مجموعة من المجلات، من المحتمل أن تغطي مجموعة واسعة من المواضيع. توفر وصولاً إلى منشورات متنوعة، قد تشمل اهتمامات متخصصة، أو الشؤون الجارية، أو مواضيع محددة. مفيدة للقراءة الترفيهية، والبقاء على اطلاع، أو استكشاف محتوى الدوريات المتنوع عبر مجالات الاهتمام والمواضيع الثقافية المختلفة."
         },
         "url": "https://t.me/magZtore",
         "tags": [
@@ -7556,8 +7555,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "WonderlandLibraryOfMagicBooks",
         "description": {
-          "en": "Esoterica / Telegram",
-          "ar": "Esoterica / Telegram"
+          "en": "This specialized library offers a collection of books focused on magic, illusion, and related performing arts. It provides resources for aspiring magicians, enthusiasts, and historians of magic, covering techniques, history, and theory. Useful for learning magic tricks, understanding its cultural impact, and conducting historical research into the art of illusion and stagecraft.",
+          "ar": "تقدم هذه المكتبة المتخصصة مجموعة من الكتب التي تركز على السحر، الخدع البصرية، والفنون الأدائية ذات الصلة. توفر موارد للسحرة الطموحين، الهواة، ومؤرخي السحر، وتغطي التقنيات، التاريخ، والنظرية. مفيدة لتعلم حيل السحر، فهم تأثيره الثقافي، وإجراء البحوث التاريخية في فن الخداع والأداء المسرحي."
         },
         "url": "https://t.me/WonderlandLibraryOfMagicBooks",
         "tags": [
@@ -7567,8 +7566,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Synchroncity1111",
         "description": {
-          "en": "Esoterica / Telegram",
-          "ar": "Esoterica / Telegram"
+          "en": "This resource likely explores concepts of synchronicity, numerology, and spiritual connections. It offers articles, interpretations, and discussions for individuals interested in understanding meaningful coincidences and their potential deeper significance. Useful for personal reflection, exploring metaphysical ideas, and seeking patterns in life events from a spiritual perspective.",
+          "ar": "يستكشف هذا المصدر مفاهيم التزامن، علم الأعداد، والروابط الروحية. يقدم مقالات، تفسيرات، ومناقشات للأفراد المهتمين بفهم المصادفات ذات المعنى وأهميتها العميقة المحتملة. مفيد للتأمل الشخصي، واستكشاف الأفكار الميتافيزيقية، والبحث عن أنماط في أحداث الحياة من منظور روحي."
         },
         "url": "https://t.me/synchroncity1111",
         "tags": [
@@ -7578,8 +7577,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "SpiritualBooks",
         "description": {
-          "en": "Esoterica / Telegram",
-          "ar": "Esoterica / Telegram"
+          "en": "This resource offers a collection of books dedicated to spiritual development, philosophy, and various religious or mystical traditions. It provides a wide range of texts for individuals seeking guidance, inspiration, or deeper understanding of spiritual concepts. Useful for personal growth, meditation practices, and exploring diverse belief systems and paths to inner peace.",
+          "ar": "يقدم هذا المصدر مجموعة من الكتب المخصصة للتنمية الروحية، الفلسفة، والتقاليد الدينية أو الصوفية المتنوعة. يوفر مجموعة واسعة من النصوص للأفراد الباحثين عن الإرشاد، الإلهام، أو فهم أعمق للمفاهيم الروحية. مفيد للنمو الشخصي، ممارسات التأمل، واستكشاف أنظمة المعتقدات المختلفة ومسارات السلام الداخلي."
         },
         "url": "https://t.me/spiritualbooks",
         "tags": [
@@ -7589,8 +7588,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Masonic Library",
         "description": {
-          "en": "Esoterica / Freemasonry",
-          "ar": "Esoterica / Freemasonry"
+          "en": "This digital library provides access to texts and documents related to Freemasonry. It offers historical records, rituals, philosophical treatises, and commentaries for members, researchers, and those interested in understanding Masonic traditions and symbolism. Useful for academic study, personal inquiry into the fraternity's history, and exploring its cultural and social impact.",
+          "ar": "توفر هذه المكتبة الرقمية الوصول إلى نصوص ووثائق تتعلق بالماسونية. تقدم سجلات تاريخية، طقوسًا، رسائل فلسفية، وتعليقات للأعضاء، الباحثين، والمهتمين بفهم التقاليد والرمزية الماسونية. مفيدة للدراسة الأكاديمية، والبحث الشخصي في تاريخ الأخوية، واستكشاف تأثيرها الثقافي والاجتماعي."
         },
         "url": "https://masonicshop.com/masonic-library/",
         "tags": [
@@ -7600,8 +7599,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Rosicrucian Esotericism Lecture",
         "description": {
-          "en": "Rosicrucian Esotericism",
-          "ar": "Rosicrucian Esotericism"
+          "en": "This resource offers lectures or materials focused on Rosicrucian esotericism. It provides insights into Rosicrucian philosophy, symbolism, and mystical teachings, benefiting students of Western esotericism and those interested in secret societies. Useful for understanding a specific tradition within occult studies, its historical development, and its influence on spiritual movements.",
+          "ar": "يقدم هذا المصدر محاضرات أو مواد تركز على الباطنية الوردية الصليبية. يوفر رؤى حول الفلسفة الوردية الصليبية، الرمزية، والتعاليم الصوفية، مما يفيد طلاب الباطنية الغربية والمهتمين بالجمعيات السرية. مفيد لفهم تقليد معين ضمن الدراسات الغامضة، وتطوره التاريخي، وتأثيره على الحركات الروحية."
         },
         "url": "https://rsarchive.org/",
         "tags": [
@@ -7611,8 +7610,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "IAPSOP",
         "description": {
-          "en": "Spiritualist / Occult Periodicals",
-          "ar": "Spiritualist / Occult Periodicals"
+          "en": "The International Association for the Preservation of Spiritualist and Occult Periodicals (IAPSOP) is an archive dedicated to digitizing and preserving historical periodicals related to spiritualism, occultism, and parapsychology. It offers a valuable resource for researchers, historians, and enthusiasts studying these fields. Useful for accessing rare primary source materials and understanding historical perspectives on these subjects.",
+          "ar": "الجمعية الدولية للحفاظ على الدوريات الروحانية والغامضة (IAPSOP) هي أرشيف مخصص لرقمنة وحفظ الدوريات التاريخية المتعلقة بالروحانية، الغموض، والباراسيكولوجيا. تقدم موردًا قيمًا للباحثين، المؤرخين، والمتحمسين الذين يدرسون هذه المجالات. مفيدة للوصول إلى مواد المصادر الأولية النادرة وفهم وجهات النظر التاريخية حول هذه المواضيع."
         },
         "url": "http://iapsop.com/",
         "tags": [
@@ -7622,8 +7621,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Dhushara Research",
         "description": {
-          "en": "Metaphysics / Conspiracies / Psychedelics",
-          "ar": "Metaphysics / Conspiracies / Psychedelics"
+          "en": "This research-oriented resource likely focuses on specific academic or esoteric topics, possibly related to ancient history, mythology, or spiritual studies. It offers articles, papers, and analyses for scholars and individuals seeking in-depth information and alternative interpretations. Useful for specialized research, critical inquiry, and exploring less conventional theories in various fields.",
+          "ar": "يركز هذا المصدر الموجه للبحث على مواضيع أكاديمية أو باطنية محددة، ربما تتعلق بالتاريخ القديم، الأساطير، أو الدراسات الروحية. يقدم مقالات، أوراق بحثية، وتحليلات للباحثين والأفراد الذين يبحثون عن معلومات متعمقة وتفسيرات بديلة. مفيد للبحث المتخصص، والتحقيق النقدي، واستكشاف النظريات غير التقليدية في مجالات مختلفة."
         },
         "url": "https://www.dhushara.com/index.htm",
         "tags": [
@@ -7633,8 +7632,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "The Theosophical Society",
         "description": {
-          "en": "or [Theosophy World](https://www.theosophy.world/portfolio/term/ebooks) - Theosophy",
-          "ar": "or [Theosophy World](https://www.theosophy.world/portfolio/term/ebooks) - Theosophy"
+          "en": "This is the official resource of The Theosophical Society, offering a collection of texts, articles, and publications on Theosophy. It provides insights into its philosophical, spiritual, and ethical teachings, benefiting students of comparative religion, mysticism, and universal brotherhood. Useful for understanding Theosophical principles, their historical impact, and their relevance to contemporary spiritual thought.",
+          "ar": "هذا هو المصدر الرسمي للجمعية الثيوصوفية، يقدم مجموعة من النصوص، المقالات، والمنشورات حول الثيوصوفيا. يوفر رؤى حول تعاليمها الفلسفية، الروحية، والأخلاقية، مما يفيد طلاب الأديان المقارنة، التصوف، والأخوة العالمية. مفيد لفهم المبادئ الثيوصوفية، وتأثيرها التاريخي، وأهميتها للفكر الروحي المعاصر."
         },
         "url": "https://www.theosociety.org/",
         "tags": [
@@ -7644,8 +7643,8 @@ export const subcategories: SubCategory[] = [
       {
         "title": "Great Library of Eris",
         "description": {
-          "en": "Discordianism",
-          "ar": "Discordianism"
+          "en": "This digital library likely contains a diverse collection of texts, possibly with a focus on Discordianism, counter-culture, or philosophical satire. It offers unconventional and thought-provoking materials for individuals interested in alternative perspectives and challenging established norms. Useful for exploring unique intellectual and humorous content, and engaging with non-traditional philosophical ideas.",
+          "ar": "تحتوي هذه المكتبة الرقمية على مجموعة متنوعة من النصوص، ربما مع التركيز على الديسكوردية، الثقافة المضادة، أو السخرية الفلسفية. تقدم مواد غير تقليدية ومثيرة للتفكير للأفراد المهتمين بوجهات النظر البديلة وتحدي المعايير الراسخة. مفيدة لاستكشاف محتوى فكري وفكاهي فريد، والتفاعل مع الأفكار الفلسفية غير التقليدية."
         },
         "url": "https://libraryoferis.org/",
         "tags": [
@@ -7988,349 +7987,6 @@ export const subcategories: SubCategory[] = [
         "url": "https://www.atmadharma.com/index.html",
         "tags": [
           "General"
-        ]
-      },
-      {
-        "title": "GoodReads",
-        "description": {
-          "en": "Tracking / Database / Reviews / Recommendations / [Frontend](https://github.com/nesaku/BiblioReads)",
-          "ar": "Tracking / Database / Reviews / Recommendations / [Frontend](https://github.com/nesaku/BiblioReads)"
-        },
-        "url": "https://www.goodreads.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "StoryGraph",
-        "description": {
-          "en": "Tracking / Recommendations",
-          "ar": "Tracking / Recommendations"
-        },
-        "url": "https://www.thestorygraph.com/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "MAL",
-        "description": {
-          "en": "Manga / Light Novels / Tracking / Database / Reviews / [Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_myanimelist_tools)",
-          "ar": "Manga / Light Novels / Tracking / Database / Reviews / [Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_myanimelist_tools)"
-        },
-        "url": "https://myanimelist.net/",
-        "tags": [
-          "Reading",
-          "Tool"
-        ]
-      },
-      {
-        "title": "Anilist",
-        "description": {
-          "en": "Manga / Light Novels / Manhwa / Manhua / Tracking / Database / Reviews / [Wrapper](https://github.com/AurelicButter/AniList-Node) / [Extras](https://greasyfork.org/en/scripts/370473-automail)",
-          "ar": "Manga / Light Novels / Manhwa / Manhua / Tracking / Database / Reviews / [Wrapper](https://github.com/AurelicButter/AniList-Node) / [Extras](https://greasyfork.org/en/scripts/370473-automail)"
-        },
-        "url": "https://anilist.co/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "MangaBaka",
-        "description": {
-          "en": "Multi-Site Aggregator for Manga / Manhwa / Manhua / OEL / Light Novels w/ Tracking & Database / [Discord](https://mangabaka.org/discord)",
-          "ar": "Multi-Site Aggregator for Manga / Manhwa / Manhua / OEL / Light Novels w/ Tracking & Database / [Discord](https://mangabaka.org/discord)"
-        },
-        "url": "https://mangabaka.org/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "Novel Updates",
-        "description": {
-          "en": "or [⁠RanobeDB](https://ranobedb.org/) - Light Novel Tracking / Databases",
-          "ar": "or [⁠RanobeDB](https://ranobedb.org/) - Light Novel Tracking / Databases"
-        },
-        "url": "https://www.novelupdates.com/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "LeagueOfComicGeeks",
-        "description": {
-          "en": "Comic Tracking / Database / Releases",
-          "ar": "Comic Tracking / Database / Releases"
-        },
-        "url": "https://leagueofcomicgeeks.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "LibraryThing",
-        "description": {
-          "en": "Tracking / Reviews / Recommendations / Database",
-          "ar": "Tracking / Reviews / Recommendations / Database"
-        },
-        "url": "https://www.librarything.com/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "⁠EntertainMe",
-        "description": {
-          "en": "Book Tracking / Recommendations",
-          "ar": "Book Tracking / Recommendations"
-        },
-        "url": "https://www.entertainme.fun/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "Hardcover",
-        "description": {
-          "en": "Tracking / Reviews / Recommendations / [Discord](https://discord.com/invite/hardcover)",
-          "ar": "Tracking / Reviews / Recommendations / [Discord](https://discord.com/invite/hardcover)"
-        },
-        "url": "https://hardcover.app/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "CandlApp",
-        "description": {
-          "en": "Book Tracking / Recommendations",
-          "ar": "Book Tracking / Recommendations"
-        },
-        "url": "https://www.candlapp.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "Oku",
-        "description": {
-          "en": "Book Tracking",
-          "ar": "Book Tracking"
-        },
-        "url": "https://oku.club/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "BookWyrm",
-        "description": {
-          "en": "Book Tracking / [Official Instance](https://bookwyrm.social/)",
-          "ar": "Book Tracking / [Official Instance](https://bookwyrm.social/)"
-        },
-        "url": "https://joinbookwyrm.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "rate.house",
-        "description": {
-          "en": "or [Yamtrack](https://github.com/FuzzyGrim/Yamtrack) - Media Trackers",
-          "ar": "or [Yamtrack](https://github.com/FuzzyGrim/Yamtrack) - Media Trackers"
-        },
-        "url": "https://rate.house/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "Literal",
-        "description": {
-          "en": "Social Book Tracking Platform",
-          "ar": "Social Book Tracking Platform"
-        },
-        "url": "https://literal.club/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "libib",
-        "description": {
-          "en": "or [All My Books](https://www.bolidesoft.com/allmybooks.html) - Desktop Catalogs",
-          "ar": "or [All My Books](https://www.bolidesoft.com/allmybooks.html) - Desktop Catalogs"
-        },
-        "url": "https://www.libib.com/",
-        "tags": [
-          "AI",
-          "Reading"
-        ]
-      },
-      {
-        "title": "Anobii",
-        "description": {
-          "en": "Book Cataloguing / Reviews",
-          "ar": "Book Cataloguing / Reviews"
-        },
-        "url": "https://www.anobii.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "MangaUpdates",
-        "description": {
-          "en": "Manga Tracking",
-          "ar": "Manga Tracking"
-        },
-        "url": "https://www.mangaupdates.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "Ratings Filter",
-        "description": {
-          "en": "Goodreads / Storygraph Rating Aggregator + Filter",
-          "ar": "Goodreads / Storygraph Rating Aggregator + Filter"
-        },
-        "url": "https://www.book-filter.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "Listal",
-        "description": {
-          "en": "Book Database",
-          "ar": "Book Database"
-        },
-        "url": "https://www.listal.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "Books Search",
-        "description": {
-          "en": "Book Database",
-          "ar": "Book Database"
-        },
-        "url": "https://books-search.typesense.org/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "⁠Banned Book List",
-        "description": {
-          "en": "List of Books Banned by Schools",
-          "ar": "List of Books Banned by Schools"
-        },
-        "url": "https://docs.google.com/spreadsheets/u/0/d/10NwV38Rp6EF8X8p7Qa2iXpSFn9m46v717DQtJkLictI",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "ISFDB",
-        "description": {
-          "en": "Speculative Fiction",
-          "ar": "Speculative Fiction"
-        },
-        "url": "https://isfdb.org/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "⁠Uchronia",
-        "description": {
-          "en": "Fictional \"What If\" History",
-          "ar": "Fictional \"What If\" History"
-        },
-        "url": "https://www.uchronia.net/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "nooSFere",
-        "description": {
-          "en": "Science Fiction",
-          "ar": "Science Fiction"
-        },
-        "url": "https://www.noosfere.org/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "Romance.io",
-        "description": {
-          "en": "Romance Database",
-          "ar": "Romance Database"
-        },
-        "url": "https://www.romance.io/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "⁠Tolkien Gateway",
-        "description": {
-          "en": "J.R.R. Tolkien Content Encyclopedia / Wiki",
-          "ar": "J.R.R. Tolkien Content Encyclopedia / Wiki"
-        },
-        "url": "https://tolkiengateway.net/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "Mad Cover Site",
-        "description": {
-          "en": "MAD Magazine History Archive",
-          "ar": "MAD Magazine History Archive"
-        },
-        "url": "https://madcoversite.com/",
-        "tags": [
-          "General"
-        ]
-      },
-      {
-        "title": "⁠Midloop",
-        "description": {
-          "en": "Book Release Date Tracker / [Discord](https://discord.gg/AvUxR59Yv5)",
-          "ar": "Book Release Date Tracker / [Discord](https://discord.gg/AvUxR59Yv5)"
-        },
-        "url": "https://midloop.net/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "Talpa Search",
-        "description": {
-          "en": "Find Books by Describing Them",
-          "ar": "Find Books by Describing Them"
-        },
-        "url": "https://www.talpasearch.com/",
-        "tags": [
-          "Reading"
-        ]
-      },
-      {
-        "title": "⁠Book Series in Order",
-        "description": {
-          "en": "Book Character / Author Release Orders",
-          "ar": "Book Character / Author Release Orders"
-        },
-        "url": "https://www.bookseriesinorder.com/",
-        "tags": [
-          "Reading"
         ]
       }
     ]
@@ -9065,6 +8721,349 @@ export const subcategories: SubCategory[] = [
         "url": "https://thegrinder.diabolicalplots.com/",
         "tags": [
           "General"
+        ]
+      },
+      {
+        "title": "GoodReads",
+        "description": {
+          "en": "Tracking / Database / Reviews / Recommendations / [Frontend](https://github.com/nesaku/BiblioReads)",
+          "ar": "Tracking / Database / Reviews / Recommendations / [Frontend](https://github.com/nesaku/BiblioReads)"
+        },
+        "url": "https://www.goodreads.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "StoryGraph",
+        "description": {
+          "en": "Tracking / Recommendations",
+          "ar": "Tracking / Recommendations"
+        },
+        "url": "https://www.thestorygraph.com/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "MAL",
+        "description": {
+          "en": "Manga / Light Novels / Tracking / Database / Reviews / [Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_myanimelist_tools)",
+          "ar": "Manga / Light Novels / Tracking / Database / Reviews / [Tools](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage#wiki_myanimelist_tools)"
+        },
+        "url": "https://myanimelist.net/",
+        "tags": [
+          "Reading",
+          "Tool"
+        ]
+      },
+      {
+        "title": "Anilist",
+        "description": {
+          "en": "Manga / Light Novels / Manhwa / Manhua / Tracking / Database / Reviews / [Wrapper](https://github.com/AurelicButter/AniList-Node) / [Extras](https://greasyfork.org/en/scripts/370473-automail)",
+          "ar": "Manga / Light Novels / Manhwa / Manhua / Tracking / Database / Reviews / [Wrapper](https://github.com/AurelicButter/AniList-Node) / [Extras](https://greasyfork.org/en/scripts/370473-automail)"
+        },
+        "url": "https://anilist.co/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "MangaBaka",
+        "description": {
+          "en": "Multi-Site Aggregator for Manga / Manhwa / Manhua / OEL / Light Novels w/ Tracking & Database / [Discord](https://mangabaka.org/discord)",
+          "ar": "Multi-Site Aggregator for Manga / Manhwa / Manhua / OEL / Light Novels w/ Tracking & Database / [Discord](https://mangabaka.org/discord)"
+        },
+        "url": "https://mangabaka.org/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "Novel Updates",
+        "description": {
+          "en": "or [⁠RanobeDB](https://ranobedb.org/) - Light Novel Tracking / Databases",
+          "ar": "or [⁠RanobeDB](https://ranobedb.org/) - Light Novel Tracking / Databases"
+        },
+        "url": "https://www.novelupdates.com/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "LeagueOfComicGeeks",
+        "description": {
+          "en": "Comic Tracking / Database / Releases",
+          "ar": "Comic Tracking / Database / Releases"
+        },
+        "url": "https://leagueofcomicgeeks.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "LibraryThing",
+        "description": {
+          "en": "Tracking / Reviews / Recommendations / Database",
+          "ar": "Tracking / Reviews / Recommendations / Database"
+        },
+        "url": "https://www.librarything.com/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "⁠EntertainMe",
+        "description": {
+          "en": "Book Tracking / Recommendations",
+          "ar": "Book Tracking / Recommendations"
+        },
+        "url": "https://www.entertainme.fun/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "Hardcover",
+        "description": {
+          "en": "Tracking / Reviews / Recommendations / [Discord](https://discord.com/invite/hardcover)",
+          "ar": "Tracking / Reviews / Recommendations / [Discord](https://discord.com/invite/hardcover)"
+        },
+        "url": "https://hardcover.app/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "CandlApp",
+        "description": {
+          "en": "Book Tracking / Recommendations",
+          "ar": "Book Tracking / Recommendations"
+        },
+        "url": "https://www.candlapp.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "Oku",
+        "description": {
+          "en": "Book Tracking",
+          "ar": "Book Tracking"
+        },
+        "url": "https://oku.club/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "BookWyrm",
+        "description": {
+          "en": "Book Tracking / [Official Instance](https://bookwyrm.social/)",
+          "ar": "Book Tracking / [Official Instance](https://bookwyrm.social/)"
+        },
+        "url": "https://joinbookwyrm.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "rate.house",
+        "description": {
+          "en": "or [Yamtrack](https://github.com/FuzzyGrim/Yamtrack) - Media Trackers",
+          "ar": "or [Yamtrack](https://github.com/FuzzyGrim/Yamtrack) - Media Trackers"
+        },
+        "url": "https://rate.house/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "Literal",
+        "description": {
+          "en": "Social Book Tracking Platform",
+          "ar": "Social Book Tracking Platform"
+        },
+        "url": "https://literal.club/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "libib",
+        "description": {
+          "en": "or [All My Books](https://www.bolidesoft.com/allmybooks.html) - Desktop Catalogs",
+          "ar": "or [All My Books](https://www.bolidesoft.com/allmybooks.html) - Desktop Catalogs"
+        },
+        "url": "https://www.libib.com/",
+        "tags": [
+          "AI",
+          "Reading"
+        ]
+      },
+      {
+        "title": "Anobii",
+        "description": {
+          "en": "Book Cataloguing / Reviews",
+          "ar": "Book Cataloguing / Reviews"
+        },
+        "url": "https://www.anobii.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "MangaUpdates",
+        "description": {
+          "en": "Manga Tracking",
+          "ar": "Manga Tracking"
+        },
+        "url": "https://www.mangaupdates.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "Ratings Filter",
+        "description": {
+          "en": "Goodreads / Storygraph Rating Aggregator + Filter",
+          "ar": "Goodreads / Storygraph Rating Aggregator + Filter"
+        },
+        "url": "https://www.book-filter.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "Listal",
+        "description": {
+          "en": "Book Database",
+          "ar": "Book Database"
+        },
+        "url": "https://www.listal.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "Books Search",
+        "description": {
+          "en": "Book Database",
+          "ar": "Book Database"
+        },
+        "url": "https://books-search.typesense.org/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "⁠Banned Book List",
+        "description": {
+          "en": "List of Books Banned by Schools",
+          "ar": "List of Books Banned by Schools"
+        },
+        "url": "https://docs.google.com/spreadsheets/u/0/d/10NwV38Rp6EF8X8p7Qa2iXpSFn9m46v717DQtJkLictI",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "ISFDB",
+        "description": {
+          "en": "Speculative Fiction",
+          "ar": "Speculative Fiction"
+        },
+        "url": "https://isfdb.org/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "⁠Uchronia",
+        "description": {
+          "en": "Fictional \"What If\" History",
+          "ar": "Fictional \"What If\" History"
+        },
+        "url": "https://www.uchronia.net/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "nooSFere",
+        "description": {
+          "en": "Science Fiction",
+          "ar": "Science Fiction"
+        },
+        "url": "https://www.noosfere.org/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "Romance.io",
+        "description": {
+          "en": "Romance Database",
+          "ar": "Romance Database"
+        },
+        "url": "https://www.romance.io/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "⁠Tolkien Gateway",
+        "description": {
+          "en": "J.R.R. Tolkien Content Encyclopedia / Wiki",
+          "ar": "J.R.R. Tolkien Content Encyclopedia / Wiki"
+        },
+        "url": "https://tolkiengateway.net/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "Mad Cover Site",
+        "description": {
+          "en": "MAD Magazine History Archive",
+          "ar": "MAD Magazine History Archive"
+        },
+        "url": "https://madcoversite.com/",
+        "tags": [
+          "General"
+        ]
+      },
+      {
+        "title": "⁠Midloop",
+        "description": {
+          "en": "Book Release Date Tracker / [Discord](https://discord.gg/AvUxR59Yv5)",
+          "ar": "Book Release Date Tracker / [Discord](https://discord.gg/AvUxR59Yv5)"
+        },
+        "url": "https://midloop.net/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "Talpa Search",
+        "description": {
+          "en": "Find Books by Describing Them",
+          "ar": "Find Books by Describing Them"
+        },
+        "url": "https://www.talpasearch.com/",
+        "tags": [
+          "Reading"
+        ]
+      },
+      {
+        "title": "⁠Book Series in Order",
+        "description": {
+          "en": "Book Character / Author Release Orders",
+          "ar": "Book Character / Author Release Orders"
+        },
+        "url": "https://www.bookseriesinorder.com/",
+        "tags": [
+          "Reading"
         ]
       }
     ]
