@@ -28,7 +28,7 @@ export const categoriesData: Category[] = [
       ar: 'الأعمال والمدفوعات',
     },
     iconName: 'Briefcase',
-    resourceCount: 35,
+    resourceCount: 36,
   },
   {
     "id": "reading",
