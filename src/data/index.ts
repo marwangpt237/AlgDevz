@@ -1,4 +1,5 @@
 import { Category } from '../types';
+import { subcategories as aiSubcategories } from './artificial-intelligence';
 export const categoriesData: Category[] = [
   // Core Tools (أدوات أساسية) - Promoted per strategic audit
   {
@@ -7,8 +8,9 @@ export const categoriesData: Category[] = [
       "en": "Artificial Intelligence",
       "ar": "الذكاء الاصطناعي"
     },
-    "iconName": "List",
-    "resourceCount": 351
+    "iconName": "Sparkles",
+    "subcategories": aiSubcategories,
+    "resourceCount": 408 // Sum of all resources in the new AI subcategories
   },
   {
     "id": "hosting-cloud",
@@ -34,7 +36,7 @@ export const categoriesData: Category[] = [
       "en": "Reading",
       "ar": "الكتب والقراءة"
     },
-    "iconName": "List",
+    "iconName": "Book",
     "resourceCount": 790
   },
   // Productivity & Utilities (أدوات الإنتاجية)
@@ -44,7 +46,7 @@ export const categoriesData: Category[] = [
       "en": "Adblock",
       "ar": "حجب الإعلانات"
     },
-    "iconName": "List",
+    "iconName": "ShieldBan",
     "resourceCount": 327
   },
   {
@@ -53,7 +55,7 @@ export const categoriesData: Category[] = [
       "en": "Downloading",
       "ar": "التحميل"
     },
-    "iconName": "List",
+    "iconName": "Download",
     "resourceCount": 125
   },
   // Leisure & Lifestyle (أسلوب حياة) - De-emphasized (shown lower in nav/grid)
@@ -63,7 +65,7 @@ export const categoriesData: Category[] = [
       "en": "Streaming",
       "ar": "البث المباشر"
     },
-    "iconName": "List",
+    "iconName": "Film",
     "resourceCount": 896
   },
   {
@@ -72,7 +74,7 @@ export const categoriesData: Category[] = [
       "en": "Gaming",
       "ar": "الألعاب"
     },
-    "iconName": "List",
+    "iconName": "Gamepad",
     "resourceCount": 852
   },
   {
@@ -81,7 +83,7 @@ export const categoriesData: Category[] = [
       "en": "Music",
       "ar": "الموسيقى"
     },
-    "iconName": "List",
+    "iconName": "Music",
     "resourceCount": 793
   },
 ];
