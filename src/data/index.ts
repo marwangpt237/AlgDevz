@@ -10,7 +10,7 @@ export const categoriesData: Category[] = [
     },
     "iconName": "Sparkles",
     "subcategories": aiSubcategories,
-    "resourceCount": 408 // Sum of all resources in the new AI subcategories
+    "resourceCount": 105
   },
   {
     "id": "hosting-cloud",

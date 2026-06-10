@@ -46,7 +46,7 @@ export function Sidebar({ categories, selectedId, onSelect, language, isOpen, on
             {categories.map((category) => {
               const Icon = (Icons as any)[category.iconName] || Icons.Folder;
               const isSelected = selectedId === category.id;
-              const count = category.subcategories?.reduce((acc, sub) => acc + sub.resources.length, 0) || 0;
+              const count = category.subcategories?.reduce((acc, sub) => acc + sub.resources.length, 0) || category.resourceCount || 0;
               const hideBadge = category.id === 'home' || category.id === 'about';
               
               return (
