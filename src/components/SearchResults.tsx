@@ -1,4 +1,4 @@
-import { Category, Language, Resource } from '../types';
+import { Language } from '../types';
 import { SearchX, Loader2 } from 'lucide-react';
 import { ResourceCard } from './ResourceCard';
 import { useEffect, useState } from 'react';
@@ -7,7 +7,6 @@ import { searchAllCategories, SearchResult } from '../lib/search';
 
 interface SearchResultsProps {
   query: string;
-  categories: Category[];
   language: Language;
   bookmarks: Set<string>;
   toggleBookmark: (url: string) => void;

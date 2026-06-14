@@ -43,6 +43,12 @@ export function Header({ language, onLanguageChange, theme, onThemeToggle, searc
     }, 200);
   };
 
+  // Keep the visible input synchronized when searchQuery is set externally,
+  // for example via RoadMapDz links like /?q=react or browser navigation.
+  useEffect(() => {
+    setLocalQuery(searchQuery);
+  }, [searchQuery]);
+
   useEffect(() => {
     return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
   }, []);

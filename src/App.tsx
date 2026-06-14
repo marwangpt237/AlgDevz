@@ -14,25 +14,40 @@ export default function App() {
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>('home');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Handle initial hash routing
+  // Handle initial/deep-link routing.
+  // Supported inbound links:
+  // - https://algdevs.marwan-naili.me/?q=react       from RoadMapDz
+  // - https://algdevs.marwan-naili.me/#/search?q=react internal/hash route
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#/', '');
+    const handleRouteChange = () => {
+      const hash = window.location.hash.replace(/^#\/?/, '');
+      const directQuery = new URLSearchParams(window.location.search).get('q');
       let currentPath = '/';
       let pageTitle = 'Home';
 
-      if (hash.startsWith('search?q=')) {
-        const q = decodeURIComponent(hash.replace('search?q=', ''));
+      // Hash routes take priority once the user navigates inside the app. This prevents
+      // an old ?q= value from overriding future searches/categories in the same tab.
+      if (hash.startsWith('search?')) {
+        const q = new URLSearchParams(hash.replace('search?', '')).get('q') || '';
+        setSelectedCategoryId('home');
         setSearchQuery(q);
         currentPath = `/search?q=${q}`;
         pageTitle = `Search: ${q}`;
       } else if (hash) {
         setSelectedCategoryId(hash);
+        setSearchQuery('');
         currentPath = `/${hash}`;
         pageTitle = hash.charAt(0).toUpperCase() + hash.slice(1);
-        if (hash !== 'bookmarks' && hash !== 'about') {
+        if (hash !== 'bookmarks' && hash !== 'about' && hash !== 'home') {
           trackCategoryOpen(hash);
         }
+      } else if (directQuery?.trim()) {
+        const q = directQuery.trim();
+        setSelectedCategoryId('home');
+        setSearchQuery(q);
+        currentPath = `/search?q=${q}`;
+        pageTitle = `Search: ${q}`;
+        console.log('[RoadMapDz Link] Loaded pre-filtered AlgDevs query:', q);
       } else {
         setSelectedCategoryId('home');
         setSearchQuery('');
@@ -41,10 +56,14 @@ export default function App() {
       trackPageView(currentPath, pageTitle);
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Run on mount
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+    handleRouteChange(); // Run on mount
 
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.removeEventListener('popstate', handleRouteChange);
+    };
   }, []);
 
   const updateHash = (id: string, query: string) => {
