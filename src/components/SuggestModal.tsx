@@ -3,8 +3,7 @@ import { Language } from '../types';
 import { X, Send, Link, FileText, CheckCircle2 } from 'lucide-react';
 import { trackSuggestion } from '../lib/analytics';
 
-const TELEGRAM_USERNAME = 'mr1labs';
-const TELEGRAM_URL = `https://t.me/${TELEGRAM_USERNAME}`;
+const SUGGEST_API_URL = 'https://algdevz-suggest-api.vercel.app/api/suggest';
 
 function sanitizeInput(value: string | undefined, maxLength: number): string {
   if (!value) return '';
@@ -108,33 +107,46 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
       return;
     }
 
-    const message = [
-      'New AlgDevs resource suggestion',
-      '',
-      `Title: ${cleanTitle}`,
-      `URL: ${cleanUrl}`,
-      cleanDesc ? `Description: ${cleanDesc}` : '',
-      `Language: ${isAr ? 'ar' : 'en'}`,
-      `Submitted: ${new Date().toISOString()}`,
-    ].filter(Boolean).join('\n');
+    const payload = {
+      title: cleanTitle,
+      url: cleanUrl,
+      description: cleanDesc,
+      language: isAr ? 'ar' : 'en',
+      website: honeypot,
+    };
 
     try {
-      await navigator.clipboard?.writeText(message);
+      const response = await fetch(SUGGEST_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Suggestion API responded with ${response.status}`);
+      }
+
+      setIsSuccess(true);
+      trackSuggestion('success');
+
+      setTimeout(() => {
+        close();
+        setUrl('');
+        setTitle('');
+        setDescription('');
+        setIsSubmitting(false);
+      }, 2500);
     } catch (err) {
-      console.warn('Could not copy Telegram suggestion message:', err);
-    }
-
-    window.open(TELEGRAM_URL, '_blank', 'noopener,noreferrer');
-    setIsSuccess(true);
-    trackSuggestion('telegram');
-
-    setTimeout(() => {
-      close();
-      setUrl('');
-      setTitle('');
-      setDescription('');
+      console.warn('Suggestion submission failed:', err);
+      setError(isAr
+        ? 'تعذر إرسال الاقتراح حالياً. حاول مرة أخرى بعد قليل.'
+        : 'Could not send the suggestion right now. Please try again shortly.'
+      );
+      trackSuggestion('error');
       setIsSubmitting(false);
-    }, 2500);
+    }
   };
 
   return (
@@ -157,10 +169,10 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
               <CheckCircle2 className="w-8 h-8 text-emerald-400" />
             </div>
             <h3 className="text-xl font-bold text-zinc-100 mb-2">
-              {isAr ? 'تم فتح تيليجرام!' : 'Telegram Opened!'}
+              {isAr ? 'تم الإرسال بنجاح!' : 'Submitted Successfully!'}
             </h3>
             <p className="text-zinc-400">
-              {isAr ? 'تم نسخ تفاصيل المورد. الصقها في محادثة @mr1labs لإرسال الاقتراح.' : 'The resource details were copied. Paste them in the @mr1labs chat to send the suggestion.'}
+              {isAr ? 'شكراً لك على مساهمتك. تم إرسال المورد للمراجعة.' : 'Thank you for your contribution. The resource was sent for review.'}
             </p>
           </div>
         ) : (
@@ -171,8 +183,8 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
               </h2>
               <p className="text-sm text-zinc-400">
                 {isAr 
-                  ? 'شاركنا أداة أو موقع مفيد عبر تيليجرام مباشرة إلى @mr1labs.' 
-                  : 'Share a useful tool or website directly via Telegram to @mr1labs.'}
+                  ? 'شاركنا أداة أو موقع مفيد ليتم إرساله مباشرة للمراجعة.' 
+                  : 'Share a useful tool or website to send it directly for review.'}
               </p>
             </div>
 
@@ -254,7 +266,7 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
                 ) : (
                   <>
                     <Send className="w-4 h-4" />
-                    {isAr ? 'إرسال عبر تيليجرام' : 'Send via Telegram'}
+                    {isAr ? 'إرسال الاقتراح' : 'Submit Suggestion'}
                   </>
                 )}
               </button>
