@@ -3,8 +3,8 @@ import { Language } from '../types';
 import { X, Send, Link, FileText, CheckCircle2 } from 'lucide-react';
 import { trackSuggestion } from '../lib/analytics';
 
-const WORKER_URL = 'https://alg-devs.marwannaili-23-07.workers.dev/';
-const SUGGEST_SECRET = 'algdevs-2026-super-secret-xyz789';
+const TELEGRAM_USERNAME = 'mr1labs';
+const TELEGRAM_URL = `https://t.me/${TELEGRAM_USERNAME}`;
 
 function sanitizeInput(value: string | undefined, maxLength: number): string {
   if (!value) return '';
@@ -108,46 +108,33 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
       return;
     }
 
-    const payload = {
-      title: cleanTitle,
-      url: cleanUrl,
-      description: cleanDesc,
-      language: isAr ? 'ar' : 'en',
-      timestamp: new Date().toISOString(),
-    };
+    const message = [
+      'New AlgDevs resource suggestion',
+      '',
+      `Title: ${cleanTitle}`,
+      `URL: ${cleanUrl}`,
+      cleanDesc ? `Description: ${cleanDesc}` : '',
+      `Language: ${isAr ? 'ar' : 'en'}`,
+      `Submitted: ${new Date().toISOString()}`,
+    ].filter(Boolean).join('\n');
 
     try {
-      await fetch(WORKER_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Secret': SUGGEST_SECRET,
-        },
-        body: JSON.stringify(payload),
-      });
-
-      setIsSuccess(true);
-      trackSuggestion('success');
-
-      setTimeout(() => {
-        close();
-        setUrl('');
-        setTitle('');
-        setDescription('');
-      }, 2500);
+      await navigator.clipboard?.writeText(message);
     } catch (err) {
-      console.warn('Suggestion submission failed:', err);
-      setIsSuccess(true);
-      trackSuggestion('error');
-      setTimeout(() => {
-        close();
-        setUrl('');
-        setTitle('');
-        setDescription('');
-      }, 2500);
-    } finally {
-      setIsSubmitting(false);
+      console.warn('Could not copy Telegram suggestion message:', err);
     }
+
+    window.open(TELEGRAM_URL, '_blank', 'noopener,noreferrer');
+    setIsSuccess(true);
+    trackSuggestion('telegram');
+
+    setTimeout(() => {
+      close();
+      setUrl('');
+      setTitle('');
+      setDescription('');
+      setIsSubmitting(false);
+    }, 2500);
   };
 
   return (
@@ -170,10 +157,10 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
               <CheckCircle2 className="w-8 h-8 text-emerald-400" />
             </div>
             <h3 className="text-xl font-bold text-zinc-100 mb-2">
-              {isAr ? 'تم الإرسال بنجاح!' : 'Submitted Successfully!'}
+              {isAr ? 'تم فتح تيليجرام!' : 'Telegram Opened!'}
             </h3>
             <p className="text-zinc-400">
-              {isAr ? 'شكراً لك على مساهمتك. سيتم مراجعة المورد وإضافته.' : 'Thank you for your contribution. The resource will be reviewed.'}
+              {isAr ? 'تم نسخ تفاصيل المورد. الصقها في محادثة @mr1labs لإرسال الاقتراح.' : 'The resource details were copied. Paste them in the @mr1labs chat to send the suggestion.'}
             </p>
           </div>
         ) : (
@@ -184,8 +171,8 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
               </h2>
               <p className="text-sm text-zinc-400">
                 {isAr 
-                  ? 'شاركنا أداة أو موقع مفيد ليتم إضافته إلى الدليل.' 
-                  : 'Share a useful tool or website to be added to the directory.'}
+                  ? 'شاركنا أداة أو موقع مفيد عبر تيليجرام مباشرة إلى @mr1labs.' 
+                  : 'Share a useful tool or website directly via Telegram to @mr1labs.'}
               </p>
             </div>
 
@@ -267,7 +254,7 @@ export function SuggestModal({ isOpen, onClose, language }: SuggestModalProps) {
                 ) : (
                   <>
                     <Send className="w-4 h-4" />
-                    {isAr ? 'إرسال الاقتراح' : 'Submit Suggestion'}
+                    {isAr ? 'إرسال عبر تيليجرام' : 'Send via Telegram'}
                   </>
                 )}
               </button>
